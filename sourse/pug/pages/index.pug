@@ -2,11 +2,11 @@ extends ../layout/main.pug
 
 include ../blocks/headerBlock/_headerBlock.pug
 include ../blocks/sForm/_sForm.pug
-include ../blocks/sContent/_sContent.pug
+include ../blocks/sNominations/_sNominations.pug
  
-include ../blocks/sContact/_sContact.pug
-include ../blocks/sForm/_sForm.pug
-include ../blocks/sForm/_sForm.pug
+include ../blocks/sAwardSteps/_sAwardSteps.pug
+include ../blocks/sNews/_sNews.pug
+include ../blocks/sPartners/_sPartners.pug
 include ../blocks/sCatalog/_sCatalog.pug
 
 block variables
@@ -22,9 +22,10 @@ block pagecontent
 	
 	+parts('header')
 	main
-		+headerBlock 
-		+sCatalog
-		+sForm()
-		+sContact()
+		//- +headerBlock 
+		+sNominations
+		+sAwardSteps
+		+sNews
+		+sPartners
 		
 	+parts('footer')

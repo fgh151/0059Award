@@ -1,0 +1,25 @@
+mixin sNews(data)
+	// start sNews
+	+b.SECTION.sNews.section#sNews&attributes(attributes)
+		.container
+			+b.section-title
+				h2 Новости
+				a(href='#') Все новости →
+			+e.row.row
+				+e.col.col-lg-6
+					+e.img-wrap.A(href='#')
+						+img(src="img/sNews-img.png", alt="").img-bg
+						+e.content.fw-500
+							+e.data 21.05.2024
+							.text.h3 В Центре знаний «Машук» стартовал образовательный модуль для победителей и лауреатов премии «Служение» по госуправлению
+				+e.col.col-lg-6: +e.items-wrap
+					+newsItem('Финалисты премии «Служение» проходят обучение в Президентской академии')
+					+newsItem('Президент наградил победителя специальной номинации Всероссийской муниципальной премии «Служение»')
+					+newsItem('Почти 3 миллиона голосов отдано за участников Всероссийской муниципальной премии «Служение»')
+					+newsItem('О промежуточных итогах народного голосования Всероссийской муниципальной премии «Служение»')
+	// end sNews
+
+mixin newsItem(title)
+	+b.news-item.fw-500.A(href='#')
+		.text-secondary 08.04.2024
+		+e.title.h5= title

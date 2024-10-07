@@ -1,0 +1,60 @@
+// start .sAwardSteps
+.sAwardSteps {
+	// --sPT: #{rem(60)};
+	--sPB: #{rem(0)};
+	--sTPB: #{rem(52)};
+	
+	&__row{
+		// --bs-gutter-x: #{rem()};
+		--bs-gutter-y: #{rem(30)};
+	}
+	.section-title{
+		display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    a {
+      color: $blue-600;
+      font-weight: 500;
+    }
+	}
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+	&__col{
+		
+	}
+	&__item{
+		
+	}
+
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sAwardSteps
+
+.award-step {
+  padding: rem(24) rem(30);
+  background: $blue-200;
+  border-radius: 24px;
+  height: 100%;
+  min-height: rem(210);
+	@include media-breakpoint-up(lg) {
+    min-height: rem(310);
+  }
+  display: block;
+
+  &__data {
+    margin-bottom: rem(20);
+  }
+
+  &__title {
+    text-wrap: balance;
+  }
+}
