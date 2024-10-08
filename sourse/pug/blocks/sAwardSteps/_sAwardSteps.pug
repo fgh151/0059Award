@@ -14,9 +14,60 @@ mixin sAwardSteps(data)
 				+e.col.col-lg-4: +awardStep('3 февраля', 'Перекрестное голосование среди участников')
 	// end sAwardSteps
 
+mixin sAwardSteps2(data)
+	// start sAwardSteps
+	+b.SECTION.sAwardSteps.section#sAwardSteps2&attributes(attributes)
+		.container
+			+e.row.row
+				+e.col.col-lg-4: +awardStep('5 ноября - 20 января', '')
+					+e.title.h5.fw-500 Прием заявок
+				+e.col.col-lg-4: +awardStep('21 января - 02 февраля', '')
+					+e.title.h5.fw-500 Первичный <br>анализ заявок
+				+e.col.col-lg-4: +awardStep('3 февраля - 16 февраля', '')
+					+e.title.h5.fw-500 Перекрестная экспертиза
+				+e.col.col-lg-4: +awardStep('17 февраля -11 марта', '')
+					+e.title.h5.fw-500 Голосование<br>экспертного совета
+				+e.col.col-lg-4: +awardStep('31 марта - 13 апреля', '')
+					+e.title.h5.fw-500 Народное голосование
+				+e.col.col-lg-4: +awardStep('Апрель', '')
+					+e.title.h5.fw-500 Заседание наблюдательного<br>совета
+				+e.col.col-lg-12: +awardStepBlue('Апрель', '')
+					+e.title.h5.fw-500 Церемония награждения
+
+mixin sAwardSteps3(data)
+	// start sAwardSteps
+	+b.SECTION.sAwardSteps.section#sAwardSteps2&attributes(attributes)
+		.container
+			+e.row.row
+				+e.col.col-lg-4: +awardStepWithIcon('Участникам', 'support@spremia.ru','people')
+				+e.col.col-lg-4: +awardStepWithIcon('CМИ', 'pr@spremia.ru','news')
+				+e.col.col-lg-4: +awardStepWithIcon('Партнерам', 'partners@spremia.ru','chat')
+				+e.col.col-lg-4: +awardStepWithIcon('Общие вопросы', 'org@spremia.ru','touch')
+
+
+
+mixin awardStepWithIcon(data, title, icon)
+	+b.award-step--with-icon.A(href=`mailto:${title}`)
+		+icon(icon)
+		+e.content-wrapper
+			+e.data.color-add.fw-500= data
+			if title
+				+e.title.h5= title
+			if block
+				block
+
 mixin awardStep(data, title)
 	+b.award-step.A(href='#')
 		+e.data.color-add.fw-500= data
+		if title
+			+e.title.h5.fw-700= title
+		if block
+			block
+
+mixin awardStepBlue(data, title)
+	+b.award-step--blue.A(href='#')
+		+img(src="img/svg/stages-bg.svg", alt="").img
+		+e.data.fw-500= data
 		if title
 			+e.title.h5.fw-700= title
 		if block

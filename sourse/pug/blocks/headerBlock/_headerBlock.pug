@@ -1,6 +1,6 @@
 mixin headerBlock()
 	// start headerBlock
-	+b.headerBlock.section#headerBlock&attributes(attributes)
+	+b.headerBlock--main-page.section#headerBlock&attributes(attributes)
 		+img(src="img/sHeaderBlock-bg.png", alt="").img-bg
 		.container
 			+e.row.row
@@ -12,4 +12,13 @@ mixin headerBlock()
 				+e.col.col-lg-2: .right-wrap
 					.small Организатор
 					+img(src="img/svg/logo-varmsu-color.svg", alt="")
+	// end headerBlock
+
+mixin headerBlock1(img, title)
+	// start headerBlock
+	+b.headerBlock--second.section#headerBlock&attributes(attributes)
+		+img(src=`img/sHeaderBlock-${img}.png`, alt="").img-bg
+		.container
+			+b.section-title
+				h1=title
 	// end headerBlock

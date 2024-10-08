@@ -17,15 +17,18 @@ mixin mob-mnu()
 		+e.inner
 			+mnu()
 	//  мобильное меню
-mixin top-nav() 
+mixin top-nav(main) 
 	// start top-nav
-	+b.top-nav.block-with-lazy
+	+b.top-nav.block-with-lazy&attributes(attributes)
 		+img(src="img/menu-bg-2.png", alt="").img-bg.header-vis
 		.container
 			+e.row.row
 				.col.col-lg-auto
-					+e.logo.header-hid(href='/'): +img('img/svg/logo-municipal.svg')
-					+e.logo.header-vis(href='/'): +img('img/svg/logo-sl.svg')
+					if (!main)
+						+e.logo.logo-to-top(href='/'): +img('img/svg/logo-sl.svg')
+					if (main)
+						+e.logo.header-vis(href='/'): +img('img/svg/logo-sl.svg')
+						+e.logo.header-hid(href='/'): +img('img/svg/logo-municipal.svg')
 				+e.col.col-auto.col-lg.order-lg-0.order-last
 					.d-none.d-xxl-block.title-menu: +mnu()
 					.menu-mobile.menu-mobile--js

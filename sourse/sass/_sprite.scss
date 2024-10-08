@@ -22,6 +22,11 @@
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(22 / #{$h} *1em );
 }
+.icon-chat {
+	$h: 80;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(80 / #{$h} *1em );
+}
 .icon-check {
 	$h: 27;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
@@ -47,15 +52,30 @@
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(24 / #{$h} *1em );
 }
+.icon-news {
+	$h: 80;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(80 / #{$h} *1em );
+}
 .icon-odnoklassniki {
 	$h: 28;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(16 / #{$h} *1em );
 }
+.icon-people {
+	$h: 80;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(91 / #{$h} *1em );
+}
 .icon-telegram {
 	$h: 28;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(28 / #{$h} *1em );
+}
+.icon-touch {
+	$h: 80;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(92 / #{$h} *1em );
 }
 .icon-user {
 	$h: 16;

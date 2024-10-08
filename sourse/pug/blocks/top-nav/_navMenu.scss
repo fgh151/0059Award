@@ -7,7 +7,9 @@
         text-align: center;
         @include roww(20px);
         flex-wrap: wrap;
-        justify-content: space-evenly;
+        // justify-content: space-evenly;
+        justify-content: flex-end;
+        gap: rem(20);
       }
     }
     @include media-breakpoint-up(xxl) {

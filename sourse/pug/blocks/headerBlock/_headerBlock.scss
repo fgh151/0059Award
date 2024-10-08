@@ -1,13 +1,20 @@
 // start .headerBlock
 .headerBlock {
-	--sPT: #{rem(140)};
-	--sPB: #{rem(118)};
-	// --sTPB: #{rem()}; 
-	@include media-breakpoint-up(lg) {
-    --sPT: #{rem(320)};
+  &--main-page {
+    --sPT: #{rem(140)};
     --sPB: #{rem(118)};
-    --sTPB: #{rem(138)};
-    }
+    // --sTPB: #{rem()}; 
+    @include media-breakpoint-up(lg) {
+      --sPT: #{rem(320)};
+      --sPB: #{rem(118)};
+      --sTPB: #{rem(138)};
+      }
+  }
+  &--second {
+    --sPT: #{rem(310)};
+    --sPB: #{rem(100)};
+  }
+
 	position: relative;
 	color: $white;
 
