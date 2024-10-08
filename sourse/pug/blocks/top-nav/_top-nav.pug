@@ -1,5 +1,5 @@
 mixin menu-toggle()
-	+b.toggle-menu-mobile--js.d-lg-none
+	+b.toggle-menu-mobile--js
 		span
 mixin mob-mnu()
 	-
@@ -20,15 +20,36 @@ mixin mob-mnu()
 mixin top-nav() 
 	// start top-nav
 	+b.top-nav.block-with-lazy
+		+img(src="img/menu-bg-2.png", alt="").img-bg.header-vis
 		.container
 			+e.row.row
-				.col-4
-				.col.order-lg-0.order-last
+				.col.col-lg-auto
+					+e.logo.header-hid(href='/'): +img('img/svg/logo-municipal.svg')
+					+e.logo.header-vis(href='/'): +img('img/svg/logo-sl.svg')
+				+e.col.col-auto.col-lg.order-lg-0.order-last
+					.d-none.d-xxl-block.title-menu: +mnu()
 					.menu-mobile.menu-mobile--js
 						.menu-mobile__inner
-							+menu-toggle()
-							+mnu()
-					
-				.col-auto.d-lg-none
-					+menu-toggle()
+							+e.row-inner.row
+								.col-md-auto
+									+e.logo(href='/'): +img('img/svg/logo-sl.svg')
+								+e.inner-col.menu-inner.col-md
+									+img(src="img/menu-bg.png", alt="").img-bg
+									+mnu()
+									+e.btn-wrap.text-center
+										+e.btn.btn.btn-primary(href='#') Подать заявку
+										+e.date.ttu старт 5 ноября
+
+								+e.inner-col.col-md-auto
+									.wrap
+										+e.lk(href='#'): +icon('user')
+										+e.inner-col--mnu-toggle
+											+menu-toggle()
+				+e.btn-col.col-md-auto.order-last.order-md-0.header-hid
+					+e.btn.btn.btn-primary(href='#') Подать заявку
+					+e.date.ttu.text-center старт 5 ноября
+				.col-auto.ms-auto.order-last
+					.wrap
+						+e.lk(href='#'): +icon('user')
+						+menu-toggle()
 	// end top-nav

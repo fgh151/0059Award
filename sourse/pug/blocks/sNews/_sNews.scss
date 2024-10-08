@@ -2,7 +2,10 @@
 .sNews {
 	// --sPT: #{rem()};
 	// --sPB: #{rem()};
+  @include media-breakpoint-up(lg) {
+    --sPB: #{rem(80)};
 	--sTPB: #{rem(54)};
+  }
 	
 	&__row{
 		// --bs-gutter-x: #{rem()};
@@ -15,11 +18,17 @@
 	.section-title{
 		display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: baseline;
+    @include media-breakpoint-up(lg) {
+      align-items: flex-end;
+    }
 
     a {
       color: $blue-600;
       font-weight: 500;
+      .icon {
+        transform: translateY(-10%);
+      }
     }
 	}
 	&__items-wrap {
@@ -31,7 +40,7 @@
 	.news-item:not(:last-child) {
     margin-bottom: rem(40);
     @include media-breakpoint-up(lg) {
-      margin-bottom: rem(55);
+      margin-bottom: rem(60);
     }
   }
 

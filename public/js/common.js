@@ -49,6 +49,24 @@ function eventHandler() {
 		watchOverflow: true,
 	});
 
+  const mediaSwiper = new Swiper(".sSupervisory__slider--js", {
+
+		slidesPerView: 1,
+		spaceBetween: 50,
+    observeParents: true,
+		navigation: {
+			nextEl: ".sSupervisory .swiper-button-next",
+			prevEl: ".sSupervisory .swiper-button-prev",
+		},
+    breakpoints: {
+      992: {
+        centeredSlides: true,
+        initialSlide: 1,
+        spaceBetween: 0,
+      }
+    }
+	});
+
 	const swiper4 = new Swiper(".sBanners__slider--js", {
 		// slidesPerView: 5,
 		...defaultSl,
@@ -59,6 +77,36 @@ function eventHandler() {
 		slideToClickedSlide: true,
 		freeModeMomentum: true,
 	});
+
+
+  window.addEventListener("load", ()=> {
+    const btnToTop = document.querySelector('.btn-to-top');
+    if (btnToTop) {
+      console.log(btnToTop);
+      btnToTop.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+        });
+      });
+    }
+
+    window.addEventListener('scroll', () => {
+      const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+      if (scrollPosition >= 30) {
+        header.classList.add('header--js');
+      } else {
+        header.classList.remove('header--js');
+      }
+
+      if (scrollPosition >= 400) {
+        header.classList.add('show');
+      } else {
+        header.classList.remove('show');
+      }
+    });
+  })
+
 }
 if (document.readyState !== "loading") {
 	eventHandler();

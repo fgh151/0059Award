@@ -82,7 +82,7 @@ $blue-300: tint-color($blue, 40%) !default;
 $blue-400: tint-color($blue, 20%) !default;
 $blue-500: $blue !default;
 $blue-600: #396084;
-$blue-700: shade-color($blue, 40%) !default;
+$blue-700: #115492;
 $blue-800: shade-color($blue, 60%) !default;
 $blue-900: shade-color($blue, 80%) !default;
 
@@ -626,7 +626,7 @@ $font-weight-bolder:          bolder !default;
 
 $font-weight-base:            $font-weight-normal !default;
 
-$line-height-base:            1.5 !default;
+$line-height-base:            1.1;
 $line-height-sm:              1.25 !default;
 $line-height-lg:              2 !default;
 

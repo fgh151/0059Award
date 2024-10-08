@@ -1,0 +1,34 @@
+mixin sSupervisory(data)
+	// start sSupervisory
+	+b.SECTION.sSupervisory.section#sSupervisory&attributes(attributes)
+		.container
+			+e.inner-wrap
+				+img(src="img/sSupervisory-img-1.png", alt="").img-bg
+				+b.section-title
+					h2 Наблюдательный совет
+				mixin slide(img)
+					+e.slide.swiper-slide&attributes(attributes)
+						+e.item
+							+e.img-wrap
+								+img(`img/${img}`, 'bg')
+							.text
+								.h5 Кириенко С.В.
+								p Первый заместитель Руководителя
+								p Администрации президента
+								p Российской Федерации 
+				+e.slider--js
+					.swiper-wrapper
+						+slide('sSupervisory-person-1.jpg')
+						+slide('sSupervisory-person-2.jpg')
+						+slide('sSupervisory-person-1.jpg')
+						+slide('sSupervisory-person-2.jpg')
+						+slide('sSupervisory-person-1.jpg')
+						+slide('sSupervisory-person-2.jpg')
+						+slide('sSupervisory-person-1.jpg')
+						+slide('sSupervisory-person-2.jpg')
+						+slide('sSupervisory-person-1.jpg')
+						+slide('sSupervisory-person-2.jpg')
+						+slide('sSupervisory-person-1.jpg')
+						+slide('sSupervisory-person-2.jpg')
+					.arrow-wrap: +arrow
+	// end sSupervisory

@@ -44,3 +44,7 @@ mixin parts(elem)
 	script.
 		addBlock(`#{elem}`)
 	div(id=`${elem}Wrap`)
+
+mixin btn-to-top
+	.btn-to-top-wrap
+		.btn-to-top: +icon('arr-top')

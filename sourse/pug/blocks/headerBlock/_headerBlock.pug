@@ -1,11 +1,15 @@
 mixin headerBlock()
 	// start headerBlock
 	+b.headerBlock.section#headerBlock&attributes(attributes)
+		+img(src="img/sHeaderBlock-bg.png", alt="").img-bg
 		.container
-			+b.section-title.text-center
-				h2 headerBlock ds dfsdfdsfsd
-				+icon('telegram')
-				+iconC('telegram')
-			.row
-						
+			+e.row.row
+				+e.col.col-lg-3: +img(src="img/svg/logo-sl.svg", alt="")
+				+e.col.col-lg-7
+					+b.section-title
+						h1 Всероссийская муниципальная премия «Служение»
+					p Проводится по поручению Президента и присваивается выдающимся представителям муниципального сообщества — людям, которые внесли особый вклад в развитие муниципальных образований и повышение качества жизни граждан.
+				+e.col.col-lg-2: .right-wrap
+					.small Организатор
+					+img(src="img/svg/logo-varmsu-color.svg", alt="")
 	// end headerBlock

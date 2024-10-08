@@ -7,7 +7,7 @@ include ../blocks/sNominations/_sNominations.pug
 include ../blocks/sAwardSteps/_sAwardSteps.pug
 include ../blocks/sNews/_sNews.pug
 include ../blocks/sPartners/_sPartners.pug
-include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sSupervisory/_sSupervisory.pug
 
 block variables
 	- let  mainPage= 'main-page' 
@@ -22,10 +22,10 @@ block pagecontent
 	
 	+parts('header')
 	main
-		//- +headerBlock 
+		+headerBlock 
 		+sNominations
 		+sAwardSteps
 		+sNews
+		+sSupervisory
 		+sPartners
-		
 	+parts('footer')

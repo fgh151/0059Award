@@ -2,33 +2,33 @@
 .sAwardSteps {
 	// --sPT: #{rem(60)};
 	--sPB: #{rem(0)};
-	--sTPB: #{rem(52)};
-	
+  @include media-breakpoint-up(lg) {
+    --sTPB: #{rem(52)};
+  }
 	&__row{
-		// --bs-gutter-x: #{rem()};
 		--bs-gutter-y: #{rem(30)};
 	}
 	.section-title{
 		display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: baseline;
+    @include media-breakpoint-up(lg) {
+      align-items: flex-end;
+    }
 
     a {
       color: $blue-600;
       font-weight: 500;
+      text-wrap: nowrap;
+      .icon {
+        transform: translateY(-5%);
+      }
     }
 	}
 
   h2 {
     margin-bottom: 0;
   }
-
-	&__col{
-		
-	}
-	&__item{
-		
-	}
 
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
@@ -52,6 +52,9 @@
 
   &__data {
     margin-bottom: rem(20);
+    @include media-breakpoint-up(lg) {
+      margin-bottom: rem(24);
+    }
   }
 
   &__title {
