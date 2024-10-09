@@ -1,0 +1,28 @@
+extends ../layout/main.pug
+
+include ../blocks/headerBlock/_headerBlock.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sNominations/_sNominations.pug
+ 
+include ../blocks/sAwardSteps/_sAwardSteps.pug
+include ../blocks/sDocuments/_sDocuments.pug
+include ../blocks/sAuth/_sAuth.pug
+include ../blocks/sBlog/_sBlog.pug
+
+block variables
+	- let  mainPage= 'main-page' 
+	- let  bg= null
+
+block title
+	- let  title= 'Авторизация или регистрация'
+	title= title
+block pagecontent
+	//- +mob-mnu()
+	
+	
+	+parts('header')
+	main
+		+headerBlock1('applies', title)
+		+sAuth
+
+	+parts('footer')

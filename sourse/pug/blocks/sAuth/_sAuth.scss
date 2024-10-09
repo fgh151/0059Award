@@ -1,0 +1,164 @@
+// start .sAuth
+.sAuth {
+	--sPT: #{rem(40)};
+	--sPB: #{rem(34)};
+	// --sTPB: #{rem()};
+	
+	&__row{
+		// --bs-gutter-x: #{rem()};
+		// --bs-gutter-y: #{rem()};
+	}
+	.section-title{
+		
+	}
+	.card {
+    background: hsla(204, 48%, 94%, 0.5);
+    border-radius: rem(30);
+		padding: rem(30) 0;
+		@include media-breakpoint-up(md) {
+			padding: rem(66) 0;
+		}
+
+    &_sm {
+      @include media-breakpoint-up(md) {
+        padding: rem(44) 0;
+      }
+    }
+    
+		@include media-breakpoint-down(md) {
+      --m-left: calc(var(--bs-gutter-x));
+      margin-left: calc(var(--m-left) * -1);
+      margin-right: calc(var(--m-left) * -1);
+    }
+    p {
+      margin-bottom: 0;
+      text-wrap: pretty;
+    }
+    .title {
+      margin-bottom: rem(30);
+    }
+    &-lg {
+      padding: rem(30) rem(30);
+      @include media-breakpoint-up(md) {
+        padding: rem(80) rem(20);
+      }
+    }
+	}
+
+	&__tabs-caption {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 32px;
+		@include media-breakpoint-up(md) {
+			margin-bottom: 40px;
+		}
+	}
+
+	&__tabs-btn {
+		position: relative;
+		color: $gray-500;
+		font-size: rem(16);
+		width: calc((100% - 10px) / 2);
+    padding-bottom: rem(24);
+		@include media-breakpoint-up(md) {
+			font-size: rem(24);
+			width: 304px;
+		}
+		&.active {
+			color: $primary;
+			&::after {
+				background-color:  $primary;
+			}
+		}
+		&:not(:last-child) {
+			margin-right: var(--bs-gutter-x);
+		}
+		&::after {
+			position: absolute;
+			content: '';
+			bottom: 0;
+			left: 0;
+			height: 6px;
+			width: 100%;
+			background-color: $gray-500;
+		}
+  }
+
+  .form-wrap {
+    max-width: calc(100% - calc(var(--m-left) * 2));
+    margin: auto;
+    @include media-breakpoint-up(md) {
+      max-width: rem(640);
+    }
+  }
+
+  .auth-row {
+    @include media-breakpoint-up(md) {
+      display: flex;
+      justify-content: space-between;
+    }
+    .btn {
+      width: 100%;
+      @include media-breakpoint-up(md) {
+        width: 30%;
+      }
+    }
+  }
+
+  .mt-50 {
+    margin-top: rem(55);
+  }
+
+  .forgot-link {
+    display: flex;
+    gap: rem(30);
+    @include media-breakpoint-down(md) {
+      flex-wrap: wrap;
+      gap: rem(10);
+    }
+
+    a {
+      text-decoration: underline;
+    }
+
+    .descr a {
+      color: $primary;
+    }
+    .descr_small {
+      font-size: rem(14);
+    }
+
+    .password {
+      @include media-breakpoint-up(md) {
+        width: 32%;
+      }
+    }
+
+    .btn {
+      width: 100%;
+      flex-shrink: 0;
+      @include media-breakpoint-up(md) {
+        width: 191px;
+      }
+    }
+  }
+
+  .fill {
+    margin-bottom: rem(40);
+  }
+
+  textarea {
+    height: rem(92);
+  }
+
+  .forgot-link {
+  }
+
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sAuth

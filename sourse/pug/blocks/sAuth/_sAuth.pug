@@ -1,0 +1,48 @@
+mixin sAuth(data)
+	// start sAuth
+	+b.SECTION.sAuth.section#sAuth&attributes(attributes)
+		.container
+			.tabs
+				+e.tabs-caption.tabs__caption
+					+e.tabs-btn.tabs__btn Авторизация
+					+e.tabs-btn.tabs__btn.active Регистрация
+				.tabs__content
+					.card
+						+form-wrap
+							.row
+								.col-lg-6: +input('', 'text', 'Логин')
+								.col-lg-6: +input('', 'password', 'Пароль')
+								.col-lg-6: +input('', 'textarea', 'Я не робот')
+							.auth-row
+								+e.btn.btn.btn-primary.BUTTON(type="submit") Войти
+								+e.btn.btn.btn-dark(href="#") Войти через VK
+								+e.btn.btn.btn-dark(href="#") Войти через OK
+							.forgot-link.mt-50
+								.password: a(href="#") Забыли пароль?
+								.descr Если у Вас нет аккаунта, Вы можете его #[a(href="#") зарегистрировать]
+				.tabs__content.active
+					.card.card_sm
+						+form-wrap
+							.fill.fw-500 Все поля обязательны для&nbsp;заполнения
+							+input('', 'email', 'E-mail').is-invalid
+								.invalid-feedback Такой email уже существует
+							+input('', 'tel', 'Телефон')
+							+input('', 'text', 'Фамилия')
+							+input('', 'text', 'Имя')
+							+input('', 'text', 'Отчество').is-invalid
+							+e.pass-wrap.row
+								.col-lg-6: +input('', 'password', 'Пароль')
+								.col-lg-6: +input('', 'password', 'Повтор пароля')
+							.forgot-link
+								+e.btn.btn.btn-primary.BUTTON(type="submit") Регистрация
+								.descr.descr_small При нажатии на кнопку «Регистрация» пользователь соглашается #[a(href="#") с условиями правил и обработки персональных данных]
+	// end sAuth
+
+mixin sAuthSuccess(data)
+	// start sAuth
+	+b.SECTION.sAuth.section#sAuthSuccess&attributes(attributes)
+		.container
+			.card.card-lg.text-center
+				.title.text-primary Спасибо за регистрацию!
+				p Ваша учетная запись успешно создана.
+				p На ваш e-mail было отправлено письмо с вашими данными.

@@ -2,8 +2,28 @@ mixin sContent()
 	// start sContent
 	+b.SECTION.sContent.section#sContent&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sContent
-				
 			+e.row.row
+				+e.col
+					.h5 Председатель
+				+e.col.col-lg-6
+					+contentCard(1, 'Кириенко С.В.', 'Первый заместитель Руководителя Администрации Президента Российской Федерации')
+				+e.col
+					.title.top-line: .h5 Заместители
+				+e.col.col-lg-6
+					+contentCard(2, 'Решетников М.Г.', 'Министр экономического развития Российской Федерации')
+				+e.col.col-lg-6
+					+contentCard(3, 'Гусева И.М.', 'Сопредседатель ВАРМСУ, член президиума Совета при Президенте Российской Федерации по развитию местного самоуправления')
+				+e.col
+					.title.top-line: .h5 Состав
+				+e.col.col-lg-6
+					+contentCard(4, 'Патрушев Д.Н.', 'Министр сельского хозяйства Российской Федерации')
+				+e.col.col-lg-6
+					+contentCard(5, 'Силуанов А.Г.', 'Министр финансов Российской Федерации')
 	// end sContent
+
+mixin contentCard(img, name, text)
+	+b.content-card
+		+e.img-wrap: +img(`img/manager-${img}.png`).img-bg
+		+e.content
+			+e.name.fw-500= name
+			+e.text= text

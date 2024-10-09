@@ -1,7 +1,7 @@
 .form-wrap {
 	&__input-wrap {
 		// @extend .form-group;
-		margin-bottom: rem(15);
+		margin-bottom: rem(29);
 	}
 	&__input {
 		// @extend .form-control;
@@ -16,6 +16,12 @@
 		width: 100%;
 		display: block;
 	}
+  
+  &__input-title {
+    display: inline-block;
+    margin-bottom: rem(14);
+  }
+
 }
 
 //

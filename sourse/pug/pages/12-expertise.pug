@@ -1,0 +1,27 @@
+extends ../layout/main.pug
+
+include ../blocks/headerBlock/_headerBlock.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sNominations/_sNominations.pug
+ 
+include ../blocks/sAwardSteps/_sAwardSteps.pug
+include ../blocks/sDocuments/_sDocuments.pug
+include ../blocks/sVote/_sVote.pug
+include ../blocks/sBlog/_sBlog.pug
+
+block variables
+	- let  mainPage= 'main-page' 
+	- let  bg= null
+
+block title
+	- let  title= 'Перекрёстная экспертиза'
+	title= title
+block pagecontent
+	//- +mob-mnu()
+	
+	
+	+parts('header')
+	main
+		+headerBlock1('expertise', title)
+
+	+parts('footer')

@@ -2,13 +2,15 @@
 	// start .sContent
 	.sContent {
 	
-	// --sPT: #{rem()};
-	// --sPB: #{rem()};
+	--sPT: #{rem(36)};
+	--sPB: #{rem(34)};
 	// --sTPB: #{rem()};
 	&__row{
 		// --bs-gutter-x: #{rem()};
-		--bs-gutter-y: var(--bs-gutter-x);
-
+		--bs-gutter-y: #{rem(20)};
+    @include media-breakpoint-up(lg) {
+      --bs-gutter-y: var(--bs-gutter-x);
+    }
 	}
 	.section-title{
 		
@@ -16,9 +18,17 @@
 	&__col{
 
 	}
-	&__item{
-
-	}
+	.title.top-line {
+    margin-top: rem(30);
+    @include media-breakpoint-up(lg) {
+      margin-top: rem(40);
+    }
+    @include media-breakpoint-down(lg) {
+      &::before {
+        top: -24px;
+      }
+    }
+  }
 	&__slide{
 		height: auto;
 	}
@@ -31,19 +41,55 @@
 	//
 	@include media-breakpoint-between(md, xl) { }
 	
-	
-	//
-	@include media-breakpoint-only(xs) {}
-	@include media-breakpoint-only(sm) {}
-	@include media-breakpoint-only(md) {}
-	@include media-breakpoint-only(lg) {}
-	@include media-breakpoint-only(xl) {}
-	
-	//
-	@include media-breakpoint-down(xl) {}
-	@include media-breakpoint-down(lg) {}
-	@include media-breakpoint-down(md) {}
-	@include media-breakpoint-down(sm) {}
-	@include media-breakpoint-down(xs) {} 
+
 
 } // end.sContent
+
+.content-card {
+  display: flex;
+  gap: rem(16);
+  align-items: center;
+  // align-items: flex-start;
+  @include media-breakpoint-up(lg) {
+    gap: rem(33);
+  }
+
+  &__img-wrap {
+    position: relative;
+    border-radius: rem(12);
+    overflow: hidden;
+    flex-shrink: 0;
+    --img-w: 100px;
+    width: var(--img-w);
+    height: var(--img-w);
+    @include media-breakpoint-up(md) {
+      --img-w: 120px;
+    }
+    @include media-breakpoint-up(lg) {
+      --img-w: 192px;
+      border-radius: $border-radius;
+    }
+  }
+
+  &__content {
+    max-width: rem(300);
+    @include media-breakpoint-up(lg) {
+      max-width: rem(335);
+    }
+  }
+
+  &__name {
+    margin-bottom: rem(10);
+    @include media-breakpoint-up(lg) {
+      margin-bottom: rem(20);
+    }
+  }
+
+  &__text {
+    opacity: .5;
+    text-wrap: balance;
+    @include media-breakpoint-down(md) {
+      font-size: rem(14);
+    }
+  }
+}
