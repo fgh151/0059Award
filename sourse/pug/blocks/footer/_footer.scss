@@ -42,6 +42,7 @@
 	&__btn {
 		margin-bottom: 10px;
 		padding-inline: 32px;
+    font-size: rem(18);
 		@include media-breakpoint-up(md) {
 			margin-bottom: 0;
 			margin-right: 33px;

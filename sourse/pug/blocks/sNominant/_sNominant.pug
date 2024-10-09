@@ -1,0 +1,19 @@
+mixin sNominant(data)
+	// start sNominant
+	+b.SECTION.sNominant.section#sNominant&attributes(attributes)
+		.container
+			+e.row.row
+				+e.col.col-lg-4
+					+b.section-title
+						h2 Мой край — моя&nbsp;гордость
+				+e.col.col-lg-4
+					+e.item.item-long: +downlFile('За проекты, направленные на популяризацию муниципального образования, создание уникального образа территории')
+					+e.btn.btn.btn-primary(href='#') Подать заявку
+				+e.col.col-lg-4
+					+e.item
+						+downlFile('Критерии номинации', 1)
+						+downlFile('Инструкция к подачи заявки', 1)
+					+e.btn-wrap
+						+e.btn.btn.btn-outline-dark(href='#') Предыдущая
+						+e.btn.btn.btn-outline-dark(href='#') Следующая
+	// end sNominant

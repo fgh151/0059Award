@@ -1,0 +1,57 @@
+mixin sVote(data)
+	// start sVote
+	+b.SECTION.sVote.section#sVote&attributes(attributes)
+		.container
+			+e.row.row
+				+e.col.col-lg-6
+					+b.section-title.text-primary
+						h2 Твой голос — героям муниципалитетов
+					+e.btn.btn.btn-primary(href='#') Проголосовать
+				+e.col.col-lg-6
+					p Муниципальные служащие — лицо всей вертикали власти, источник помощи и поддержки для граждан, гарант благополучия людей в каждом регионе, городе или посёлке.
+					p Быть представителем муниципальной власти — значит быть героем в глазах соотечественников и отдавать людям самое ценное — своё время и силы.
+					p На них лежит ответственность за принятие решений, качество жизни и безопасность людей.
+					p Именно вы можете проголосовать за настоящих героев муниципалитетов — тех, кто достойно несёт службу на местах.
+	// end sVote
+
+mixin sVoteProjects(btn)
+	// start sVote
+	+b.SECTION.sVoteProjects.section#sVoteProjects&attributes(attributes)
+		.container
+			+b.section-title.top-line
+				h2 Мой край — моя гордость
+			+e.row.row
+				- const wrapClass="col-md-6 col-lg-4 col-xl-3"
+				+e.col(class= wrapClass)
+					+voteItem('Название проекта 1 может быть разного размера')
+				+e.col(class= wrapClass)
+					+voteItem('Название проекта 1')
+				+e.col(class= wrapClass)
+					+voteItem('Название проекта 1 может быть разного размера')
+				+e.col(class= wrapClass)
+					+voteItem('Название проекта 1')
+				+e.col(class= wrapClass)
+					+voteItem('Название проекта 1 может быть разного размера')
+				+e.col(class= wrapClass)
+					+voteItem('Название проекта 1')
+				+e.col(class= wrapClass)
+					+voteItem('Название проекта 1 может быть разного размера')
+				+e.col(class= wrapClass)
+					+voteItem('Название проекта 1')
+				+e.col(class= wrapClass)
+					+voteItem('Название проекта 1 может быть разного размера')
+				+e.col(class= wrapClass)
+					+voteItem('Название проекта 1')
+			if btn
+				+e.wrap-btn.text-center.top-line: +e.btn.btn.btn-primary(href='#')= btn
+
+mixin voteItem(title)
+	+b.vote-item
+		+in-c('checkbox', title, 'text')
+		+buttonOpenModal
+
+mixin buttonOpenModal
+	a.button-open-modal.link-modal-js(href='#modal-project')
+		.span
+		.span
+		.span

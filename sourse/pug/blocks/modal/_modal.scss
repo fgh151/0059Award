@@ -14,6 +14,60 @@
 	width: rem(500);
 	// min-height: 100%; 
 	padding: 40px;
+  &--lg {
+    width: 1310px;
+    padding: rem(50) 4vw;
+    @include media-breakpoint-up(lg) {
+      padding: rem(77) rem(110);
+    }
+    // background: gray;
+    border-radius: $border-radius-sm;
+  }
+  .h5 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+    line-height: 1.2;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .col-wrapper-scroll {
+    overflow-x: hidden;
+    overflow-y: auto;
+    // height: 100%;
+    max-height: calc(100dvh - 160px);
+    @include media-breakpoint-up(xl) {
+      max-height: calc(100dvh - 160px);
+    }
+  }
+
+  &__row-lg {
+    --bs-gutter-x: #{rem(20)};
+    --bs-gutter-y: #{rem(20)};
+    .col-lg {
+      @include media-breakpoint-up(xl) {
+        margin-left: rem(-30);
+      }
+    }
+  }
+
+  .mb-30 {
+    margin-bottom: rem(31);
+  }
+  .mb-26 {
+    margin-bottom: rem(26);
+  }
+
+  &__wrap {
+    padding: rem(26) rem(30);
+    border-radius: $border-radius-sm;
+    &.wrap_blue {
+      background: var(--color-card-bg);
+    }
+  }
 
 	.modal-content {
 		// max-width: 485px;
@@ -173,4 +227,11 @@ a {
     transform: translate3d(0, 10%, 0);
     opacity: 0;
   }
+}
+
+.fancybox__content>.f-button.is-close-btn {
+  top: 10px;
+  right: 10px;
+  opacity: 1;
+  --fancybox-color: #{$body-color};
 }

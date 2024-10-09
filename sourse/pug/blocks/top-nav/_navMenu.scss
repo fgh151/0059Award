@@ -68,12 +68,12 @@
 		content: "";
 		position: absolute;
 		left: 0;
-    border-radius: rem(24);
+    border-radius: $border-radius;
 	}
 	span {
 		@include a-cent(y);
 		display: block;
-    border-radius: rem(24);
+    border-radius: $border-radius;
 	}
 
 	span:before {

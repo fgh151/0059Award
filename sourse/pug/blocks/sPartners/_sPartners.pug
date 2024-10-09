@@ -81,6 +81,22 @@ mixin sPartners3(data)
 				+partnerItem('sPartners-logo-7.svg')
 	// end sPartners
 
+mixin sPartners4(data)
+	// start sPartners
+	+b.SECTION.sPartners.section#sPartners3&attributes(attributes)
+		.container
+			if data
+				+b.section-title.top-line
+					h5= data
+			+e.row.row
+				+partnerItem('')
+				+partnerItem('sPartners-logo-2.svg')
+				+partnerItem('sPartners-logo-3.svg')
+	+b.SECTION.sPartners.section#sPartners3: .container
+		+b.section-title.top-line
+			h5 Шорт-лист (Топ-10)
+	// end sPartners
+
 mixin partnerItem(img)
 	+b.partner-item&attributes(attributes)
 		if img

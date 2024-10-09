@@ -107,6 +107,25 @@ function eventHandler() {
     });
   })
 
+  /* vote */
+
+  const checkboxesVote = document.querySelectorAll('.vote-item input');
+
+  if(checkboxesVote.length) {
+    checkboxesVote.forEach(checkbox => {
+      checkbox.addEventListener('change', function () {
+        const card = this.closest('.vote-item');
+
+        if (this.checked) {
+          card.classList.add('checked');
+        } else {
+          card.classList.remove('checked');
+        }
+      });
+    });
+  }
+
+
 }
 if (document.readyState !== "loading") {
 	eventHandler();

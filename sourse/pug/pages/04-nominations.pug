@@ -5,7 +5,7 @@ include ../blocks/sForm/_sForm.pug
 include ../blocks/sNominations/_sNominations.pug
  
 include ../blocks/sAwardSteps/_sAwardSteps.pug
-include ../blocks/sNews/_sNews.pug
+include ../blocks/sNominant/_sNominant.pug
 include ../blocks/sPartners/_sPartners.pug
 include ../blocks/sSupervisory/_sSupervisory.pug
 
@@ -23,4 +23,6 @@ block pagecontent
 	+parts('header')
 	main
 		+headerBlock1('nominations', title)
+		+sNominant
+		+sPartners4('Партнеры номинации')
 	+parts('footer')

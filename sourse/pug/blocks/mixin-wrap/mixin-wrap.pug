@@ -48,3 +48,12 @@ mixin parts(elem)
 mixin btn-to-top
 	.btn-to-top-wrap
 		.btn-to-top: +icon('arr-top')
+
+
+mixin downlFile(text, link)
+	+b.download-file
+		p= text
+		if link
+			+e.link(href='#' download)
+				+icon('pdf')
+				| Скачать файл .doc

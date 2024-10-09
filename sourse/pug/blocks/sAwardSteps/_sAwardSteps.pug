@@ -8,9 +8,9 @@ mixin sAwardSteps(data)
 					+icon('arr-next')
 			+e.row.row
 				+e.col.col-lg-4: +awardStep('5 ноября', '')
-					+e.title.h5.fw-700 Подача заявок<br> участниками
+					+e.title.h5.fw-500 Подача заявок<br> участниками
 				+e.col.col-lg-4: +awardStep('21 января', '')
-					+e.title.h5.fw-700 Первичный <br>анализ заявок
+					+e.title.h5.fw-500 Первичный <br>анализ заявок
 				+e.col.col-lg-4: +awardStep('3 февраля', 'Перекрестное голосование среди участников')
 	// end sAwardSteps
 
@@ -60,7 +60,7 @@ mixin awardStep(data, title)
 	+b.award-step.A(href='#')
 		+e.data.color-add.fw-500= data
 		if title
-			+e.title.h5.fw-700= title
+			+e.title.h5.fw-500= title
 		if block
 			block
 

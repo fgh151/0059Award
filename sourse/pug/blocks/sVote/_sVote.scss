@@ -1,0 +1,127 @@
+// start .sVote
+.sVote {
+	--sPT: #{rem(32)};
+	--sPB: #{rem(44)};
+	--sTPB: #{rem(28)};
+	
+	&__row{
+		// --bs-gutter-x: #{rem()};
+		--bs-gutter-y: var(--bs-gutter-x);
+	}
+	.section-title h2 {
+		line-height: 107%;
+	}
+	&__col{
+		
+	}
+	&__item{
+		
+	}
+  p {
+    text-wrap: pretty;
+    margin-bottom: rem(20);
+  }
+
+  &__btn {
+    width: 100%;
+    @include media-breakpoint-up(lg) {
+      width: rem(192);
+    }
+  }
+
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sVote
+// start .sVote
+.sVoteProjects {
+	--sPT: #{rem(34)};
+	--sPB: #{rem(34)};
+	--sTPB: #{rem(56)};
+
+	&__row {
+		--bs-gutter-y: var(--bs-gutter-x);
+	}
+
+  &__wrap-btn {
+    margin-top: rem(74);
+  }
+
+  &__btn {
+    width: 100%;
+    @include media-breakpoint-up(lg) {
+      width: rem(192);
+    }
+  }
+}
+
+.vote-item {
+  --padding: 20px;
+  position: relative;
+  border: 1px solid $body-color;
+  border-radius: $border-radius-sm;
+
+  label {
+    padding: var(--padding);
+    height: 100%;
+    min-height: rem(227);
+
+    position: relative;
+
+    input {
+      position: absolute;
+      right: var(--padding);
+      bottom: var(--padding);
+      height: rem(24);
+      width: rem(24);
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+      &:not(:checked) {
+        opacity: 0;
+      }
+    }
+  }
+
+  &.checked {
+    color: $primary;
+    border-color: $primary;
+    .span {
+      background: $primary;
+    }
+  }
+
+  .button-open-modal {
+    position: absolute;
+    top: calc(var(--padding) - 6px);
+    right: calc(var(--padding) - 6px);
+    z-index: 2;
+  }
+
+  .custom-input__text {
+    display: inline-block;
+    max-width: calc(100% - 50px);
+  }
+}
+
+.button-open-modal {
+  cursor: pointer;
+  max-height: max-content;
+  padding: rem(5);
+  display: flex;
+  flex-direction: column;
+  gap: rem(8);
+
+  .span {
+    --width: 27px;
+    width: var(--width);
+    height: 1px;
+    background: $body-color;
+    position: relative;
+  }
+}

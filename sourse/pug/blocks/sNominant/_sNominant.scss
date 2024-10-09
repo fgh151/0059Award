@@ -1,0 +1,61 @@
+// start .sNominant
+.sNominant {
+	--sPT: #{rem(32)};
+	--sPB: #{rem(56)};
+	--sTPB: #{rem(0)};
+	
+	&__row{
+		// --bs-gutter-x: #{rem()};
+		--bs-gutter-y: var(--bs-gutter-x);
+	}
+
+	&__item {
+		margin-bottom: rem(22);
+    @include media-breakpoint-up(lg) {
+      margin-top: rem(10);
+      margin-bottom: rem(42);
+    }
+	}
+
+  .item-long {
+    .download-file {
+      @include media-breakpoint-up(lg) {
+        min-height: rem(311);
+      }
+    }
+  }
+
+  .download-file:not(:last-child) {
+    margin-bottom: var(--bs-gutter-x);
+  }
+
+  &__btn-wrap {
+    display: flex;
+    justify-content: space-between;
+    gap: rem(10);
+
+    .btn {
+      width: 50%;
+      max-width: 50%;
+      --bs-btn-padding-x: #{rem(10)};
+      @include media-breakpoint-up(lg) {
+        width: rem(192);
+      }
+    }
+  }
+
+  .btn-primary {
+    width: 100%;
+    @include media-breakpoint-up(lg) {
+      width: rem(192);
+    }
+  }
+
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sNominant

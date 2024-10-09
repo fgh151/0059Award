@@ -140,3 +140,30 @@
     z-index: 10;
   }
 }
+
+
+.download-file {
+  padding: rem(29) rem(24);
+  border-radius: 24px;
+  background: var(--color-card-bg);
+	@include media-breakpoint-up(sm) {
+    padding: rem(29) rem(30);
+  }
+
+  p {
+    font-weight: 500;
+    margin-bottom: rem(32);
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: rem(20);
+
+    width: max-content;
+    color: $primary;
+    &:hover {
+      color: $blue-600;
+    }
+  }
+}

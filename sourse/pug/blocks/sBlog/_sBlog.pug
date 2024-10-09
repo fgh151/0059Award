@@ -1,0 +1,23 @@
+mixin sBlog(data)
+	// start sBlog
+	+b.SECTION.sBlog.section#sBlog&attributes(attributes)
+		.container
+			+e.list
+				+blogItem(1, 'В Центре знаний «Машук» стартовал образовательный модуль для победителей и лауреатов премии «Служение» по госуправлению')
+				+blogItem(2, 'В Центре знаний «Машук» стартовал образовательный модуль для победителей')
+				+blogItem(3, 'В Центре знаний «Машук» стартовал образовательный модуль для победителей и лауреатов премии «Служение» по госуправлению')
+			+e.btn.btn.btn-secondary(href='#') Показать еще
+	// end sBlog
+
+mixin blogItem(img, title)
+	+b.blog-item(href='#')
+		.row
+			+e.col.col-lg-5
+				+e.img-wrap
+					+img(src=`img/sBlog-${img}.png`, alt="").img-bg
+			+e.col.col-lg-7
+				+e.content
+					.wrap
+						+e.date.fw-500.color-add 08.04.2024
+						h3= title
+					p В Центре знаний «Машук» стартовал образовательный модуль для победителей и лауреатов премии «Служение» по госуправлению

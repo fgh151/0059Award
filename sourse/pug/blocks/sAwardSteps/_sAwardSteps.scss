@@ -49,7 +49,7 @@
 
 .award-step {
   padding: rem(24) rem(30);
-  background: $blue-200;
+  background: var(--color-card-bg);
   border-radius: 24px;
   height: 100%;
   &:not(.award-step--blue) {
