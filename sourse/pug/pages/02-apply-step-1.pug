@@ -6,16 +6,15 @@ include ../blocks/sNominations/_sNominations.pug
  
 include ../blocks/sAwardSteps/_sAwardSteps.pug
 include ../blocks/sDocuments/_sDocuments.pug
-include ../blocks/sVote/_sVote.pug
+include ../blocks/sApplication/_sApplication.pug
 include ../blocks/sBlog/_sBlog.pug
-include ../blocks/sExpertise/_sExpertise.pug
 
 block variables
 	- let  mainPage= 'main-page' 
 	- let  bg= null
 
 block title
-	- let  title= 'Экспертная оценка'
+	- let  title= 'Подача заявки'
 	title= title
 block pagecontent
 	//- +mob-mnu()
@@ -23,7 +22,7 @@ block pagecontent
 	
 	+parts('header')
 	main
-		+headerBlock1('expertise', title)
-		+sExpertise2
+		+headerBlock1('apply1', title)
+		+sApplication
 
 	+parts('footer')

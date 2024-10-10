@@ -37,14 +37,95 @@
 					</div>
 				</div>
 				<!-- end headerBlock-->
-				<!-- start sAuth-->
+				<!-- start sApplication-->
 				<section class="sApplication section" id="sApplication">
 					<div class="container">
-						<div class="card card_sm text-center">
-							<div class="success-title text-primary">Спасибо Ваша заявка принята!</div>
+						<div class="sApplication__steps">
+							<div class="sApplication__step active">Шаг 1
+							</div>
+							<div class="sApplication__step">Шаг 2
+							</div>
+						</div>
+						<div class="card">
+							<div class="form-wrap">
+								<form>
+									<div class="form-wrap__row row">
+										<div class="form-wrap__col col-md-4">
+											<div class="form-wrap__input-wrap form-group">
+												<label><span class="form-wrap__input-title">ИНН</span><input class="form-wrap__input form-control" inputmode="text" name="text" type="text" placeholder=""/>
+												</label>
+											</div>
+											<!-- +e.input-wrap-->
+										</div>
+										<div class="col-md">
+											<div class="form-wrap__input-wrap form-wrap__input-wrap--select form-group">
+												<label><span class="form-wrap__input-title">Номинация</span>
+													<select class="form-wrap__input form-select" name="select">
+														<option value=""></option>
+														<option value=" placeholder 1">placeholder 1</option>
+														<option value=" placeholder 2">placeholder 2</option>
+														<option value=" placeholder 3">placeholder 3</option>
+														<option value=" placeholder 4">placeholder 4</option>
+													</select>
+												</label>
+											</div>
+										</div>
+										<div class="col-12">
+											<div class="form-wrap__input-wrap form-group">
+												<label><span class="form-wrap__input-title">Название проекта</span><input class="form-wrap__input form-control" inputmode="text" name="text" type="text" placeholder=""/>
+												</label>
+											</div>
+											<!-- +e.input-wrap-->
+										</div>
+										<div class="col-12">
+											<div class="form-wrap__input-wrap form-group">
+												<label><span class="form-wrap__input-title">Отрасль</span><input class="form-wrap__input form-control" inputmode="text" name="text" type="text" placeholder=""/>
+												</label>
+											</div>
+											<!-- +e.input-wrap-->
+										</div>
+										<div class="col-12">
+											<div class="video-able">
+												<label class="custom-input form-check"><input class="custom-input__input form-check-input order-last" name="checkbox" type="checkbox"/><span class="custom-input__text form-check-label">Возможность предоставить видео-презентацию</span>
+												</label>
+											</div>
+										</div>
+										<div class="col-12">
+											<div class="title text-primary fw-500">Контакты</div>
+										</div>
+										<div class="col-12 col-md-6">
+											<div class="form-wrap__input-wrap form-group">
+												<label><span class="form-wrap__input-title">Телефон</span><input class="form-wrap__input form-control" inputmode="tel" name="tel" type="tel" placeholder=""/>
+												</label>
+											</div>
+											<!-- +e.input-wrap-->
+										</div>
+										<div class="col-12 col-md-6">
+											<div class="form-wrap__input-wrap form-group">
+												<label><span class="form-wrap__input-title">Ссылка</span><input class="form-wrap__input form-control" inputmode="text" name="text" type="text" placeholder=""/>
+												</label>
+											</div>
+											<!-- +e.input-wrap-->
+										</div>
+										<div class="col-12">
+											<div class="form-wrap__input-title radio">Тип заявки</div>
+											<div class="form-wrap__input-wrap form-wrap__input-wrap--radio form-group">
+												<div class="wrap">
+													<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="type" type="radio"/><span class="custom-input__text form-check-label">Групповая</span>
+													</label>
+													<label class="custom-input form-check"><input class="custom-input__input form-check-input" name="type" type="radio"/><span class="custom-input__text form-check-label">Одиночная</span>
+													</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="btn-single btn btn-primary" href="#">Далее</div>
+								</form>
+							</div>
 						</div>
 					</div>
 				</section>
+				<!-- end sApplication-->
 			</main>
 			<script>addBlock(`footer`)</script>
 			<div id="footerWrap"></div>
