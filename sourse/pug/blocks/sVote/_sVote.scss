@@ -11,12 +11,7 @@
 	.section-title h2 {
 		line-height: 107%;
 	}
-	&__col{
-		
-	}
-	&__item{
-		
-	}
+	
   p {
     text-wrap: pretty;
     margin-bottom: rem(20);
@@ -38,6 +33,11 @@
 	@include media-breakpoint-down(xl) {}
 } // end.sVote
 // start .sVote
+
+.for-empty {
+  min-height: rem(260);
+  margin-bottom: rem(40);
+}
 
 #sVoteProjects2 {
   --sPT: #{rem(10)};

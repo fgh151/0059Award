@@ -1,0 +1,121 @@
+// start .sRegion
+.sRegion {
+	// --sPT: #{rem()};
+	// --sPB: #{rem()};
+	// --sTPB: #{rem()};
+  @include media-breakpoint-up(lg) {
+    --sPT: #{rem(36)};
+    --sPB: #{rem(110)};
+  }
+	
+	&__row{
+		// --bs-gutter-x: #{rem()};
+		--bs-gutter-y: #{rem(20)};
+	}
+	&__title-wrap {
+		height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: rem(20);
+	}
+
+  h2 {
+    line-height: 107%;
+  }
+
+  &__btn-wrap {
+    @include media-breakpoint-down(lg) {
+      display: flex;
+      justify-content: space-between;
+      gap: rem(10);
+    }
+    .btn {
+      width: 49%;
+      @include media-breakpoint-up(lg) {
+        width: 192px;
+        max-width: 49%;
+      }
+      --bs-btn-padding-x: #{rem(10)};
+      &:first-child {
+        @include media-breakpoint-up(xl) {
+          margin-right: var(--bs-gutter-x);
+        }
+      }
+    }
+  }
+
+	&__card {
+		border-radius: $border-radius;
+    padding: rem(25) rem(20);
+    @include media-breakpoint-up(md) {
+      padding: rem(28) rem(37);
+    }
+
+    &:not(:last-child) {
+      margin-bottom: rem(10);
+      margin-top: rem(6);
+    }
+
+    .h5 {
+      margin-top: rem(10);
+    }
+
+    &.flex {
+      @include media-breakpoint-up(md) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .btn {
+        width: 100%;
+        @include media-breakpoint-up(md) {
+          width: rem(192);
+        }
+      }
+    }
+	}
+
+  .card_blue {
+    background: var(--color-card-bg);
+  }
+
+  p {
+    line-height: 1.22;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+	&__map {
+		margin-bottom: 40px;
+		@include media-breakpoint-up(lg) {
+			margin-top:rem(40);
+			margin-bottom: 0;
+		}
+		svg g.active>path {
+			fill: #115492;
+			stroke: #115492;
+			filter: drop-shadow(0 0 30px $primary);
+		}
+	}
+
+  .reg-9 {
+    transform: translateX(12px) translateY(474px);
+    & > g {
+      transform: translateX(12px);
+    }
+  }
+
+  .reg-8 {
+    transform: translateX(743px);
+  }
+
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sRegion

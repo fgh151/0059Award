@@ -109,3 +109,13 @@ mixin sVoteProjects3(btn)
 					+voteItemBtn('Название проекта 1 может быть разного размера').--btn
 				+e.col(class= wrapClass)
 					+voteItemBtn('Название проекта 1').--btn
+
+
+
+mixin sVoteProjects4(title)
+	// start sVote
+	+b.SECTION.sVoteProjects.for-empty.section#sVoteProjects2&attributes(attributes)
+		.container
+			+b.section-title.top-line
+				h5= title
+			+e.row.row

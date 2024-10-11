@@ -21,9 +21,9 @@
 18. <https://megafronteam.github.io/0059Award/16-applies.html>
 19. <https://megafronteam.github.io/0059Award/17-managers.html>
 20. <https://megafronteam.github.io/0059Award/18-geography.html>
+21. <https://megafronteam.github.io/0059Award/19-region.html>
 
 2. <https://megafronteam.github.io/0059Award/00-modal.html>
 
 
 #### In progress
-1. <https://megafronteam.github.io/0059Award/19-statistics.html>
