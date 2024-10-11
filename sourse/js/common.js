@@ -82,7 +82,6 @@ function eventHandler() {
   window.addEventListener("load", ()=> {
     const btnToTop = document.querySelector('.btn-to-top');
     if (btnToTop) {
-      console.log(btnToTop);
       btnToTop.addEventListener('click', () => {
         window.scrollTo({
           top: 0,
@@ -109,7 +108,7 @@ function eventHandler() {
 
   /* vote */
 
-  const checkboxesVote = document.querySelectorAll('.vote-item input');
+  const checkboxesVote = document.querySelectorAll('.vote-item--js input');
 
   if(checkboxesVote.length) {
     checkboxesVote.forEach(checkbox => {
@@ -136,6 +135,19 @@ function eventHandler() {
 	}
 	inputFile();
 
+  /* avatar */
+  let uploadavatar = document.querySelector('.upload-avatar');
+	if (uploadavatar){
+		let inputFile = uploadavatar.querySelector('.input-upload');
+		let img = uploadavatar.querySelector('.img-wrap-center img');
+		inputFile.addEventListener('change', () => {
+			var reader = new FileReader();
+			reader.onload = function(){ img.src = reader.result;}
+			reader.readAsDataURL(event.target.files[0]);
+
+			inputFile.files[0].name.length > 0 ? uploadavatar.classList.add('active') : uploadavatar.classList.remove('active');
+		});
+	}
 
 }
 if (document.readyState !== "loading") {

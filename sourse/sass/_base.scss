@@ -479,6 +479,12 @@ iframe {
 	}
 }
 
+.nomination {
+  color: $primary;
+  margin-bottom: rem(8);
+  text-transform: uppercase;
+}
+
 .btn-secondary {
   --bs-btn-color: #000;
   --bs-btn-bg: #{$blue-200};

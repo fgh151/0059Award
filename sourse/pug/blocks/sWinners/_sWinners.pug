@@ -1,0 +1,26 @@
+mixin sWinners(data)
+	// start sWinners
+	+b.SECTION.sWinners.section#sWinners&attributes(attributes)
+		.container
+			.nomination НОМИНАЦИЯ
+			+b.section-title
+				.h2 Мой край — моя гордость
+			+e.list
+				+winnerCard('Первое место', 'Название проекта может быть в две строчки, в три строчки в четыре, если больше, то скрывается Название проекта может быть в две строчки, в три строчки в четыре, если больше, то скрывается')
+				+winnerCard('Второе место', 'Название проекта может быть в две строчки, ')
+				+winnerCard('Третье место', 'Название проекта может быть в две строчки, в три строчки в четыре, если больше, то скрывается за ')
+			.nomination.top-line СПЕЦИАЛЬНАЯ НОМИНАЦИЯ
+			+b.section-title
+				.h2 Судьба человека&nbsp;&mdash; гордость Отечества
+			+e.list
+				+winnerCard('Победитель', 'Название проекта может быть в две строчки, в три строчки в четыре, если больше, то скрывается Название проекта может быть в две строчки, в три строчки в четыре, если больше, то скрывается')
+	// end sWinners
+
+mixin winnerCard(num, text)
+	+b.winner-card
+		+e.row.row
+			+e.col.col-lg-8: +e.content
+				+e.title.text-primary.h4= num
+				+e.descr= text
+				+e.distr.text-primary Северо-кавказский федеральный округ
+			+e.col.col-lg-4: +e.btn-wrap: +e.btn.btn.btn-primary.link-modal-js(href='#modal-winner') Подробнее

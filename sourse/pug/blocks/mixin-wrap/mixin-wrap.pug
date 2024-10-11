@@ -79,3 +79,14 @@ mixin ranking(rank)
 			- var x = 1;
 			while x <= 10
 				+in-c('radio',x++)(name=`ranking${rank}`)
+
+
+mixin uploadAvatar(initials)
+	+b.upload-avatar
+		+e.LABEL.input-wrap
+			input.input-upload(type='file' name='file')
+			+e.stub
+				+img('')
+			.img-wrap-center
+				+img('', 'bg')
+			+e.file-name +

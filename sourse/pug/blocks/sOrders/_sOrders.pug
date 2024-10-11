@@ -1,0 +1,19 @@
+mixin sOrders(data)
+	// start sOrders
+	+b.SECTION.sOrders.section#sOrders&attributes(attributes)
+		.container
+			+b.order-card
+				+e.title.fw-500.color-add Номинация
+				+e.title.fw-500.color-add Название проекта
+			+orderCard('Мой край — моя гордость', 'Президент наградил победителя специальной номинации Всероссийской муниципальной премии «Служение»', 'btn').--blue
+			+orderCard('Мой край — моя гордость', 'Президент наградил победителя', 'btn').--blue
+			+orderCard('Мой край — моя гордость', 'Президент наградил победителя специальной номинации Всероссийской муниципальной премии «Служение»', 'btn').--blue
+	// end sOrders
+
+
+mixin orderCard(title, descr, btn)
+	+b.order-card&attributes(attributes)
+		+e.title.fw-500= title
+		+e.descr-wrap: +e.descr= descr
+		if btn
+			+e.btn.btn.btn-outline-primary(href='#'): +icon('pencil')

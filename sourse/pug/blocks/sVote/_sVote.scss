@@ -38,6 +38,12 @@
 	@include media-breakpoint-down(xl) {}
 } // end.sVote
 // start .sVote
+
+#sVoteProjects2 {
+  --sPT: #{rem(10)};
+	--sTPB: #{rem(30)};
+}
+
 .sVoteProjects {
 	--sPT: #{rem(34)};
 	--sPB: #{rem(34)};
@@ -64,6 +70,12 @@
   position: relative;
   border: 1px solid $body-color;
   border-radius: $border-radius-sm;
+  &:not(.vote-item--js) {
+    label {
+      pointer-events: none;
+    }
+  }
+
 
   label {
     padding: var(--padding);
@@ -83,6 +95,20 @@
       }
     }
   }
+  &--btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    padding: var(--padding);
+    min-height: rem(227);
+    height: 100%;
+    label {
+      padding: 0;
+      min-height: auto;
+      height: auto;
+    }
+  }
 
   &.checked {
     color: $primary;
@@ -94,14 +120,14 @@
 
   .button-open-modal {
     position: absolute;
-    top: calc(var(--padding) - 6px);
+    top: calc(var(--padding));
     right: calc(var(--padding) - 6px);
     z-index: 2;
   }
 
   .custom-input__text {
     display: inline-block;
-    max-width: calc(100% - 50px);
+    max-width: calc(100% - 52px);
   }
 }
 

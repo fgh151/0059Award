@@ -1,0 +1,111 @@
+// start .sUser
+.sUser {
+	--sPT: #{rem(40)};
+	--sPB: #{rem(24)};
+	// --sTPB: #{rem()};
+	
+	.row {
+		// --bs-gutter-x: #{rem()};
+		--bs-gutter-y: #{rem(30)};
+	}
+	.section-title{
+		
+	}
+	&__wrap {
+    border-radius: $border-radius-sm;
+    padding: rem(29) rem(20);
+    background: #F3F8FB;
+		@include media-breakpoint-up(lg) {
+      padding: rem(29) rem(33);
+    }
+	}
+
+  &__item:not(:last-child) {
+		margin-bottom: rem(33px);
+		@include media-breakpoint-up(lg) {
+			margin-bottom: rem(44);
+		}
+  }
+
+	&__item {
+		display: grid;
+    gap: rem(10);
+    grid-template-columns: 1fr;
+		@include media-breakpoint-up(md) {
+      grid-template-columns: repeat(2,1fr) 100px;
+    }
+		@include media-breakpoint-up(lg) {
+      gap: rem(30);
+      grid-template-columns: repeat(2,1fr) .5fr;
+    }
+	}
+
+	.upload-avatar__input-wrap {
+		display: block;
+		position: relative;
+		width: 192px;
+		@include media-breakpoint-up(md) {
+			margin-bottom: 0;
+		}
+	}
+  &__link {
+		color: $primary;
+    display: inline;
+    height: max-content;
+    width: max-content;
+		.icon {
+      margin-left: rem(9);
+			font-size:12px;
+			fill: none;
+			stroke: $primary;
+		}
+  }
+
+	&__return-link {
+		@include mt;
+    text-align: end;
+    display: inline-block;
+		@include media-breakpoint-down(md) {
+      order: -1;
+    }
+	}
+
+	&__person {
+    line-height: 1;
+		font-size: rem(20);
+    font-weight: 500;
+	}
+
+	.form-wrap__input-wrap {
+		margin-bottom: 27px;
+		margin-right: 0;
+		@include media-breakpoint-up(md) {
+			margin-bottom: 0;
+		}
+	}
+	.form-wrap__input-title {
+		flex-basis: auto;
+		margin-right: rem(20);
+		color: $body-color;
+    margin-bottom: rem(10);
+		@include media-breakpoint-up(xxl) {
+			margin-right: rem(56);
+		}
+	}
+	.form-wrap__input {
+		max-width: 303px;
+		// border-color: $info;
+		text-align: center;
+		@include media-breakpoint-down(md) {
+			max-width: none;
+		}
+	}
+
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sUser

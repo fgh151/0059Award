@@ -60,12 +60,76 @@
   .mb-26 {
     margin-bottom: rem(26);
   }
+  .mb-10 {
+    margin-bottom: rem(10);
+  }
 
   &__wrap {
-    padding: rem(26) rem(30);
+    padding: rem(26) rem(20);
+    @include media-breakpoint-up(lg) {
+      padding: rem(26) rem(30);
+    }
     border-radius: $border-radius-sm;
     &.wrap_blue {
       background: var(--color-card-bg);
+    }
+  }
+
+  &__item {
+    margin-bottom: rem(54);
+  }
+  &__item-person {
+    max-width: rem(415);
+    .name {
+      margin-bottom: rem(18);
+      font-size: rem(20);
+    }
+
+    .secondary {
+      opacity: .5;
+      font-size: rem(18);
+    }
+  }
+
+  &__img-person-wrap {
+    position: relative;
+    border-radius: $border-radius;
+    overflow: hidden;
+    width: 192px;
+    margin-bottom: rem(30);
+    img {
+      width: 100%;
+    }
+  }
+
+  .award-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: rem(18);
+    width: rem(250);
+    padding-top: rem(40);
+    padding-bottom: rem(40);
+    @include media-breakpoint-up(lg) {
+      gap: rem(27);
+      padding-top: rem(60);
+      padding-bottom: rem(60);
+      width: 90%;
+    }
+
+    .title {
+      font-size: rem(20);
+      @include media-breakpoint-up(xl) {
+        font-size: rem(25);
+      }
+    }
+
+    .icon {
+      fill: $primary;
+      font-size: rem(60);
+      @include media-breakpoint-up(xl) {
+        font-size: rem(95);
+      }
     }
   }
 

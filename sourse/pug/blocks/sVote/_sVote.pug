@@ -23,30 +23,30 @@ mixin sVoteProjects(btn)
 			+e.row.row
 				- const wrapClass="col-md-6 col-lg-4 col-xl-3"
 				+e.col(class= wrapClass)
-					+voteItem('Название проекта 1 может быть разного размера')
+					+voteItem('Название проекта 1 может быть разного размера').--js
 				+e.col(class= wrapClass)
-					+voteItem('Название проекта 1')
+					+voteItem('Название проекта 1').--js
 				+e.col(class= wrapClass)
-					+voteItem('Название проекта 1 может быть разного размера')
+					+voteItem('Название проекта 1 может быть разного размера').--js
 				+e.col(class= wrapClass)
-					+voteItem('Название проекта 1')
+					+voteItem('Название проекта 1').--js
 				+e.col(class= wrapClass)
-					+voteItem('Название проекта 1 может быть разного размера')
+					+voteItem('Название проекта 1 может быть разного размера').--js
 				+e.col(class= wrapClass)
-					+voteItem('Название проекта 1')
+					+voteItem('Название проекта 1').--js
 				+e.col(class= wrapClass)
-					+voteItem('Название проекта 1 может быть разного размера')
+					+voteItem('Название проекта 1 может быть разного размера').--js
 				+e.col(class= wrapClass)
-					+voteItem('Название проекта 1')
+					+voteItem('Название проекта 1').--js
 				+e.col(class= wrapClass)
-					+voteItem('Название проекта 1 может быть разного размера')
+					+voteItem('Название проекта 1 может быть разного размера').--js
 				+e.col(class= wrapClass)
-					+voteItem('Название проекта 1')
+					+voteItem('Название проекта 1').--js
 			if btn
 				+e.wrap-btn.text-center.top-line: +e.btn.btn.btn-primary(href='#')= btn
 
 mixin voteItem(title)
-	+b.vote-item
+	+b.vote-item&attributes(attributes)
 		+in-c('checkbox', title, 'text')
 		+buttonOpenModal
 
@@ -55,3 +55,57 @@ mixin buttonOpenModal
 		.span
 		.span
 		.span
+
+
+mixin sVoteProjects2(btn)
+	// start sVote
+	+b.SECTION.sVoteProjects.section#sVoteProjects2&attributes(attributes)
+		.container
+			+b.section-title.text-primary
+				h4 Лауреаты
+			+e.row.row
+				- const wrapClass="col-md-6 col-lg-4 col-xl-3"
+				+e.col(class= wrapClass)
+					+voteItem('Название проекта 1 может быть разного размера')
+				+e.col(class= wrapClass)
+					+voteItem('Название проекта 1')
+				+e.col(class= wrapClass)
+					+voteItem('Название проекта 1 может быть разного размера')
+				+e.col(class= wrapClass)
+					+voteItem('Название проекта 1')
+				+e.col(class= wrapClass)
+					+voteItem('Название проекта 1 может быть разного размера')
+				+e.col(class= wrapClass)
+					+voteItem('Название проекта 1')
+				+e.col(class= wrapClass)
+					+voteItem('Название проекта 1 может быть разного размера')
+				+e.col(class= wrapClass)
+					+voteItem('Название проекта 1')
+				+e.col(class= wrapClass)
+					+voteItem('Название проекта 1 может быть разного размера')
+				+e.col(class= wrapClass)
+					+voteItem('Название проекта 1')
+
+
+mixin voteItemBtn(title)
+	+b.vote-item&attributes(attributes)
+		+in-c('checkbox', title, 'text')
+		+e.btn.btn.btn-primary(href='#') Голосовать
+		+buttonOpenModal
+
+mixin sVoteProjects3(btn)
+	// start sVote
+	+b.SECTION.sVoteProjects.section#sVoteProjects3&attributes(attributes)
+		.container
+			+b.section-title
+				h2 Мой край — моя гордость
+			+e.row.row
+				- const wrapClass="col-md-6 col-lg-4 col-xl-3"
+				+e.col(class= wrapClass)
+					+voteItemBtn('Название проекта 1 может быть разного размера').--btn
+				+e.col(class= wrapClass)
+					+voteItemBtn('Название проекта 1').--btn
+				+e.col(class= wrapClass)
+					+voteItemBtn('Название проекта 1 может быть разного размера').--btn
+				+e.col(class= wrapClass)
+					+voteItemBtn('Название проекта 1').--btn
