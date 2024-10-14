@@ -22,17 +22,19 @@
     display: inline-block;
     margin-bottom: rem(14);
   }
+
   .form-check-input {
-    
     height: rem(24);
     width: rem(24);
-    &:focus {
-      outline: none;
-      box-shadow: none;
-    }
   }
   
 
+}
+.form-check-input {
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
 }
 
 //
