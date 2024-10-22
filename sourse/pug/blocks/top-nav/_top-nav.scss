@@ -1,28 +1,4 @@
-.header--js {
-  .top-nav {
-    top: -1px !important;
-    padding-top: rem(20);
-    padding-bottom: rem(20);
-    @include media-breakpoint-up(xxl) {
-      padding-top: rem(60);
-      padding-bottom: 0;
-    }
-    border-radius: 0 0 $border-radius $border-radius;
-    
-    transform: translateY(-320%);
-    transition: .5s transform;
-  }
-
-  &.show .top-nav {
-    transform: translateY(0);
-    background: $blue-700;
-    .header-vis {
-      &.img-bg {
-        opacity: 1;
-        border-radius: 0 0 $border-radius $border-radius;
-      }
-    }
-  }
+.change-logos--js {
 
   .header-hid {
     .top-nav__date {
@@ -38,11 +14,58 @@
       transform: translateY(-10%);
       max-width: rem(100);
       @include media-breakpoint-up(xxl) {
-        transform: translateY(-40%);
+        transform: translateY(0);
         max-width: none;
         // width: ;
       }
     }
+  }
+  .top-nav {
+    .logo-to-top {
+      transform: translateY(0);
+    }
+  }
+
+  
+  .title-menu .menu {
+    @include media-breakpoint-up(xxl) {
+    max-width: 700px;
+    margin-left: auto;
+    }
+  }
+}
+
+.header--js {
+  .top-nav {
+    top: -1px !important;
+    padding-top: rem(20);
+    padding-bottom: rem(20);
+    @include media-breakpoint-up(xxl) {
+      padding-top: rem(0);
+      padding-bottom: rem(14);
+    }
+    &__row{
+      @include media-breakpoint-up(xxl) {
+        align-items: center;
+      }
+    }
+    border-radius: 0 0 $border-radius $border-radius;
+    transform: translateY(-320%);
+    transition: .5s transform;
+  }
+
+  &.show .top-nav {
+    transform: translateY(0);
+    background: $blue-700;
+    .header-vis {
+      &.img-bg {
+        opacity: 1;
+        border-radius: 0 0 $border-radius $border-radius;
+      }
+    }
+  }
+
+  .header-vis {
     &.img-bg {
       display: block;
       opacity: 0;
@@ -173,7 +196,7 @@
   }
 
   &__logo {
-    margin-top: rem(12);
+    margin-top: rem(16);
     display: inline-block;
     img {
       max-width: 100%;

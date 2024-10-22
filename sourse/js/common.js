@@ -67,6 +67,29 @@ function eventHandler() {
     }
 	});
 
+  const stepsSwiper = new Swiper(".sAwardSteps__slider--js", {
+
+		slidesPerView: 1,
+		spaceBetween: 20,
+    // observeParents: true,
+		navigation: {
+			nextEl: ".sAwardSteps .swiper-button-next",
+			prevEl: ".sAwardSteps .swiper-button-prev",
+		},
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      992: {
+        // centeredSlides: true,
+        // initialSlide: 3,
+        slidesPerView: 3,
+        spaceBetween: 30,
+      }
+    }
+	});
+
 	const swiper4 = new Swiper(".sBanners__slider--js", {
 		// slidesPerView: 5,
 		...defaultSl,
@@ -89,8 +112,14 @@ function eventHandler() {
       });
     }
 
+
+    let lastScrollPosition = 0;
+
     window.addEventListener('scroll', () => {
       const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+      const bottomNav = document.querySelector('.top-nav').getBoundingClientRect().bottom
+      const isScrollingDown = scrollPosition > lastScrollPosition;
 
       if (scrollPosition >= 30) {
         header.classList.add('header--js');
@@ -98,11 +127,20 @@ function eventHandler() {
         header.classList.remove('header--js');
       }
 
+      if (bottomNav < 0 && isScrollingDown) {
+        header.classList.add('change-logos--js');
+      } else if (!isScrollingDown && scrollPosition < 300 ) {
+        header.classList.remove('change-logos--js');
+      }
+
       if (scrollPosition >= 400) {
         header.classList.add('show');
       } else {
         header.classList.remove('show');
       }
+
+      lastScrollPosition = scrollPosition;
+
     });
   })
 

@@ -6,12 +6,19 @@ mixin sAwardSteps(data)
 				h2 Этапы премии
 				a(href='#') Все этапы
 					+icon('arr-next')
-			+e.row.row
-				+e.col.col-lg-4: +awardStep('13 ноября', '')
-					+e.title.h5.fw-500 Подача заявок<br> участниками
-				+e.col.col-lg-4: +awardStep('21 января', '')
-					+e.title.h5.fw-500 Первичный <br>анализ заявок
-				+e.col.col-lg-4: +awardStep('3 февраля', 'Перекрестное голосование среди участников')
+			+e.slider--js
+				+arrow
+				.swiper-wrapper
+					.swiper-slide: +awardStep('13 ноября', '')
+						+e.title.h5.fw-500 Подача заявок<br> участниками
+					.swiper-slide: +awardStep('21 января', '')
+						+e.title.h5.fw-500 Первичный <br>анализ заявок
+					.swiper-slide: +awardStep('3 февраля', 'Перекрестное голосование среди участников')
+					.swiper-slide: +awardStep('17 февраля', '')
+						+e.title.h5.fw-500 Голосование<br>экспертного совета
+					.swiper-slide: +awardStep('31 марта', 'Народное голосование')
+					.swiper-slide: +awardStep('Апрель', '')
+						+e.title.h5.fw-500 Заседание наблюдательного<br>совета
 	// end sAwardSteps
 
 mixin sAwardSteps2(data)

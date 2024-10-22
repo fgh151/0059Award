@@ -34,6 +34,38 @@
     }
 	}
 
+  &__slider--js {
+    position: relative;
+    .award-step:not(.award-step--blue) {
+      min-height: rem(310);
+      @include media-breakpoint-up(lg) {
+        min-height: rem(310);
+      }
+    }
+    @include media-breakpoint-up(lg) {
+      overflow: hidden;
+    }
+
+    @include media-breakpoint-down(md) {
+      max-width: 80%;
+    }
+  }
+  --swiperArrowPosition: 0;
+  .swiper-button-hand {
+    bottom: 10px;
+    top: auto;
+
+    .icon {
+      stroke: $body-color;
+      z-index: 2;
+    }
+
+    
+    @include media-breakpoint-down(lg) {
+      display: none;
+    }
+  }
+
   h2 {
     margin-bottom: 0;
   }
