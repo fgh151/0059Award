@@ -36,7 +36,7 @@
 
   &__slider--js {
     position: relative;
-    .award-step:not(.award-step--blue) {
+    .swiper-slide .award-step {
       min-height: rem(310);
       @include media-breakpoint-up(lg) {
         min-height: rem(310);
@@ -58,6 +58,7 @@
     .icon {
       stroke: $body-color;
       z-index: 2;
+      stroke-width: 1.5px;
     }
 
     
@@ -140,6 +141,12 @@
 
     .icon {
       fill: $blue-600;
+    }
+  }
+
+  &--blue {
+    .award-step__data {
+      color: #E8F1F7;
     }
   }
 }

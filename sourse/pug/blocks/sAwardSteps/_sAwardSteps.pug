@@ -9,7 +9,7 @@ mixin sAwardSteps(data)
 			+e.slider--js
 				+arrow
 				.swiper-wrapper
-					.swiper-slide: +awardStep('13 ноября', '')
+					.swiper-slide: +awardStep('13 ноября', '').--blue
 						+e.title.h5.fw-500 Подача заявок<br> участниками
 					.swiper-slide: +awardStep('21 января', '')
 						+e.title.h5.fw-500 Первичный <br>анализ заявок
@@ -51,8 +51,6 @@ mixin sAwardSteps3(data)
 				+e.col.col-lg-4: +awardStepWithIcon('Партнерам', 'partners@spremia.ru','chat')
 				+e.col.col-lg-4: +awardStepWithIcon('Общие вопросы', 'org@spremia.ru','touch')
 
-
-
 mixin awardStepWithIcon(data, title, icon)
 	+b.award-step--with-icon.A(href=`mailto:${title}`)
 		+icon(icon)
@@ -64,7 +62,7 @@ mixin awardStepWithIcon(data, title, icon)
 				block
 
 mixin awardStep(data, title)
-	+b.award-step.A(href='#')
+	+b.award-step.A(href='#')&attributes(attributes)
 		+e.data.color-add.fw-500= data
 		if title
 			+e.title.h5.fw-500= title

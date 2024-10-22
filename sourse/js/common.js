@@ -71,7 +71,6 @@ function eventHandler() {
 
 		slidesPerView: 1,
 		spaceBetween: 20,
-    // observeParents: true,
 		navigation: {
 			nextEl: ".sAwardSteps .swiper-button-next",
 			prevEl: ".sAwardSteps .swiper-button-prev",
@@ -82,10 +81,16 @@ function eventHandler() {
         spaceBetween: 20,
       },
       992: {
-        // centeredSlides: true,
-        // initialSlide: 3,
         slidesPerView: 3,
         spaceBetween: 30,
+      }
+    },
+    on: {
+      slideChange: function () {
+        setTimeout(checkOverlap, 30);
+      },
+      transitionEnd: function () {
+        checkOverlap();
       }
     }
 	});
@@ -115,7 +120,7 @@ function eventHandler() {
 
     let lastScrollPosition = 0;
 
-    window.addEventListener('scroll', () => {
+    function handleScroll() {
       const scrollPosition = window.scrollY || document.documentElement.scrollTop;
 
       const bottomNav = document.querySelector('.top-nav').getBoundingClientRect().bottom
@@ -139,9 +144,17 @@ function eventHandler() {
         header.classList.remove('show');
       }
 
-      lastScrollPosition = scrollPosition;
+      if (scrollPosition >= 400) {
+        header.classList.add('show');
+        header.classList.add('change-logos--js');
+      }
 
-    });
+      lastScrollPosition = scrollPosition;
+    }
+
+    handleScroll()
+
+    window.addEventListener('scroll', handleScroll);
   })
 
   /* vote */
@@ -186,6 +199,44 @@ function eventHandler() {
 			inputFile.files[0].name.length > 0 ? uploadavatar.classList.add('active') : uploadavatar.classList.remove('active');
 		});
 	}
+
+  /* check arrows */
+  function checkOverlap() {
+    const buttons = document.querySelectorAll('.sAwardSteps .swiper-button-hand');
+    const awardSteps = document.querySelectorAll('.sAwardSteps .award-step--blue');
+    if (!buttons.length || !awardSteps.length) return
+
+    buttons.forEach(button => {
+      const buttonRect = button.getBoundingClientRect();
+      let isOverlapping = false;
+
+      awardSteps.forEach(step => {
+        const stepRect = step.getBoundingClientRect();
+
+        if (
+          buttonRect.top < stepRect.bottom &&
+          buttonRect.bottom > stepRect.top &&
+          buttonRect.left < stepRect.right &&
+          buttonRect.right > stepRect.left
+        ) {
+          isOverlapping = true;
+        }
+      });
+
+      const icon = button.querySelector('.icon');
+      if (icon) {
+        if (isOverlapping) {
+          icon.style.stroke = 'white';
+        } else {
+          icon.style.stroke = '';
+        }
+      }
+    });
+  }
+
+  checkOverlap()
+
+  window.addEventListener('resize', checkOverlap);
 
 }
 if (document.readyState !== "loading") {
