@@ -38,7 +38,7 @@
 .header--js {
   .top-nav {
     top: -1px !important;
-    padding-top: rem(20);
+    padding-top: 0;
     padding-bottom: rem(20);
     @include media-breakpoint-up(xxl) {
       padding-top: rem(0);
