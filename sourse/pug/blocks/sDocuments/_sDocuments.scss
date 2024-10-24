@@ -1,12 +1,18 @@
 // start .sDocuments
 .sDocuments {
-	--sPT: #{rem(42)};
+	--sPT: #{rem(28)};
 	--sPB: #{rem(34)};
 	// --sTPB: #{rem()};
-	
+    @include media-breakpoint-up(lg) {
+      --sPT: #{rem(42)};
+    }
+
 	&__row{
 		// --bs-gutter-x: #{rem()};
 		--bs-gutter-y: var(--bs-gutter-x);
+    @include media-breakpoint-down(lg) {
+      --bs-gutter-x: #{rem(10)};
+    }
 	}
 
   .download-file {

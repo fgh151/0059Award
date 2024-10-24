@@ -3,7 +3,8 @@
 	--sPT: #{rem(0)};
 	--sPB: #{rem(20)};
   @include media-breakpoint-down(sm) {
-    --sPT: #{rem(40)};
+    --sPT: #{rem(30)};
+    --sPB: #{rem(30)};
   }
 	// --sTPB: #{rem()};
 	
@@ -19,8 +20,14 @@
 	}
   .order-card:first-child {
     padding-bottom: rem(30);
+    row-gap: 0;
     @include media-breakpoint-down(sm) {
-      display: none;
+      // display: none;
+      padding: 0;
+      .order-card__title:last-child {
+        color: $body-color;
+      }
+      margin-bottom: rem(32);
     }
   }
 	.order-card--blue {
@@ -48,7 +55,14 @@
     align-items: center;
   }
 
+  &__title {
+    @include media-breakpoint-down(lg) {
+      color: $blue-600;
+    }
+  }
+
   padding: rem(30) rem(20);
+  padding-bottom: rem(22);
 	@include media-breakpoint-up(lg) {
     padding: rem(40) rem(5) rem(40) rem(36);
   }
@@ -56,12 +70,15 @@
   &--blue {
     background: var(--color-card-bg);
     border-radius: $border-radius;
+    @include media-breakpoint-down(lg) {
+      border-radius: 8px;
+    }
   }
 
   &__descr-wrap {
 
     @include media-breakpoint-down(lg) {
-      // grid-column: 1/-1;
+      margin-bottom: rem(26);
     }
   }
 
@@ -75,9 +92,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: calc($border-radius - 5px);
     --margin: calc(40px - 5px);
     @include media-breakpoint-up(lg) {
+      border-radius: calc($border-radius - 5px);
       height: calc(100% + var(--margin) * 2);
       margin-bottom: calc(var(--margin) * -1);
       margin-top: calc(var(--margin) * -1);
@@ -85,6 +102,7 @@
     }
     @include media-breakpoint-down(lg) {
       grid-column: 1/-1;
+      border-radius: 8px;
     }
 
     &:hover .icon {

@@ -6,7 +6,7 @@ mixin sExpertise(data)
 				h2 Название проекта, может быть коротким, в одну строку, или в две или даже в три строки.
 			.sub-title: p Оцените проекты номинантов по следующим критериям и напишите короткое резюме (до 500 знаков)
 			+form-wrap
-				+e.card-item
+				+e.card-item.card-item--single
 					+e.row.row
 						.col-lg-7
 							p #[span Есть ли у проекта/управленческого решения комплексный подход к реализации и достижению поставленной цели?]
@@ -14,7 +14,7 @@ mixin sExpertise(data)
 							.form-wrap__input-wrap.form-wrap__input-wrap--budget-radio.form-group
 								+in-c('radio', 'Да', 'budget')
 								+in-c('radio', 'Нет', 'budget')
-				+e.card-item
+				+e.card-item.card-item--single
 					+e.row.row
 						.col-lg-7
 							p #[span Есть ли у проекта/управленческого решения социальная значимость?]
@@ -22,7 +22,7 @@ mixin sExpertise(data)
 							.form-wrap__input-wrap.form-wrap__input-wrap--budget-radio.form-group
 								+in-c('radio', 'Да', 'budget1')
 								+in-c('radio', 'Нет', 'budget1')
-				+e.card-item
+				+e.card-item.card-item--single
 					+e.row.row
 						.col-lg-7
 							p #[span Проект/управленческое решение подразумевает устойчивую долгосрочную потребность в результате реализации?]
@@ -31,7 +31,7 @@ mixin sExpertise(data)
 							.form-wrap__input-wrap.form-wrap__input-wrap--budget-radio.form-group
 								+in-c('radio', 'Да', 'budget2')
 								+in-c('radio', 'Нет', 'budget2')
-				+e.card-item
+				+e.card-item.card-item--single
 					+e.row.row
 						.col-lg-7
 							p #[span Направлен ли проект/управленческое решение на повышение качества жизни граждан?]
@@ -39,15 +39,15 @@ mixin sExpertise(data)
 							.form-wrap__input-wrap.form-wrap__input-wrap--budget-radio.form-group
 								+in-c('radio', 'Да', 'budget3')
 								+in-c('radio', 'Нет', 'budget3')
-				+e.card-item
+				+e.card-item.card-item--single
 					+e.row.row
 						.col-lg-7
-							p #[span Может ли проект/управленческое решение быть масштабируемым и тиражируемым?] (например,  для других регионов или элементов системы муниципального самоуправления)
+							p #[span Может ли проект/управленческое решение быть масштабируемым и тиражируемым?]<br>(например,  для других регионов или элементов системы муниципального самоуправления)
 						.col: .wrapper
 							.form-wrap__input-wrap.form-wrap__input-wrap--budget-radio.form-group
 								+in-c('radio', 'Да', 'budget4')
 								+in-c('radio', 'Нет', 'budget4')
-				+e.card-item.card_sm
+				+e.card-item.card-item--single.card_sm
 					+e.row-large.row
 						.col-lg-7
 							p #[span Пожалуйста, составьте короткое резюме о проекте/управленческом решении, ориентируясь на примеры ниже:]
@@ -65,7 +65,7 @@ mixin sExpertise(data)
 								li Проект/решение является универсальным (может быть внедрёно не только в муниципалитетах, но и в больших городах) или не является таковым по причине…
 								li Проект/решение соответствует принципам устойчивого развития ESG (или не соответствует в силу…)
 						.col-lg-12
-							p #[span Ваше резюме о номинанте (до 500 символов, но не менее 150):]
+							p #[span Ваше резюме о&nbsp;номинанте (до&nbsp;500 символов, но&nbsp;не&nbsp;менее 150):]
 							+input('', 'textarea', '')
 				.text-center: button.btn.btn-primary Отправить
 	// end sExpertise
@@ -79,7 +79,7 @@ mixin sExpertise2(data)
 				h2 Название проекта, может быть коротким, в одну строку, или в две или даже в три строки.
 			.sub-title: p Оцените проекты номинантов по следующим критериям
 			+form-wrap
-				+e.card-item
+				+e.card-item--nomin
 					+e.row-review.row
 						.col-lg-12
 							.nomination НОМИНАЦИЯ

@@ -176,12 +176,12 @@
 				<section class="sAwardSteps section" id="sAwardSteps">
 					<div class="container">
 						<div class="section-title">
-							<h2>Этапы премии</h2><a href="#">Все этапы
+							<h2>Этапы премии</h2><a class="btn-link d-none d-lg-inline-block" href="#">Все этапы
 								<svg class="icon icon-arr-next ">
 									<use xlink:href="img/svg/sprite.svg#arr-next"></use>
 								</svg></a>
 						</div>
-						<div class="sAwardSteps__slider sAwardSteps__slider--js">
+						<div class="sAwardSteps__slider sAwardSteps__slider--js" activeslide="0">
 							<div class="swiper-button-hand swiper-button-hand-prev swiper-button-prev">
 								<svg class="icon icon-chevron-left ">
 									<use xlink:href="img/svg/sprite.svg#chevron-left"></use>
@@ -194,7 +194,7 @@
 							</div>
 							<div class="swiper-wrapper">
 								<div class="swiper-slide">
-									<a class="award-step award-step--blue" href="#">
+									<a class="award-step" href="#">
 										<div class="award-step__data color-add fw-500">13 ноября
 										</div>
 										<div class="award-step__title h5 fw-500">Подача заявок<br> участниками
@@ -242,7 +242,10 @@
 									</a>
 								</div>
 							</div>
-						</div>
+						</div><a class="btn-link d-lg-none" href="#">Все этапы
+							<svg class="icon icon-arr-next ">
+								<use xlink:href="img/svg/sprite.svg#arr-next"></use>
+							</svg></a>
 					</div>
 				</section>
 				<!-- end sAwardSteps-->
@@ -250,7 +253,7 @@
 				<section class="sNews section" id="sNews">
 					<div class="container">
 						<div class="section-title">
-							<h2>Новости</h2><a href="#">Все новости
+							<h2>Новости</h2><a class="btn-link d-none d-lg-inline-block" href="#">Все новости
 								<svg class="icon icon-arr-next ">
 									<use xlink:href="img/svg/sprite.svg#arr-next"></use>
 								</svg></a>
@@ -268,35 +271,42 @@
 							<div class="sNews__col col-lg-6">
 								<div class="sNews__items-wrap">
 									<a class="news-item fw-500" href="#">
-										<div class="text-secondary">08.04.2024</div>
+										<div class="news-item__data text-secondary">08.04.2024
+										</div>
 										<div class="news-item__title h5">Финалисты премии «Служение» проходят обучение в Президентской академии
 										</div>
 									</a>
 									<a class="news-item fw-500" href="#">
-										<div class="text-secondary">08.04.2024</div>
+										<div class="news-item__data text-secondary">08.04.2024
+										</div>
 										<div class="news-item__title h5">Президент наградил победителя специальной номинации Всероссийской муниципальной премии «Служение»
 										</div>
 									</a>
 									<a class="news-item fw-500" href="#">
-										<div class="text-secondary">08.04.2024</div>
+										<div class="news-item__data text-secondary">08.04.2024
+										</div>
 										<div class="news-item__title h5">Почти 3 миллиона голосов отдано за участников Всероссийской муниципальной премии «Служение»
 										</div>
 									</a>
 									<a class="news-item fw-500" href="#">
-										<div class="text-secondary">08.04.2024</div>
+										<div class="news-item__data text-secondary">08.04.2024
+										</div>
 										<div class="news-item__title h5">О промежуточных итогах народного голосования Всероссийской муниципальной премии «Служение»
 										</div>
 									</a>
 								</div>
 							</div>
-						</div>
+						</div><a class="btn-link d-lg-none" href="#">Все новости
+							<svg class="icon icon-arr-next ">
+								<use xlink:href="img/svg/sprite.svg#arr-next"></use>
+							</svg></a>
 					</div>
 				</section>
 				<!-- end sNews-->
 				<!-- start sSupervisory-->
 				<section class="sSupervisory section" id="sSupervisory">
 					<div class="container">
-						<div class="sSupervisory__inner-wrap"><img class="img-bg" src="img/sSupervisory-img-1.png" alt="" loading="lazy"/>
+						<div class="sSupervisory__inner-wrap"><img class="img-bg d-none d-md-block" src="img/svg/sSupervisory-img-1.svg" alt="" loading="lazy"/><img class="img-bg d-md-none" src="img/svg/sSupervisory-img-sm.svg" alt="" loading="lazy"/>
 							<div class="section-title">
 								<h2>Наблюдательный совет</h2>
 							</div>
@@ -467,9 +477,10 @@
 				<!-- start sPartners-->
 				<section class="sPartners section" id="sPartners">
 					<div class="container">
+						<div class="section-title">
+							<h2>Партнеры номинаций</h2>
+						</div>
 						<div class="sPartners__row row">
-							<div class="partner-item">
-							</div>
 							<div class="partner-item"><img class="res-i" src="img/svg/sPartners-logo-1.svg" alt="" loading="lazy"/>
 							</div>
 							<div class="partner-item"><img class="res-i" src="img/svg/sPartners-logo-2.svg" alt="" loading="lazy"/>
@@ -513,6 +524,10 @@
 							<div class="partner-item"><img class="res-i" src="img/svg/sPartners-logo-21.svg" alt="" loading="lazy"/>
 							</div>
 							<div class="partner-item"><img class="res-i" src="img/svg/sPartners-logo-22.svg" alt="" loading="lazy"/>
+							</div>
+							<div class="partner-item partner-item--no-border"><a class="btn btn-dark" href="#">Стать партнером</a>
+							</div>
+							<div class="partner-item partner-item--no-border"><a class="btn btn-link" href="mailto:partners@spremia.ru">partners@spremia.ru</a>
 							</div>
 						</div>
 					</div>

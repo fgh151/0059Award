@@ -71,6 +71,8 @@ mixin downlFile(text, link)
 			+e.link(href='#' download)
 				+icon('pdf')
 				| Скачать файл .doc
+		if block 
+			block
 
 mixin ranking(rank)
 	+b.ranking

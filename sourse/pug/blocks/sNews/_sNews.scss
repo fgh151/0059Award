@@ -1,15 +1,19 @@
 // start .sNews
 .sNews {
-	// --sPT: #{rem()};
-	// --sPB: #{rem()};
+	--sPT: #{rem(60)};
+	--sPB: #{rem(18)};
   @include media-breakpoint-up(lg) {
-    --sPB: #{rem(80)};
+    --sPT: #{rem(120)};
+    --sPB: #{rem(110)};
 	--sTPB: #{rem(54)};
   }
 	
 	&__row{
 		// --bs-gutter-x: #{rem()};
-		--bs-gutter-y: #{rem(40)};
+		--bs-gutter-y: #{rem(35)};
+    @include media-breakpoint-up(lg) {
+      --bs-gutter-y: #{rem(40)};
+    }
 	}
   h2 {
     margin-bottom: 0;
@@ -24,13 +28,17 @@
     }
 
     a {
-      color: $blue-600;
-      font-weight: 500;
       .icon {
         transform: translateY(-10%);
       }
     }
 	}
+
+  .btn-link {
+    color: $blue-600;
+    font-weight: 500;
+  }
+
 	&__items-wrap {
     @include media-breakpoint-up(xxl) {
       margin-left: rem(120);
@@ -38,7 +46,7 @@
 	}
 
 	.news-item:not(:last-child) {
-    margin-bottom: rem(40);
+    margin-bottom: rem(30);
     @include media-breakpoint-up(lg) {
       margin-bottom: rem(60);
     }
@@ -51,6 +59,9 @@
     border-radius: $border-radius;
     overflow: hidden;
     display: block;
+    @include media-breakpoint-down(lg) {
+      @include block(240,342);
+    }
 
     @include media-breakpoint-up(lg) {
       margin-top: rem(6);
@@ -83,7 +94,11 @@
   &__content {
     position: relative;
     z-index: 1;
-    padding: rem(32) rem(37);
+    padding: rem(20) rem(30);
+    @include media-breakpoint-up(lg) {
+      padding: rem(32) rem(37);
+      padding-bottom: rem(22);
+    }
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -93,6 +108,30 @@
       line-height: 1.2;
       margin-top: rem(32);
       text-wrap: balance;
+      @include media-breakpoint-down(md) {
+        margin-top: rem(16);
+      }
+    }
+  }
+
+  .news-item {
+    @include media-breakpoint-down(lg) {
+      &:nth-child(3),
+      &:nth-child(4) {
+        display: none;
+      }
+    }
+  }
+
+  .h3 {
+    @include media-breakpoint-down(md) {
+      font-size: rem(20);
+    }
+  }
+
+  &__data {
+    @include media-breakpoint-down(md) {
+      font-size: rem(13);
     }
   }
 
@@ -112,8 +151,18 @@
     margin-top: rem(20);
     text-wrap: balance;
     margin-bottom: 0;
+    @include media-breakpoint-down(md) {
+      font-size: rem(20);
+      margin-top: rem(10);
+    }
   }
   &:hover {
     color: $primary;
+  }
+
+  &__data {
+    @include media-breakpoint-down(md) {
+      font-size: rem(13);
+    }
   }
 }

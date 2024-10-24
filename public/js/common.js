@@ -61,7 +61,7 @@ function eventHandler() {
     breakpoints: {
       992: {
         centeredSlides: true,
-        initialSlide: 1,
+        // initialSlide: 1,
         spaceBetween: 0,
       }
     }
@@ -70,7 +70,7 @@ function eventHandler() {
   const stepsSwiper = new Swiper(".sAwardSteps__slider--js", {
 
 		slidesPerView: 1,
-		spaceBetween: 20,
+		spaceBetween: 10,
 		navigation: {
 			nextEl: ".sAwardSteps .swiper-button-next",
 			prevEl: ".sAwardSteps .swiper-button-prev",
@@ -86,14 +86,34 @@ function eventHandler() {
       }
     },
     on: {
+      init: function() {
+        const sliderElement = document.querySelector('.sAwardSteps__slider--js');
+
+        if (sliderElement) {
+          const activeSlideIndex = +sliderElement.getAttribute('activeslide');
+          this.slideTo(activeSlideIndex);
+        }
+      },
+
       slideChange: function () {
         setTimeout(checkOverlap, 30);
       },
+
       transitionEnd: function () {
         checkOverlap();
       }
     }
 	});
+  // setActiveSlide(stepsSwiper)
+  // function setActiveSlide(slider) {
+  //   const activeSlide = slider.getAttribute('activeslide')
+  //   console.dir(activeSlide);
+  //   // this.swiperRef.swiper.slideTo(index);
+  // }
+
+  function setActiveSlide(index) {
+    stepsSwiper.slideTo(index);
+  }
 
 	const swiper4 = new Swiper(".sBanners__slider--js", {
 		// slidesPerView: 5,
@@ -203,7 +223,7 @@ function eventHandler() {
   /* check arrows */
   function checkOverlap() {
     const buttons = document.querySelectorAll('.sAwardSteps .swiper-button-hand');
-    const awardSteps = document.querySelectorAll('.sAwardSteps .award-step--blue');
+    const awardSteps = document.querySelectorAll('.sAwardSteps .swiper-slide-active .award-step');
     if (!buttons.length || !awardSteps.length) return
 
     buttons.forEach(button => {

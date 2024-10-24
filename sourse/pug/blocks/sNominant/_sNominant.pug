@@ -5,15 +5,19 @@ mixin sNominant(data)
 			+e.row.row
 				+e.col.col-lg-4
 					+b.section-title
-						h2 Мой край — моя&nbsp;гордость
+						h2 Мой край —<br>моя&nbsp;гордость
+					+e.btn-wrap.d-lg-none
+						+e.btn.btn.btn-outline-dark(href='#') Предыдущая
+						+e.btn.btn.btn-outline-dark(href='#') Следующая
 				+e.col.col-lg-4
 					+e.item.item-long: +downlFile('За проекты, направленные на популяризацию муниципального образования, создание уникального образа территории')
-					+e.btn.btn.btn-primary(href='#') Подать заявку
+						+e.btn.btn.btn-primary.d-lg-none(href='#') Подать заявку
+					+e.btn.btn.btn-primary.d-none.d-lg-inline-block(href='#') Подать заявку
 				+e.col.col-lg-4
 					+e.item
 						+downlFile('Критерии номинации', 1)
 						+downlFile('Инструкция к подачи заявки', 1)
-					+e.btn-wrap
+					+e.btn-wrap.d-none.d-lg-flex
 						+e.btn.btn.btn-outline-dark(href='#') Предыдущая
 						+e.btn.btn.btn-outline-dark(href='#') Следующая
 	// end sNominant

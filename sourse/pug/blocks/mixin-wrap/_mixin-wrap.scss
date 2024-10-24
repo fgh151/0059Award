@@ -140,12 +140,13 @@
 
 
 .download-file {
-  padding: rem(29) rem(24);
+  padding: rem(28) rem(14) rem(36) rem(30);
   border-radius: 24px;
   background: var(--color-card-bg);
-	@include media-breakpoint-up(sm) {
-    padding: rem(29) rem(30);
-  }
+  min-height: rem(144);
+	// @include media-breakpoint-up(sm) {
+  //   padding: rem(29) rem(30);
+  // }
 
   p {
     font-weight: 500;
@@ -263,7 +264,10 @@
 .ranking {
 	width: 100%;
 	&__descr {
-		margin-bottom: rem(30);
+		margin-bottom: rem(20);
+    @include media-breakpoint-up(md) {
+      margin-bottom: rem(30);
+    }
 	}
 	.ranking__row {
 		display: flex;
@@ -288,9 +292,11 @@
 			margin-bottom: rem(6);
 			border-radius: rem(4);
       margin-left: 0;
-			@include media-breakpoint-down(sm) {
+      @media (max-width: 360px) {
         width: 20px;
         height: 20px;
+      }
+			@include media-breakpoint-down(sm) {
       }
 			&:checked[type=radio] {
         background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='24' height='24' rx='4' fill='%230F70CA' /%3E%3Cpath d='M9.68493 17.2C9.44493 17.2 9.22491 17.12 9.04491 16.94L5.06493 12.96C4.70493 12.6 4.70493 12.04 5.06493 11.68C5.42493 11.32 5.98491 11.32 6.34491 11.68L9.70492 15.02L17.6849 7.06004C18.0449 6.70004 18.6049 6.70004 18.9649 7.06004C19.3249 7.42004 19.3249 7.98004 18.9649 8.34004L10.3449 16.94C10.1449 17.12 9.92493 17.2 9.68493 17.2Z' fill='white' /%3E%3C/svg%3E");
@@ -353,7 +359,7 @@
     align-items: center;
     height: 100%;
     border: 1px solid $blue-200;
-    // background: #f3f8fb9d;
+    background: $body-bg;
     border-radius: $border-radius;
     // position: relative;
     // z-index: -1;

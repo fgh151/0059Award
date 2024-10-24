@@ -1,28 +1,34 @@
 // start .sSupervisory
 .sSupervisory {
 	// --sPT: #{rem()};
-	// --sPB: #{rem()};
+	--sPB: #{rem(20)};
 	// --sTPB: #{rem()};
+    --sTPB: #{rem(40)};
 	
 	@include media-breakpoint-up(lg) {
     --sPT: #{rem(10)};
-    --sTPB: #{rem(120)};
-	  --sPB: #{rem(10)};
+    --sTPB: #{rem(100)};
+    --sPB: #{rem(44)};
   }
 	&__slider--js {
 		max-width: rem(360);
     margin: auto;
 	}
+
 	.section-title{
     color: $white;
+    position: relative;
+    z-index: 2;
     @include media-breakpoint-down(lg) {
-      text-align: center;
+      // text-align: center;
+      max-width: rem(250);
     }
 	}
 	&__inner-wrap {
     position: relative;
-    padding: rem(54) rem(20);
+    padding: rem(28) rem(30);
     border-radius: $border-radius;
+    background: $primary;
     overflow: hidden;
     @include media-breakpoint-up(lg) {
       padding: rem(54) rem(60);
@@ -34,13 +40,17 @@
 	}
 
   &__img-wrap {
-    max-width: rem(300);
     margin: auto;
-    border-radius: 50%;
+    max-width: rem(150);
+    margin-bottom: rem(34);
+    @include media-breakpoint-up(lg) {
+      max-width: rem(300);
+      margin-bottom: rem(54);
+    }
+    border-radius: $border-radius;
     overflow: hidden;
     @include mt;
 
-    margin-bottom: rem(34);
   }
 
   .swiper-slide:not(.swiper-slide-active) {
@@ -65,13 +75,26 @@
     display: flex;
     justify-content: space-between;
 
-    margin-top: rem(20);
     @include media-breakpoint-up(lg) {
       margin-top: rem(64);
     }
   }
   .swiper-button-hand {
-    position: static;
+    @include media-breakpoint-down(lg) {
+      --swiperArrowPosition: 2%;
+      top: 38%;
+      bottom: auto;
+    }
+    @include media-breakpoint-up(lg) {
+      position: static;
+    }
+  }
+
+  .img-bg {
+    z-index: 0;
+    @include media-breakpoint-down(lg) {
+      object-fit: contain;
+    }
   }
 
 	@include media-breakpoint-up(xl) {}
@@ -91,6 +114,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 10;
 
   .icon {
     stroke-width: 1px;
@@ -125,7 +149,7 @@
   --swiperBgDefHover: transparent;
   --swiperBorderColorDefHover: transparent;
   .icon {
-    stroke: $secondary;
+    // stroke: $secondary;
   }
   // color: var(--swiperColorDefHover);
 }

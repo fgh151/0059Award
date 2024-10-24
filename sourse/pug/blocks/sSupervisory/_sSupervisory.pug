@@ -3,7 +3,8 @@ mixin sSupervisory(data)
 	+b.SECTION.sSupervisory.section#sSupervisory&attributes(attributes)
 		.container
 			+e.inner-wrap
-				+img(src="img/sSupervisory-img-1.png", alt="").img-bg
+				+img(src="img/svg/sSupervisory-img-1.svg", alt="").img-bg.d-none.d-md-block
+				+img(src="img/svg/sSupervisory-img-sm.svg", alt="").img-bg.d-md-none
 				+b.section-title
 					h2 Наблюдательный совет
 				mixin slide(img)

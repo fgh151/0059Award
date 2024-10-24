@@ -4,7 +4,7 @@ mixin sNews(data)
 		.container
 			+b.section-title
 				h2 Новости
-				a(href='#') Все новости
+				a.btn-link(href='#').d-none.d-lg-inline-block Все новости
 					+icon('arr-next')
 			+e.row.row
 				+e.col.col-lg-6
@@ -18,9 +18,11 @@ mixin sNews(data)
 					+newsItem('Президент наградил победителя специальной номинации Всероссийской муниципальной премии «Служение»')
 					+newsItem('Почти 3 миллиона голосов отдано за участников Всероссийской муниципальной премии «Служение»')
 					+newsItem('О промежуточных итогах народного голосования Всероссийской муниципальной премии «Служение»')
+			a.btn-link(href='#').d-lg-none Все новости
+				+icon('arr-next')
 	// end sNews
 
 mixin newsItem(title)
 	+b.news-item.fw-500.A(href='#')
-		.text-secondary 08.04.2024
+		+e.data.text-secondary 08.04.2024
 		+e.title.h5= title

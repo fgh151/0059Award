@@ -1,37 +1,15 @@
 <svg width="1312" height="840" viewBox="0 0 1312 840" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="1312" height="840" fill="#0F70CA"/>
-<g clip-path="url(#clip0_4905_60)">
+<path d="M128.82 480C128.82 607.47 232.53 711.18 360 711.18V840C161.5 840 0 678.5 0 480H128.82Z" fill="#0D5FAC"/>
+<path d="M1155 608.82C1027.53 608.82 923.82 712.53 923.82 840L795 840C795 641.5 956.5 480 1155 480L1155 608.82Z" fill="#0D5FAC"/>
+<path d="M1183.18 360C1183.18 232.53 1079.47 128.82 952 128.82L952 -3.14722e-05C1150.5 -1.41188e-05 1312 161.5 1312 360L1183.18 360Z" fill="#0D5FAC"/>
+<g clip-path="url(#clip0_4908_152)">
 <g style="mix-blend-mode:multiply">
-<path d="M314 231.18C441.47 231.18 545.18 127.47 545.18 2.75679e-06L674 4.29296e-06C674 198.5 512.5 360 314 360L314 231.18Z" fill="#D9D9D9"/>
-</g>
-</g>
-<g clip-path="url(#clip1_4905_60)">
-<g style="mix-blend-mode:multiply">
-<path d="M1155 608.82C1027.53 608.82 923.82 712.53 923.82 840L795 840C795 641.5 956.5 480 1155 480L1155 608.82Z" fill="#D9D9D9"/>
-</g>
-</g>
-<g clip-path="url(#clip2_4905_60)">
-<g style="mix-blend-mode:multiply">
-<path d="M1183.18 360C1183.18 232.53 1079.47 128.82 952 128.82L952 -3.14722e-05C1150.5 -1.41188e-05 1312 161.5 1312 360L1183.18 360Z" fill="#D9D9D9"/>
-</g>
-</g>
-<g clip-path="url(#clip3_4905_60)">
-<g style="mix-blend-mode:multiply">
-<path d="M128.82 480C128.82 607.47 232.53 711.18 360 711.18V840C161.5 840 0 678.5 0 480H128.82Z" fill="#D9D9D9"/>
+<path d="M314 231.18C441.47 231.18 545.18 127.47 545.18 2.75679e-06L674 4.29296e-06C674 198.5 512.5 360 314 360L314 231.18Z" fill="#0D5FAC"/>
 </g>
 </g>
 <defs>
-<clipPath id="clip0_4905_60">
+<clipPath id="clip0_4908_152">
 <rect width="360" height="360" fill="white" transform="translate(314 360) rotate(-90)"/>
-</clipPath>
-<clipPath id="clip1_4905_60">
-<rect width="360" height="360" fill="white" transform="translate(1155 480) rotate(90)"/>
-</clipPath>
-<clipPath id="clip2_4905_60">
-<rect width="360" height="360" fill="white" transform="translate(1312 360) rotate(-180)"/>
-</clipPath>
-<clipPath id="clip3_4905_60">
-<rect width="360" height="360" fill="white" transform="translate(0 480)"/>
 </clipPath>
 </defs>
 </svg>

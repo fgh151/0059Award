@@ -1,27 +1,86 @@
 // start .sUser
 .sUser {
-	--sPT: #{rem(40)};
+	--sPT: #{rem(26)};
 	--sPB: #{rem(24)};
 	// --sTPB: #{rem()};
+		@include media-breakpoint-up(lg) {
+      --sPT: #{rem(40)};
+      --sPB: #{rem(40)};
+    }
 	
 	.row {
 		// --bs-gutter-x: #{rem()};
 		--bs-gutter-y: #{rem(30)};
-	}
-	.section-title{
-		
-	}
-	&__wrap {
-    border-radius: $border-radius-sm;
-    padding: rem(29) rem(20);
-    background: #F3F8FB;
+    justify-content: center;
 		@include media-breakpoint-up(lg) {
-      padding: rem(29) rem(33);
+      justify-content: start;
+    }
+	}
+
+	&__top-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: rem(27);
+    margin-bottom: rem(59);
+		@include media-breakpoint-up(lg) {
+      flex-direction: row;
+      gap: rem(34);
+    }
+
+    a {
+      opacity: .3;
+      &:hover {
+        opacity: 1;
+      }
+      &.active {
+        opacity: 1;
+        color: $primary;
+        // text-decoration: underline;
+        position: relative;
+        padding-bottom: rem(3);
+
+        &:after {
+          content: '';
+          width: 100%;
+          height: 2px;
+          background: $primary;
+
+          position: absolute;
+          bottom: 0;
+          left: 0;
+        }
+      }
+    }
+  }
+
+	&__wrap {
+    padding: rem(20) rem(20) rem(30);
+    // background: #F3F8FB;
+    position: relative;
+
+    &::before {
+      content: '';
+      width: 100%;
+      height: 127%;
+      background: #F3F8FB;
+      border-radius: $border-radius-sm;
+
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      @include media-breakpoint-up(lg) {
+        content: none;
+      }
+    }
+		@include media-breakpoint-up(lg) {
+      padding: 0;
     }
 	}
 
   &__item:not(:last-child) {
-		margin-bottom: rem(33px);
+		margin-bottom: rem(50px);
 		@include media-breakpoint-up(lg) {
 			margin-bottom: rem(44);
 		}
@@ -29,16 +88,39 @@
 
 	&__item {
 		display: grid;
-    gap: rem(10);
+    gap: rem(0);
     grid-template-columns: 1fr;
 		@include media-breakpoint-up(md) {
-      grid-template-columns: repeat(2,1fr) 100px;
+      grid-template-columns: repeat(2,1fr);
     }
 		@include media-breakpoint-up(lg) {
       gap: rem(30);
-      grid-template-columns: repeat(2,1fr) .5fr;
     }
 	}
+  .sUser__item-2 {
+		@include media-breakpoint-up(xl) {
+      grid-template-columns: repeat(2,1fr) 1.4fr;
+      align-items: end;
+    }
+  }
+
+  &__btns-wrap {
+    display: grid;
+    grid-template-columns: 1fr .3fr;
+    gap: rem(12);
+    margin-top: rem(30);
+		@include media-breakpoint-up(md) {
+      max-width: rem(305);
+      width: rem(305);
+    }
+		@include media-breakpoint-up(xxl) {
+      margin-left: auto;
+    }
+
+    .btn {
+      --bs-btn-padding-x: #{rem(5)};
+    }
+  }
 
 	.upload-avatar__input-wrap {
 		display: block;
@@ -72,8 +154,13 @@
 
 	&__person {
     line-height: 1;
-		font-size: rem(20);
+		font-size: rem(30);
     font-weight: 500;
+		@include media-breakpoint-up(lg) {
+      font-size: rem(40);
+      grid-column: 1/ span 2;
+      max-width: 406px;
+    }
 	}
 
 	.form-wrap__input-wrap {

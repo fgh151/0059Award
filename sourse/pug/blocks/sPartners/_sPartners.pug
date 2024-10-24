@@ -4,9 +4,9 @@ mixin sPartners(data)
 		.container
 			if data
 				+b.section-title
-					h5= data
+					h2= data
 			+e.row.row
-				+partnerItem('')
+				//- +partnerItem('')
 				+partnerItem('sPartners-logo-1.svg')
 				+partnerItem('sPartners-logo-2.svg')
 				+partnerItem('sPartners-logo-3.svg')
@@ -29,6 +29,10 @@ mixin sPartners(data)
 				+partnerItem('sPartners-logo-20.svg')
 				+partnerItem('sPartners-logo-21.svg')
 				+partnerItem('sPartners-logo-22.svg')
+				+b.partner-item--no-border
+					a.btn.btn-dark(href='#') Стать партнером
+				+b.partner-item--no-border
+					a.btn.btn-link(href='mailto:partners@spremia.ru') partners@spremia.ru
 	// end sPartners
 
 mixin sPartners2(data)
@@ -39,7 +43,7 @@ mixin sPartners2(data)
 				+b.section-title
 					h5= data
 			+e.row.row
-				+partnerItem('')
+				//- +partnerItem('')
 				+partnerItem('sPartners-logo-1.svg')
 				+partnerItem('sPartners-logo-2.svg')
 				+partnerItem('sPartners-logo-3.svg')
@@ -61,7 +65,10 @@ mixin sPartners2(data)
 				+partnerItem('sPartners-logo-19.svg')
 				+partnerItem('sPartners-logo-20.svg')
 				+partnerItem('sPartners-logo-21.svg')
-				+partnerItem('sPartners-logo-22.svg')
+				+b.partner-item--no-border
+					a.btn.btn-dark(href='#') Стать партнером
+				+b.partner-item--no-border
+					a.btn.btn-link(href='mailto:partners@spremia.ru') partners@spremia.ru
 	// end sPartners
 
 mixin sPartners3(data)

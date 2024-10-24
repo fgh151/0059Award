@@ -1,18 +1,22 @@
 // start .sArticle
 .sArticle {
-	--sPT: #{rem(190)};
+	--sPT: #{rem(184)};
 	--sPB: #{rem(40)};
 	// --sTPB: #{rem()};
   @include media-breakpoint-up(xxl) {
-    --sPT: #{rem(220)};
+    --sPT: #{rem(210)};
   }
 	&__row {
-		// --bs-gutter-x: #{rem()};
 		--bs-gutter-y: var(--bs-gutter-x);
+    @include media-breakpoint-down(md) {
+      --bs-gutter-x: #{rem(24)};
+    }
 	}
 	h2 {
-    font-size: rem(48);
     max-width: rem(1200);
+    @include media-breakpoint-up(xl) {
+      font-size: rem(48);
+    }
   }
 
 	&__link-back{
@@ -22,12 +26,23 @@
       margin-right: rem(6);
       margin-top: rem(-2);
     }
+
+    display: inline-block;
+    margin-bottom: rem(46);
+    @include media-breakpoint-up(lg) {
+      margin-bottom: rem(34);
+    }
 	}
 
 	&__item {
-		margin-bottom: rem(34);
+		margin-bottom: rem(22);
+    @include media-breakpoint-up(lg) {
+      margin-bottom: rem(34);
+    }
     &:last-child {
+      @include media-breakpoint-up(lg) {
       margin-top: rem(48);
+      }
       margin-bottom: 0;
     }
 	}
@@ -36,7 +51,10 @@
     position: relative;
     border-radius: $border-radius;
     overflow: hidden;
-    min-height: rem(287);
+    min-height: rem(240);
+    @include media-breakpoint-up(lg) {
+      min-height: rem(287);
+    }
 
     img {
       z-index: 1;
@@ -44,9 +62,19 @@
     }
 	}
 
+	&__date {
+    @include media-breakpoint-down(md) {
+      font-size: rem(13);
+    }
+  }
+
   p {
     text-wrap: pretty;
     margin-bottom: rem(25);
+    line-height: 1.18;
+    @include media-breakpoint-up(lg) {
+      margin-bottom: rem(20);
+    }
   }
 
 	@include media-breakpoint-up(xl) {}

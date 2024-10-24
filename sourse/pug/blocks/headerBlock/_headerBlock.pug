@@ -18,7 +18,16 @@ mixin headerBlock1(img, title)
 	// start headerBlock
 	+b.headerBlock--second.section#headerBlock&attributes(attributes)
 		+img(src=`img/sHeaderBlock-${img}.png`, alt="").img-bg
-		.container
+		.container: .wrap
+			+b.section-title
+				h1=title
+	// end headerBlock
+
+mixin headerBlockSm(img, title)
+	// start headerBlock
+	+b.headerBlock.headerBlock--small.section#headerBlock&attributes(attributes)
+		+img(src=`img/sHeaderBlock-${img}.png`, alt="").img-bg
+		.container: .wrap
 			+b.section-title
 				h1=title
 	// end headerBlock

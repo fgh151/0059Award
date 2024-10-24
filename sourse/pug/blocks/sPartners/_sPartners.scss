@@ -1,8 +1,12 @@
 // start .sPartners
 #sPartners2 {
-	--sPT: #{rem(36)};
+	--sPT: #{rem(30)};
 	--sPB: #{rem(20)};
 	--sTPB: #{rem(20)};
+  @include media-breakpoint-up(lg) {
+    --sPT: #{rem(36)};
+    --sPB: #{rem(80)};
+  }
 }
 // start .sPartners
 #sPartners3 {
@@ -18,6 +22,7 @@
 	
   @include media-breakpoint-up(lg) {
     --sPB: #{rem(98)};
+    --sTPB: #{rem(100)};
   }
 	&__row{
 		// --bs-gutter-x: #{rem()};
@@ -30,6 +35,10 @@
 			--bs-gutter-y: #{rem(32)};
 		}
 	}
+
+  h5 {
+    font-size: rem(24)
+  }
 
   .partner-item {
 		img{
@@ -66,16 +75,32 @@
 .partner-item {
 	@include block(1,1);
 	// max-width: rem(210);
-	border: 1px solid $gray-400;
-  border-radius: rem(6);
+  &:not(.partner-item--no-border) {
+    border: 1px solid $gray-400;
+    border-radius: rem(6);
+    padding: rem(10);
+  }
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: rem(10);
-	width: calc(100% / var(--cardCount) - var(--bs-gutter-x));
+  width: calc(100% / var(--cardCount) - var(--bs-gutter-x));
 	img {
 		max-height: 100%;
 	}
+
+  &--no-border {
+    padding-left: 0;
+    padding-right: 0;
+    @include media-breakpoint-down(md) {
+      width: 100%;
+      --ratio: auto;
+      display: none;
+      .btn {
+        margin-top: rem(20);
+        width: 100%;
+      }
+    }
+  }
 }
 
 

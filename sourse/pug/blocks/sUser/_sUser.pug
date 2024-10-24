@@ -2,6 +2,12 @@ mixin sUser(data)
 	// start sUser
 	+b.SECTION.sUser.section#sUser&attributes(attributes)
 		.container
+			+e.top-nav
+				a(href='#') Мои заявки
+				a(href='#') Мои сертификаты
+				a(href='#').active Профиль
+				a(href='#') Голосование
+				a(href='#') Анкета для финального опроса
 			+b.form-wrap
 				.row
 					+e.col.col-auto
@@ -11,14 +17,20 @@ mixin sUser(data)
 						.sUser__wrap
 							.sUser__item
 								.sUser__person Муклин Василий Геннадьевич
-								a.sUser__link.fw-500(href="#") Редактировать профиль
-									+icon('pencil')
-								a.sUser__link.sUser__return-link.fw-500.ms-auto(href="#") Выйти
-							.sUser__item
+								//- a.sUser__link.fw-500(href="#") Редактировать профиль
+								//- 	+icon('pencil')
+								//- a.sUser__link.sUser__return-link.fw-500.ms-auto(href="#") Выйти
+							.sUser__item.sUser__item-2
 								.sUser__email
 									+input('', 'email', 'E-mail')(value="email@email.ru")
 								.sUser__tel
 									+input('', 'tel', 'Телефон')(value="+7 (000) 000 00 00")
+								+btnsCollect
 
 
 	// end sUser
+
+mixin btnsCollect
+	.sUser__btns-wrap
+		.btn.btn-outline-primary(href='#') Редактировать профиль
+		.btn.btn-outline-dark(href='#') Выйти

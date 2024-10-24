@@ -1,38 +1,65 @@
 // start .sNominant
 .sNominant {
 	--sPT: #{rem(32)};
-	--sPB: #{rem(56)};
-	--sTPB: #{rem(0)};
+	--sPB: #{rem(32)};
+	--sTPB: #{rem(33)};
+  @include media-breakpoint-up(lg) {
+    --sPB: #{rem(56)};
+    --sTPB: #{rem(0)};
+  }
 	
 	&__row{
-		// --bs-gutter-x: #{rem()};
-		--bs-gutter-y: var(--bs-gutter-x);
-	}
-
-	&__item {
-		margin-bottom: rem(22);
+		--bs-gutter-y: #{rem(8)};
     @include media-breakpoint-up(lg) {
-      margin-top: rem(10);
-      margin-bottom: rem(42);
+      --bs-gutter-y: var(--bs-gutter-x);
     }
 	}
 
+	&__item {
+		margin-bottom: rem(0);
+    @include media-breakpoint-up(lg) {
+      margin-top: rem(10);
+      margin-bottom: rem(38);
+    }
+
+	}
+
   .item-long {
+    p {
+      max-width: rem(270);
+      margin-bottom: rem(79);
+    }
+
     .download-file {
       @include media-breakpoint-up(lg) {
-        min-height: rem(311);
+        min-height: rem(314);
+      }
+    }
+  }
+
+  .download-file {
+    @include media-breakpoint-up(lg) {
+      padding-bottom: rem(28);
+      p {
+        margin-bottom: rem(28);
       }
     }
   }
 
   .download-file:not(:last-child) {
-    margin-bottom: var(--bs-gutter-x);
+    margin-bottom: rem(8);
+    @include media-breakpoint-up(lg) {
+      margin-bottom: calc(var(--bs-gutter-x) - 4px);
+    }
   }
 
   &__btn-wrap {
     display: flex;
     justify-content: space-between;
     gap: rem(10);
+    @include media-breakpoint-down(lg) {
+      margin-bottom: rem(20);
+    }
 
     .btn {
       width: 50%;
@@ -45,10 +72,7 @@
   }
 
   .btn-primary {
-    width: 100%;
-    @include media-breakpoint-up(lg) {
-      width: rem(192);
-    }
+    width: rem(192);
   }
 
 	@include media-breakpoint-up(xl) {}

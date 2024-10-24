@@ -2,36 +2,56 @@
 	// start .sContent
 	.sContent {
 	
-	--sPT: #{rem(36)};
+	--sPT: #{rem(28)};
 	--sPB: #{rem(34)};
+  @include media-breakpoint-up(lg) {
+    --sPT: #{rem(36)};
+    --sPB: #{rem(34)};
+  }
 	// --sTPB: #{rem()};
-	&__row{
+	&__row {
 		// --bs-gutter-x: #{rem()};
 		--bs-gutter-y: #{rem(20)};
+
     @include media-breakpoint-up(lg) {
-      --bs-gutter-y: var(--bs-gutter-x);
+      --bs-gutter-y:  #{rem(42)};
+    }
+
+    &:not(:last-child){
+      margin-bottom: rem(70);
+      @include media-breakpoint-up(lg) {
+        margin-bottom: rem(78);
+        }
     }
 	}
-	.section-title{
-		
-	}
-	&__col{
 
-	}
+  @include media-breakpoint-down(lg) {
+    .col-lg-6:not(:last-child) .content-card {
+      margin-bottom: rem(40);
+    }
+  }
+
+	.h5 {
+    font-size: rem(24);
+    margin-bottom: rem(39);
+    @include media-breakpoint-down(lg) {
+      text-align: center;
+    margin-bottom: rem(33);
+    }
+  }
+
 	.title.top-line {
-    margin-top: rem(30);
+    margin-top: rem(44);
     @include media-breakpoint-up(lg) {
       margin-top: rem(40);
     }
     @include media-breakpoint-down(lg) {
       &::before {
-        top: -24px;
+        top: -36px;
       }
     }
   }
-	&__slide{
-		height: auto;
-	}
+
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}
@@ -47,28 +67,43 @@
 
 .content-card {
   display: flex;
-  gap: rem(16);
+  gap: rem(33);
   align-items: center;
-  // align-items: flex-start;
-  @include media-breakpoint-up(lg) {
-    gap: rem(33);
+
+  @include media-breakpoint-down(lg) {
+    flex-direction: column;
+    .content-card__content {
+      text-align: center;
+    }
   }
 
   &__img-wrap {
     position: relative;
-    border-radius: rem(12);
+    border-radius: $border-radius;
     overflow: hidden;
     flex-shrink: 0;
-    --img-w: 100px;
+    --img-w: 150px;
     width: var(--img-w);
     height: var(--img-w);
-    @include media-breakpoint-up(md) {
-      --img-w: 120px;
-    }
     @include media-breakpoint-up(lg) {
       --img-w: 192px;
-      border-radius: $border-radius;
     }
+  }
+
+  &--darken {
+    .content-card__img-wrap {
+      &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      background: $body-color;
+      opacity: .05;
+    }
+  }
   }
 
   &__content {
@@ -79,7 +114,7 @@
   }
 
   &__name {
-    margin-bottom: rem(10);
+    margin-bottom: rem(20);
     @include media-breakpoint-up(lg) {
       margin-bottom: rem(20);
     }
@@ -89,7 +124,7 @@
     opacity: .5;
     text-wrap: balance;
     @include media-breakpoint-down(md) {
-      font-size: rem(14);
+      // font-size: rem(14);
     }
   }
 }

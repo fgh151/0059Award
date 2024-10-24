@@ -20,7 +20,7 @@ mixin winnerCard(num, text)
 	+b.winner-card
 		+e.row.row
 			+e.col.col-lg-8: +e.content
-				+e.title.text-primary.h4= num
+				+e.title.text-primary= num
 				+e.descr= text
 				+e.distr.text-primary Северо-кавказский федеральный округ
 			+e.col.col-lg-4: +e.btn-wrap: +e.btn.btn.btn-primary.link-modal-js(href='#modal-winner') Подробнее

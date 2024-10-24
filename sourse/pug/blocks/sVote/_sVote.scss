@@ -1,26 +1,56 @@
 // start .sVote
 .sVote {
 	--sPT: #{rem(32)};
-	--sPB: #{rem(44)};
-	--sTPB: #{rem(28)};
+	--sPB: #{rem(54)};
+	// --sTPB: #{rem(28)};
+  @include media-breakpoint-up(lg) {
+    // --sPT: #{rem(32)};
+    --sPB: #{rem(44)};
+    // --sTPB: #{rem(28)};
+  }
 	
-	&__row{
-		// --bs-gutter-x: #{rem()};
+	&__row {
 		--bs-gutter-y: var(--bs-gutter-x);
 	}
-	.section-title h2 {
+	.text-primary h2 {
+		line-height: 1.2;
+    margin-bottom: 0;
+    @include media-breakpoint-up(lg) {
 		line-height: 107%;
+    }
 	}
 	
   p {
     text-wrap: pretty;
+    // margin-bottom: rem(20);
+    line-height: 1.2;
+    @include media-breakpoint-up(lg) {
     margin-bottom: rem(20);
+    }
   }
 
   &__btn {
     width: 100%;
     @include media-breakpoint-up(lg) {
       width: rem(192);
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--bs-gutter-x);
+    @include media-breakpoint-up(lg) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: min-content 1fr;
+      align-items: start;
+    }
+  }
+
+  &__text {
+    @include media-breakpoint-up(lg) {
+      grid-row: 1 / span 2;
+      grid-column: 2/-1;
     }
   }
 
@@ -40,21 +70,40 @@
 }
 
 #sVoteProjects2 {
-  --sPT: #{rem(10)};
-	--sTPB: #{rem(30)};
+  --sPT: #{rem(26)};
+	--sTPB: #{rem(20)};
+	@include media-breakpoint-up(lg) {
+    --sPT: #{rem(10)};
+    --sTPB: #{rem(30)};
+  }
 }
 
 .sVoteProjects {
 	--sPT: #{rem(34)};
-	--sPB: #{rem(34)};
-	--sTPB: #{rem(56)};
+	--sPB: #{rem(54)};
+	--sTPB: #{rem(54)};
+	@include media-breakpoint-up(lg) {
+    --sPT: #{rem(34)};
+    --sPB: #{rem(34)};
+    --sTPB: #{rem(56)};
+  }
 
 	&__row {
 		--bs-gutter-y: var(--bs-gutter-x);
+		--bs-gutter-x: #{rem(10)};
+      @include media-breakpoint-up(lg) {
+        --bs-gutter-x: #{rem(30)};
+    }
 	}
 
   &__wrap-btn {
     margin-top: rem(74);
+    @include media-breakpoint-down(lg) {
+      margin-top: rem(54);
+      &::before {
+        content: none;
+      }
+    }
   }
 
   &__btn {
@@ -66,7 +115,7 @@
 }
 
 .vote-item {
-  --padding: 20px;
+  --padding: 18px;
   position: relative;
   border: 1px solid $body-color;
   border-radius: $border-radius-sm;
@@ -75,12 +124,18 @@
       pointer-events: none;
     }
   }
+  @include media-breakpoint-up(lg) {
+    --padding: 20px;
+  }
 
 
   label {
     padding: var(--padding);
     height: 100%;
-    min-height: rem(227);
+    min-height: rem(196);
+    @include media-breakpoint-up(lg) {
+      min-height: rem(227);
+    }
 
     position: relative;
 
@@ -101,7 +156,13 @@
     justify-content: space-between;
     
     padding: var(--padding);
-    min-height: rem(227);
+    min-height: rem(198);
+    @include media-breakpoint-up(lg) {
+      min-height: rem(220);
+      label {
+        min-height: auto;
+      }
+    }
     height: 100%;
     label {
       padding: 0;
@@ -127,7 +188,10 @@
 
   .custom-input__text {
     display: inline-block;
-    max-width: calc(100% - 52px);
+    max-width: 190px;
+    @include media-breakpoint-up(lg) {
+      max-width: calc(100% - 52px);
+    }
   }
 }
 

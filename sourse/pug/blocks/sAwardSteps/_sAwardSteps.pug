@@ -4,12 +4,12 @@ mixin sAwardSteps(data)
 		.container
 			+b.section-title
 				h2 Этапы премии
-				a(href='#') Все этапы
+				a.btn-link(href='#').d-none.d-lg-inline-block Все этапы
 					+icon('arr-next')
-			+e.slider--js
+			+e.slider--js(activeslide="0")
 				+arrow
 				.swiper-wrapper
-					.swiper-slide: +awardStep('13 ноября', '').--blue
+					.swiper-slide: +awardStep('13 ноября', '')
 						+e.title.h5.fw-500 Подача заявок<br> участниками
 					.swiper-slide: +awardStep('21 января', '')
 						+e.title.h5.fw-500 Первичный <br>анализ заявок
@@ -19,37 +19,49 @@ mixin sAwardSteps(data)
 					.swiper-slide: +awardStep('31 марта', 'Народное голосование')
 					.swiper-slide: +awardStep('Апрель', '')
 						+e.title.h5.fw-500 Заседание наблюдательного<br>совета
+			a.btn-link(href='#').d-lg-none Все этапы
+				+icon('arr-next')
 	// end sAwardSteps
 
 mixin sAwardSteps2(data)
 	// start sAwardSteps
 	+b.SECTION.sAwardSteps.section#sAwardSteps2&attributes(attributes)
 		.container
-			+e.row.row
-				+e.col.col-lg-4: +awardStep('13 ноября - 20 января', '')
+			+e.row-colored.row
+				+e.col.col-lg-4: +awardStepColored('13 ноября - 20 января', '')
 					+e.title.h5.fw-500 Прием заявок
-				+e.col.col-lg-4: +awardStep('21 января - 02 февраля', '')
+				+e.col.col-lg-4: +awardStepColored('21 января - 02 февраля', '').active
 					+e.title.h5.fw-500 Первичный <br>анализ заявок
-				+e.col.col-lg-4: +awardStep('3 февраля - 16 февраля', '')
-					+e.title.h5.fw-500 Перекрестная экспертиза
-				+e.col.col-lg-4: +awardStep('17 февраля -11 марта', '')
+				+e.col.col-lg-4: +awardStepColored('3 февраля - 16 февраля', '')
+					+e.title.h5.fw-500 Перекрестная<br>экспертиза
+				+e.col.col-lg-4.order-lg-5: +awardStepColored('17 февраля -11 марта', '')
 					+e.title.h5.fw-500 Голосование<br>экспертного совета
-				+e.col.col-lg-4: +awardStep('31 марта - 13 апреля', '')
-					+e.title.h5.fw-500 Народное голосование
-				+e.col.col-lg-4: +awardStep('Апрель', '')
+				+e.col.col-lg-4.order-lg-4: +awardStepColored('31 марта - 13 апреля', '')
+					+e.title.h5.fw-500 Народное<br>голосование
+				+e.col.col-lg-4.order-lg-3: +awardStepColored('Апрель', '')
 					+e.title.h5.fw-500 Заседание наблюдательного<br>совета
-				+e.col.col-lg-12: +awardStepBlue('Апрель', '')
+				+e.col.col-lg-12.order-lg-last: +awardStepColored('Апрель', '', 'blue').--blue
 					+e.title.h5.fw-500 Церемония награждения
+				<svg class='line' width="1259" height="441" viewBox="0 0 1259 441" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M0 3H1206C1233.61 3 1256 25.3858 1256 53V257C1256 284.614 1233.61 307 1206 307H53C25.3858 307 3 329.386 3 357V441" stroke="url(#paint0_linear_3142_122)" stroke-width="5" />
+					<defs>
+						<linearGradient id="paint0_linear_3142_122" x1="626.565" y1="341" x2="626.565" y2="-109" gradientUnits="userSpaceOnUse">
+							<stop offset="0.273026" stop-color="#0F70CA" />
+							<stop offset="1" stop-color="white" />
+						</linearGradient>
+					</defs>
+				</svg>
+				//- +img(src='img/svg/line.svg').line
 
 mixin sAwardSteps3(data)
 	// start sAwardSteps
 	+b.SECTION.sAwardSteps.section#sAwardSteps2&attributes(attributes)
 		.container
 			+e.row.row
-				+e.col.col-lg-4: +awardStepWithIcon('Участникам', 'support@spremia.ru','people')
-				+e.col.col-lg-4: +awardStepWithIcon('CМИ', 'pr@spremia.ru','news')
-				+e.col.col-lg-4: +awardStepWithIcon('Партнерам', 'partners@spremia.ru','chat')
-				+e.col.col-lg-4: +awardStepWithIcon('Общие вопросы', 'org@spremia.ru','touch')
+				+e.col.col-lg-6: +awardStepWithIcon('Участникам', 'support@spremia.ru','people')
+				+e.col.col-lg-6: +awardStepWithIcon('Общие вопросы', 'org@spremia.ru','touch')
+				+e.col.col-lg-6: +awardStepWithIcon('CМИ', 'pr@spremia.ru','news')
+				+e.col.col-lg-6: +awardStepWithIcon('Партнерам', 'partners@spremia.ru','chat')
 
 mixin awardStepWithIcon(data, title, icon)
 	+b.award-step--with-icon.A(href=`mailto:${title}`)
@@ -71,9 +83,19 @@ mixin awardStep(data, title)
 
 mixin awardStepBlue(data, title)
 	+b.award-step--blue.A(href='#')
-		+img(src="img/svg/stages-bg.svg", alt="").img
 		+e.data.fw-500= data
 		if title
 			+e.title.h5.fw-700= title
+		if block
+			block
+
+mixin awardStepColored(data, title, img)
+	+b.award-step--colored.A(href='#')&attributes(attributes)
+		if img
+			+img(src="img/svg/stages-bg.svg", alt="").img.d-none.d-lg-block
+			+img(src="img/svg/stages-bg-mob.svg", alt="").img.d-lg-none
+		+e.data.color-add.fw-500= data
+		if title
+			+e.title.h5.fw-500= title
 		if block
 			block

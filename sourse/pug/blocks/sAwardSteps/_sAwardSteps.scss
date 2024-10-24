@@ -1,11 +1,18 @@
 // start .sAwardSteps
 #sAwardSteps2 {
   
-	--sPT: #{rem(42)};
+	--sPT: #{rem(26)};
 	--sPB: #{rem(34)};
-  .award-step:not(.award-step--blue) .award-step__title {
-    max-width: rem(250);
+  @include media-breakpoint-up(lg) {
+    --sPT: #{rem(62)};
+    --sPB: #{rem(64)};
   }
+  .award-step .award-step__title {
+    @include media-breakpoint-down(lg) {
+    max-width: rem(250);
+    }
+  }
+
 }
 .sAwardSteps {
 	// --sPT: #{rem(60)};
@@ -13,9 +20,104 @@
   @include media-breakpoint-up(lg) {
     --sTPB: #{rem(52)};
   }
-	&__row{
-		--bs-gutter-y: #{rem(30)};
+
+	&__row {
+		--bs-gutter-y: #{rem(10)};
+    @include media-breakpoint-up(lg) {
+      --bs-gutter-y: #{rem(30)};
+    }
 	}
+
+  &__row-colored {
+
+		--bs-gutter-y: #{rem(46)};
+    @include media-breakpoint-up(lg) {
+      --bs-gutter-y: #{rem(40)};
+    }
+    @include media-breakpoint-up(xl) {
+      --bs-gutter-y: #{rem(70)};
+    }
+    @include media-breakpoint-up(xxl) {
+      --bs-gutter-y: #{rem(116)};
+    }
+    position: relative;
+
+    .order-lg-last {
+      .award-step:before {
+        content: none;
+      }
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: rem(4);
+      background: linear-gradient(180deg, rgba(171, 205, 237, 1) 0%, rgba(15, 112, 202, 1) 100%);
+      left: 50%;
+      transform: translateX(-50%);
+      top: calc(var(--bs-gutter-y) + 10px);
+      height: calc(100% - var(--bs-gutter-y) - 20px);
+      z-index: -1;
+      @include media-breakpoint-up(lg) {
+        content: none;
+      }
+    }
+
+    &:after {
+      @include media-breakpoint-down(lg) {
+        content: '';
+        position: absolute;
+        display: block;
+        width: rem(26);
+        height: rem(26);
+        border-radius: 50%;
+        background-color: $blue-700;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        bottom: 0;
+        z-index: 5;
+      }
+    }
+
+    --right-pad: 30px;
+    @include media-breakpoint-up(xl) {
+      --right-pad: 58px;
+    }
+
+    .line {
+      display: none;
+      @include media-breakpoint-up(lg) {
+        display: inline-block;
+        position: absolute;
+        bottom: -1%;
+        left: 1px;
+        // height: 60%;
+        z-index: 1;
+        width: calc(100% - var(--right-pad));
+      }
+      @include media-breakpoint-up(xl) {
+        bottom: 3%;
+      }
+      @include media-breakpoint-up(xxl) {
+        bottom: 7%;
+      }
+    }
+
+    .sAwardSteps__col:nth-child(4) {
+      .award-step {
+        &:before {
+          @include media-breakpoint-up(lg) {
+            right: calc(var(--right-pad));
+            left: auto;
+            bottom: 50%;
+            transform: translate(50%, 50%);
+          }
+        }
+      }
+    }
+  }
+
 	.section-title{
 		display: flex;
     justify-content: space-between;
@@ -25,14 +127,17 @@
     }
 
     a {
-      color: $blue-600;
-      font-weight: 500;
       text-wrap: nowrap;
-      .icon {
-        transform: translateY(-5%);
-      }
     }
 	}
+
+  .btn-link {
+    color: $blue-600;
+    font-weight: 500;
+    .icon {
+      transform: translateY(-5%);
+    }
+  }
 
   &__slider--js {
     position: relative;
@@ -42,18 +147,36 @@
         min-height: rem(310);
       }
     }
+
+    .swiper-slide-active .award-step {
+      .award-step__data {
+        color: #E8F1F7;
+      }
+
+      background: $primary;
+      color: $white;
+    }
+
+    margin-bottom: rem(24);
     @include media-breakpoint-up(lg) {
       overflow: hidden;
+      margin-bottom: rem(0);
     }
 
     @include media-breakpoint-down(md) {
-      max-width: 80%;
+      max-width: 75%;
     }
   }
-  --swiperArrowPosition: 0;
+  --swiperArrowPosition: 5px;
+  @include media-breakpoint-up(lg) {
+    --swiperArrowPosition: 0;
+  }
   .swiper-button-hand {
-    bottom: 10px;
+    bottom: 17px;
     top: auto;
+    @include media-breakpoint-up(lg) {
+      bottom: 10px;
+    }
 
     .icon {
       stroke: $body-color;
@@ -62,9 +185,9 @@
     }
 
     
-    @include media-breakpoint-down(lg) {
-      display: none;
-    }
+    // @include media-breakpoint-down(lg) {
+    //   display: none;
+    // }
   }
 
   h2 {
@@ -81,14 +204,14 @@
 } // end.sAwardSteps
 
 .award-step {
-  padding: rem(24) rem(30);
+  padding: rem(34) rem(30);
   background: var(--color-card-bg);
   border-radius: 24px;
   height: 100%;
   &:not(.award-step--blue) {
-    min-height: rem(210);
+    // min-height: rem(210);
     @include media-breakpoint-up(lg) {
-      min-height: rem(310);
+      // min-height: rem(310);
     }
   }
 
@@ -104,9 +227,10 @@
   }
 
   &__title {
-    text-wrap: balance;
+    // text-wrap: balance;
     position: relative;
     z-index: 2;
+    font-size: rem(24);
   }
 
   &--blue {
@@ -117,12 +241,11 @@
 
     .img {
       height: 100%;
-      width: 110%;
-      object-fit: cover;
+      object-fit: contain;
       right: 0;
       @include media-breakpoint-up(lg) {
         width: 100%;
-        // object-fit: contain;
+        object-fit: cover;
       }
       @include media-breakpoint-up(xxl) {
         right: 20px;
@@ -138,9 +261,17 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding-left: rem(40);
+    @include media-breakpoint-down(lg) {
+      padding: rem(30) rem(40) rem(26);
+    }
+    @include media-breakpoint-up(lg) {
+      min-height: rem(238) !important;
+    }
 
     .icon {
       fill: $blue-600;
+      margin-bottom: rem(26);
     }
   }
 
@@ -148,5 +279,64 @@
     .award-step__data {
       color: #E8F1F7;
     }
+    @include media-breakpoint-up(lg) {
+      min-height: rem(134) !important;
+    }
+  }
+
+  &.active {
+    background: $primary;
+    color: $white;
+
+    .award-step__data {
+      color: #E8F1F7;
+    }
+  }
+
+  &--colored {
+    position: relative;
+    min-height: rem(188);
+    padding-top: rem(34);
+    @include media-breakpoint-between(lg, xxl) {
+      padding-left: rem(30);
+      .h5 {
+        font-size: rem(20);
+      }
+    }
+    @include media-breakpoint-up(lg) {
+      padding-right: rem(10);
+      min-height: rem(160);
+      padding-top: rem(30);
+    }
+    @include media-breakpoint-up(xl) {
+      min-height: rem(188);
+    }
+
+    &.active {
+      @include media-breakpoint-down(lg) {
+      &:before {
+        background-color: $blue-700;
+      }
+    }
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: rem(26);
+      height: rem(26);
+      border-radius: 50%;
+      background-color: $primary;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      bottom: 0;
+      z-index: 5;
+
+      @include media-breakpoint-up(lg) {
+        bottom: calc(var(--bs-gutter-y) / 2 * -1)
+      }
+    }
+
   }
 }

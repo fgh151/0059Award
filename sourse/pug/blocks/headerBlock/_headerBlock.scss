@@ -10,9 +10,51 @@
       --sTPB: #{rem(138)};
       }
   }
+
   &--second {
-    --sPT: #{rem(310)};
-    --sPB: #{rem(100)};
+    --sPT: #{rem(0)};
+    --sPB: #{rem(0)};
+    min-height: rem(267);
+    @include media-breakpoint-up(lg) {
+      min-height: rem(470);
+    }
+    .wrap {
+      position: absolute;
+      bottom: 20px;
+      left: var(--bg-gutter-x);
+      @include media-breakpoint-up(lg) {
+        bottom: 105px;
+      }
+    }
+    .container {
+      min-height: rem(267);
+      @include media-breakpoint-up(lg) {
+        min-height: rem(470);
+      }
+    }
+  }
+
+  &--small {
+    --sPT: #{rem(0)};
+    --sPB: #{rem(0)};
+    min-height: rem(267);
+    @include media-breakpoint-up(lg) {
+      min-height: rem(299);
+    }
+    .wrap {
+      position: absolute;
+      bottom: 20px;
+      left: var(--bg-gutter-x);
+      @include media-breakpoint-up(lg) {
+        bottom: 10px;
+      }
+    }
+    .container {
+      min-height: rem(267);
+      @include media-breakpoint-up(lg) {
+        min-height: rem(299);
+      }
+    }
   }
 
 	position: relative;

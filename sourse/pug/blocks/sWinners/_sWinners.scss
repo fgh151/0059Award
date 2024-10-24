@@ -1,30 +1,31 @@
 // start .sWinners
 .sWinners {
-	--sPT: #{rem(36)};
+	--sPT: #{rem(30)};
 	--sPB: #{rem(0)};
 	--sTPB: #{rem(30)};
-	
-	&__row{
-		// --bs-gutter-x: #{rem()};
-		// --bs-gutter-y: #{rem()};
-	}
-	.section-title{
-		
-	}
-	&__col{
-		
-	}
-	&__item{
-		
-	}
+  @include media-breakpoint-up(lg) {
+    --sPT: #{rem(36)};
+  }
 
   .winner-card {
-    margin-bottom: rem(43);
+    margin-bottom: rem(20);
+    @include media-breakpoint-up(lg) {
+      margin-bottom: rem(43);
+    }
+  }
+  .h2 {
+    @include media-breakpoint-down(sm) {
+      max-width: rem(304);
+    }
   }
 
   .nomination.top-line {
-    padding-top: rem(64);
-    margin-top: rem(64);
+    padding-top: rem(29);
+    margin-top: rem(50);
+    @include media-breakpoint-up(lg) {
+      padding-top: rem(64);
+      margin-top: rem(64);
+    }
     &:before {
       top: 0;
     }
@@ -49,35 +50,45 @@
 
 .winner-card {
   border: 2px solid $primary;
-  border-radius: $border-radius-sm;
+  border-radius: $border-radius;
 
   &__row {
     align-items: center;
-		--bs-gutter-y: #{rem(20)};
+		--bs-gutter-y: #{rem(40)};
+    @include media-breakpoint-up(lg) {
+      --bs-gutter-y: #{rem(20)};
+    }
   }
-  padding: rem(20);
+  padding: rem(32) rem(34) rem(46);
 	@include media-breakpoint-up(lg) {
+    border-radius: $border-radius-sm;
     padding: rem(32) 0 rem(38) rem(33);
   }
 
   &__title {
     margin-bottom: rem(32);
+    font-size: rem(30);
   }
 
   &__distr {
     font-size: rem(15);
+    @include media-breakpoint-down(lg) {
+      max-width: rem(170);
+    }
   }
 
   &__descr {
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-size: rem(20);
+    line-height: 1.2;
 
     margin-bottom: rem(24);
     @include media-breakpoint-up(lg) {
-      font-size: rem(20);
+      -webkit-line-clamp: 2;
     }
   }
 

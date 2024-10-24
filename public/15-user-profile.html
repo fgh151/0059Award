@@ -29,10 +29,12 @@
 			<div id="headerWrap"></div>
 			<main>
 				<!-- start headerBlock-->
-				<div class="headerBlock headerBlock--second section" id="headerBlock"><img class="img-bg" src="img/sHeaderBlock-expertise.png" alt="" loading="lazy"/>
+				<div class="headerBlock headerBlock headerBlock--small section" id="headerBlock"><img class="img-bg" src="img/sHeaderBlock-expertise.png" alt="" loading="lazy"/>
 					<div class="container">
-						<div class="section-title">
-							<h1>Личный кабинет</h1>
+						<div class="wrap">
+							<div class="section-title">
+								<h1>Личный кабинет</h1>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -40,6 +42,8 @@
 				<!-- start sUser-->
 				<section class="sUser section" id="sUser">
 					<div class="container">
+						<div class="sUser__top-nav"><a href="#">Мои заявки</a><a href="#">Мои сертификаты</a><a class="active" href="#">Профиль</a><a href="#">Голосование</a><a href="#">Анкета для финального опроса</a>
+						</div>
 						<div class="form-wrap">
 							<div class="row">
 								<div class="form-wrap__col col-auto">
@@ -56,12 +60,9 @@
 								<div class="form-wrap__col col-lg">
 									<div class="sUser__wrap">
 										<div class="sUser__item">
-											<div class="sUser__person">Муклин Василий Геннадьевич</div><a class="sUser__link fw-500" href="#">Редактировать профиль
-												<svg class="icon icon-pencil ">
-													<use xlink:href="img/svg/sprite.svg#pencil"></use>
-												</svg></a><a class="sUser__link sUser__return-link fw-500 ms-auto" href="#">Выйти</a>
+											<div class="sUser__person">Муклин Василий Геннадьевич</div>
 										</div>
-										<div class="sUser__item">
+										<div class="sUser__item sUser__item-2">
 											<div class="sUser__email">
 												<div class="form-wrap__input-wrap form-group">
 													<label><span class="form-wrap__input-title">E-mail</span><input class="form-wrap__input form-control" inputmode="email" name="email" type="email" placeholder="" value="email@email.ru"/>
@@ -75,6 +76,10 @@
 													</label>
 												</div>
 												<!-- +e.input-wrap-->
+											</div>
+											<div class="sUser__btns-wrap">
+												<div class="btn btn-outline-primary" href="#">Редактировать профиль</div>
+												<div class="btn btn-outline-dark" href="#">Выйти</div>
 											</div>
 										</div>
 									</div>
