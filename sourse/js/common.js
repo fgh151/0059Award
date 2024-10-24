@@ -177,6 +177,7 @@ function eventHandler() {
     }
 
     handleScroll()
+    window.scrollBy(0, 2);
 
     window.addEventListener('scroll', handleScroll);
   })
