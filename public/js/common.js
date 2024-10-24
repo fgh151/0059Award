@@ -143,33 +143,37 @@ function eventHandler() {
     function handleScroll() {
       const scrollPosition = window.scrollY || document.documentElement.scrollTop;
 
-      const bottomNav = document.querySelector('.top-nav').getBoundingClientRect().bottom
-      const isScrollingDown = scrollPosition > lastScrollPosition;
+      const topNav = document.querySelector('.top-nav');
+      if(topNav) {
 
-      if (scrollPosition >= 30) {
-        header.classList.add('header--js');
-      } else {
-        header.classList.remove('header--js');
+        const bottomNav = topNav.getBoundingClientRect().bottom
+        const isScrollingDown = scrollPosition > lastScrollPosition;
+
+        if (scrollPosition >= 30) {
+          header.classList.add('header--js');
+        } else {
+          header.classList.remove('header--js');
+        }
+
+        if (bottomNav < 0 && isScrollingDown) {
+          header.classList.add('change-logos--js');
+        } else if (!isScrollingDown && scrollPosition < 300 ) {
+          header.classList.remove('change-logos--js');
+        }
+
+        if (scrollPosition >= 400) {
+          header.classList.add('show');
+        } else {
+          header.classList.remove('show');
+        }
+
+        if (scrollPosition >= 400) {
+          header.classList.add('show');
+          header.classList.add('change-logos--js');
+        }
+
+        lastScrollPosition = scrollPosition;
       }
-
-      if (bottomNav < 0 && isScrollingDown) {
-        header.classList.add('change-logos--js');
-      } else if (!isScrollingDown && scrollPosition < 300 ) {
-        header.classList.remove('change-logos--js');
-      }
-
-      if (scrollPosition >= 400) {
-        header.classList.add('show');
-      } else {
-        header.classList.remove('show');
-      }
-
-      if (scrollPosition >= 400) {
-        header.classList.add('show');
-        header.classList.add('change-logos--js');
-      }
-
-      lastScrollPosition = scrollPosition;
     }
 
     handleScroll()
