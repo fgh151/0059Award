@@ -35,9 +35,10 @@ mixin top-nav(main)
 						.menu-mobile__inner
 							+e.row-inner.row
 								.col-md-auto
-									+e.logo(href='/'): +img('img/svg/logo-sl.svg')
+									+e.logo(href='/'): +img('img/svg/logo-sl.svg').sl
 								+e.inner-col.menu-inner.col-md
-									+img(src="img/menu-bg.png", alt="").img-bg
+									+img(src="img/menu-bg.png", alt="").d-none.d-lg-block.img-bg.img-bg-inner
+									+img(src="img/svg/menu-bg-mob.svg", alt="").d-lg-none.img-bg.img-bg-inner
 									+mnu()
 									+e.btn-wrap.text-center
 										+e.btn.btn.btn-primary(href='#') Подать заявку
@@ -49,14 +50,19 @@ mixin top-nav(main)
 											+e.lk(href='#'): +icon('exit')
 										+e.inner-col--mnu-toggle
 											+menu-toggle()
-				+e.btn-col.col-md-auto.order-last.order-md-0
+				+e.btn-col.col-md-auto
 					+e.btn.btn.btn-primary(href='#') Подать заявку
 					+e.date.ttu.text-center старт 13 ноября
 				.col-auto.ms-auto.order-last
 					.wrap
-						+e.btn-wrap.text-center.d-md-none
-							+e.btn.btn.btn-primary(href='#') Подать заявку
-							+e.date.ttu старт 13 ноября
+						if (!main)
+							+e.btn-wrap.text-center.d-md-none
+								+e.btn.btn.btn-primary(href='#') Подать заявку
+								+e.date.ttu старт 13 ноября
+						if (main)
+							+e.btn-wrap.text-center.d-md-none.visible-only-header-sroll.header-hid
+								+e.btn.btn.btn-primary(href='#') Подать заявку
+								+e.date.ttu старт 13 ноября
 						+e.lk(href='#').d-none.d-md-block: +icon('user')
 						if (!main)
 							+e.lk(href='#').d-none.d-md-block: +icon('exit')

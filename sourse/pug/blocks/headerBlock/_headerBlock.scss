@@ -1,14 +1,71 @@
 // start .headerBlock
 .headerBlock {
   &--main-page {
-    --sPT: #{rem(140)};
-    --sPB: #{rem(118)};
+    --sPT: #{rem(85)};
+    --sPB: #{rem(26)};
     // --sTPB: #{rem()}; 
+    @include media-breakpoint-up(md) {
+      --sPT: #{rem(200)};
+    }
     @include media-breakpoint-up(lg) {
       --sPT: #{rem(320)};
       --sPB: #{rem(118)};
       --sTPB: #{rem(138)};
       }
+  }
+  .top-nav2__btn-col {
+    display: flex;
+    gap: rem(14);
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: rem(60);
+  }
+  .line-r {
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 1px;
+      height: 100%;
+      left: 95%;
+      top: 0;
+      background: white;
+      @include media-breakpoint-up(lg) {
+        height: rem(192);
+        transform: translateY(-25%);
+        left: 75%;
+      }
+    }
+  }
+  .line-l {
+    position: relative;
+    &:after {
+      @include media-breakpoint-up(lg) {
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        // left: 0;
+        top: 0;
+        background: white;
+        height: rem(192);
+        transform: translateY(-25%);
+        right: 100%;
+      }
+    }
+  }
+
+  .logo-img {
+    @include media-breakpoint-down(lg) {
+      width: rem(76);
+      margin-right: 10vw;
+    }
+  }
+
+  .img2 {
+    @include media-breakpoint-down(lg) {
+      width: rem(63);
+    }
   }
 
   &--second {
@@ -81,6 +138,9 @@
     @include media-breakpoint-up(lg) {
       margin-left: rem(10);
     }
+    @include media-breakpoint-down(lg) {
+      display: none;
+    }
   }
 
   .container {
@@ -98,16 +158,18 @@
 	}
 
 	.right-wrap {
+    display: flex;
+    align-items: center;
+    gap: rem(23);
     @include media-breakpoint-up(lg) {
-      display: flex;
       flex-direction: column;
-      align-items: center;
       margin-top: rem(-24);
       margin-left: auto;
       max-width: max-content;
+      gap: rem(25);
     }
     .small {
-      margin-bottom: rem(25);
+      // margin-bottom: rem(25);
     }
   }
   

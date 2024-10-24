@@ -3,15 +3,18 @@ mixin headerBlock()
 	+b.headerBlock--main-page.section#headerBlock&attributes(attributes)
 		+img(src="img/sHeaderBlock-bg.png", alt="").img-bg
 		.container
+			.top-nav2__btn-col.d-md-none
+				+e.btn.btn.btn-primary(href='#') Подать заявку
+				+e.date.ttu.text-center старт 13 ноября
 			+e.row.row
-				+e.col.col-lg-3: +img(src="img/svg/logo-sl.svg", alt="")
+				+e.col.col-auto.col-lg-3.line-r: +img(src="img/svg/logo-sl.svg", alt="").logo-img
+				+e.col.col-auto.col-lg-2.order-lg-last.line-l: .right-wrap
+					.small Организатор
+					+img(src="img/svg/logo-varmsu-color.svg", alt="").img2
 				+e.col.col-lg-7
 					+b.section-title
 						h1 Всероссийская муниципальная премия «Служение»
 					p Проводится по поручению Президента и присваивается выдающимся представителям муниципального сообщества — людям, которые внесли особый вклад в развитие муниципальных образований и повышение качества жизни граждан.
-				+e.col.col-lg-2: .right-wrap
-					.small Организатор
-					+img(src="img/svg/logo-varmsu-color.svg", alt="")
 	// end headerBlock
 
 mixin headerBlock1(img, title)
