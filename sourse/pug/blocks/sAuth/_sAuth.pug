@@ -4,23 +4,26 @@ mixin sAuth(data)
 		.container
 			.tabs
 				+e.tabs-caption.tabs__caption
-					+e.tabs-btn.tabs__btn Авторизация
-					+e.tabs-btn.tabs__btn.active Регистрация
-				.tabs__content
+					+e.tabs-btn.tabs__btn.active Авторизация
+					+e.tabs-btn.tabs__btn Регистрация
+				.tabs__content.active
 					.card
 						+form-wrap
 							.row
 								.col-lg-6: +input('', 'text', 'Логин')
 								.col-lg-6: +input('', 'password', 'Пароль')
-								.col-lg-6: +input('', 'textarea', 'Я не робот')
+								.col-lg-6
+									+e.captcha
+										+img(src="img/captcha.png", alt="")
 							.auth-row
 								+e.btn.btn.btn-primary.BUTTON(type="submit") Войти
+								.d-md-none.password: a(href="#") Забыли пароль?
 								+e.btn.btn.btn-dark(href="#") Войти через VK
 								+e.btn.btn.btn-dark(href="#") Войти через OK
 							.forgot-link.mt-50
-								.password: a(href="#") Забыли пароль?
+								.password.d-none.d-md-inline: a(href="#") Забыли пароль?
 								.descr Если у Вас нет аккаунта, Вы можете его #[a(href="#") зарегистрировать]
-				.tabs__content.active
+				.tabs__content
 					.card.card_sm
 						+form-wrap
 							.fill.fw-500 Все поля обязательны для&nbsp;заполнения
@@ -33,6 +36,9 @@ mixin sAuth(data)
 							+e.pass-wrap.row
 								.col-lg-6: +input('', 'password', 'Пароль')
 								.col-lg-6: +input('', 'password', 'Повтор пароля')
+								.col-lg-6
+									+e.captcha
+										+img(src="img/captcha.png", alt="")
 							.forgot-link
 								+e.btn.btn.btn-primary.BUTTON(type="submit") Регистрация
 								.descr.descr_small При нажатии на кнопку «Регистрация» пользователь соглашается #[a(href="#") с условиями правил и обработки персональных данных]

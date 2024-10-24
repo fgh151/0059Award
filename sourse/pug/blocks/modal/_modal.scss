@@ -5,6 +5,9 @@
 .fancybox__content {
 	padding: 0;
 	max-width: 100%;
+  @include media-breakpoint-down(xl) {
+    max-width: calc(100% - 32px);
+  }
 }
 .modal-win {
 	// display: block;
@@ -16,7 +19,7 @@
 	padding: 40px;
   &--lg {
     width: 1310px;
-    padding: rem(50) 4vw;
+    padding: rem(30);
     @include media-breakpoint-up(lg) {
       padding: rem(77) rem(110);
     }
@@ -63,11 +66,16 @@
   .mb-10 {
     margin-bottom: rem(10);
   }
+  .mt-dop {
+    @include media-breakpoint-down(lg) {
+      margin-top: rem(38);
+    }
+  }
 
   &__wrap {
-    padding: rem(26) rem(20);
+    padding: rem(26) rem(30);
     @include media-breakpoint-up(lg) {
-      padding: rem(26) rem(30);
+      // padding: rem(26) rem(30);
     }
     border-radius: $border-radius-sm;
     &.wrap_blue {
@@ -76,7 +84,10 @@
   }
 
   &__item {
-    margin-bottom: rem(54);
+    margin-bottom: rem(33);
+    @include media-breakpoint-up(lg) {
+      margin-bottom: rem(54);
+    }
   }
   &__item-person {
     max-width: rem(415);
@@ -95,8 +106,11 @@
     position: relative;
     border-radius: $border-radius;
     overflow: hidden;
-    width: 192px;
+    width: 150px;
     margin-bottom: rem(30);
+    @include media-breakpoint-up(lg) {
+      width: 192px;
+    }
     img {
       width: 100%;
     }
@@ -107,7 +121,7 @@
     flex-direction: column;
     align-items: center;
     gap: rem(18);
-    width: rem(250);
+    // width: rem(250);
     padding-top: rem(40);
     padding-bottom: rem(40);
     @include media-breakpoint-up(lg) {
