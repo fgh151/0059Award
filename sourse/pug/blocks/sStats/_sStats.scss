@@ -88,28 +88,70 @@
 					transform: translate(100px, 599px);
 				}
 			}
+			&.reg-5 {
+        g path:first-child{
+          @include media-breakpoint-up(xl) {
+          transform: translateX(100px);
+          }
+        }
+      }
+			&.reg-1 {
+        g path:first-child{
+          @include media-breakpoint-up(xl) {
+            transform: translate(325px, 230px);
+          }
+        }
+      }
+
+			&.reg-2 {
+        g path:first-child{
+            @include media-breakpoint-up(xl) {
+              transform: translate(120px, 230px);
+          }
+        }
+      }
+
 			&.reg-3 {
 				transform: translateY(494px) translateX(0px);
 				& > g {
 					transform: translateX(44px);
+          path:first-child{
+            @include media-breakpoint-up(xl) {
+            transform: translateX(-50px);
+            }
+          }
 				}
 			}
 			&.reg-7 {
 				transform: translate(455px, 204px);
 				& > g {
 					transform: translate(-455px,-204px);
+          path:first-child{
+            @include media-breakpoint-up(xl) {
+            transform: translateX(280px);
+            }
+          }
 				}
 			}
 			&.reg-8 {
 				transform: translateX(743px);
 				.line-8 {
-					transform: translateX(-743px);
+					transform: translateX(-723px);
+          path:first-child {
+            transform: translate(990px, 221px);
+          }
 				}
 			}
 			&.reg-9 {
 				transform: translateX(12px) translateY(474px);
 				& > g {
 					transform: translateX(12px);
+          
+          path:first-child{
+            @include media-breakpoint-up(xl) {
+            transform: translate(-40px, 30px);
+            }
+          }
 				}
 			}
 			g {
@@ -130,7 +172,7 @@
 		// max-width: rem(1076);
 		// margin: 0 auto;
     margin-bottom: rem(65);
-    @include media-breakpoint-up(lg) {
+    @include media-breakpoint-up(xl) {
       margin-bottom: rem(95);
       max-width: rem(1205);
       margin-left: auto;
@@ -141,7 +183,7 @@
 			--bs-gutter-y: #{rem(33)};
 
 			justify-content: center;
-			@include media-breakpoint-up(lg) {
+			@include media-breakpoint-up(xl) {
 				--bs-gutter-y: 0;
 			}
 			@include media-breakpoint-up(xl) {
@@ -155,7 +197,7 @@
 	}
 
 	&__col {
-		@include media-breakpoint-up(lg) {
+		@include media-breakpoint-up(xl) {
 			max-width: calc(rem(251) + var(--bs-gutter-x));
 		}
 	}
@@ -179,7 +221,7 @@
       max-width: rem(225);
       margin: auto;
     }
-		@include media-breakpoint-up(lg) {
+		@include media-breakpoint-up(xl) {
 			cursor: pointer;
 		}
 		@include media-breakpoint-up(xl) {
@@ -189,7 +231,7 @@
 			cursor: pointer;
 		}
 		&:hover, &.active {
-			@include media-breakpoint-up(lg) {
+			@include media-breakpoint-up(xl) {
 				box-shadow: none;
 				color: #fff;
 				background-color: $primary;
