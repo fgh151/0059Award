@@ -17,6 +17,15 @@
 	width: rem(500);
 	// min-height: 100%; 
 	padding: 40px;
+
+  .vote-item__stars {
+    position: static;
+    margin: rem(36) 0;
+    @include media-breakpoint-up(md) {
+      margin-bottom: 0;
+    }
+  }
+
   &--lg {
     width: 1310px;
     padding: rem(30);

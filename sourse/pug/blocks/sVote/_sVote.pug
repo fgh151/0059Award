@@ -22,30 +22,38 @@ mixin sVoteProjects(btn)
 			+e.row.row
 				- const wrapClass="col-md-6 col-lg-4 col-xl-3"
 				+e.col(class= wrapClass)
-					+voteItem('Название проекта 1 может быть разного размера').--js
+					+voteItem('Название проекта 1 может быть разного размера',1).--js
 				+e.col(class= wrapClass)
-					+voteItem('Название проекта 1').--js
+					+voteItem('Название проекта 1', 3).--js
 				+e.col(class= wrapClass)
-					+voteItem('Название проекта 1 может быть разного размера').--js
+					+voteItem('Название проекта 1 может быть разного размера',1).--js
 				+e.col(class= wrapClass)
-					+voteItem('Название проекта 1').--js
+					+voteItem('Название проекта 1',1).--js
 				+e.col(class= wrapClass)
-					+voteItem('Название проекта 1 может быть разного размера').--js
+					+voteItem('Название проекта 1 может быть разного размера',2).--js
 				+e.col(class= wrapClass)
-					+voteItem('Название проекта 1').--js
+					+voteItem('Название проекта 1', 3).--js
 				+e.col(class= wrapClass)
-					+voteItem('Название проекта 1 может быть разного размера').--js
+					+voteItem('Название проекта 1 может быть разного размера', 3, 'sl').--js
 				+e.col(class= wrapClass)
-					+voteItem('Название проекта 1').--js
+					+voteItem('Название проекта 1', 2, 'sl').--js
 				+e.col(class= wrapClass)
-					+voteItem('Название проекта 1 может быть разного размера').--js
+					+voteItem('Название проекта 1 может быть разного размера', 1, 'sl').--js
 				+e.col(class= wrapClass)
-					+voteItem('Название проекта 1').--js
+					+voteItem('Название проекта 1', 1, 'sl').--js
 			if btn
 				+e.wrap-btn.text-center.top-line: +e.btn.btn.btn-primary(href='#')= btn
 
-mixin voteItem(title)
+mixin voteItem(title, star, item='award')
 	+b.vote-item&attributes(attributes)
+		if star
+			+e.stars(data-star=`${star}`)
+				+img(src=`img/svg/${item}.svg`, alt="")
+				+img(src=`img/svg/${item}.svg`, alt="")
+				+img(src=`img/svg/${item}.svg`, alt="")
+			//- +icon(`${item}`)
+			//- +icon(`${item}`)
+			//- +icon(`${item}`)
 		+in-c('checkbox', title, 'text')
 		+buttonOpenModal
 

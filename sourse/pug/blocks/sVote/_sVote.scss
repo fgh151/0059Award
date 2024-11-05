@@ -150,6 +150,13 @@
       }
     }
   }
+
+  &__stars {
+    position: absolute;
+    bottom: var(--padding);
+    left: var(--padding);
+  }
+
   &--btn {
     display: flex;
     flex-direction: column;
@@ -209,5 +216,25 @@
     height: 1px;
     background: $body-color;
     position: relative;
+  }
+}
+
+.vote-item__stars {
+  img {
+    opacity: .1;
+    max-height: rem(41);
+    // font-size: rem(34);
+    // fill: $primary;
+
+    &:not(:last-child) {
+      margin-right: rem(14);
+    }
+  }
+}
+@for $n from 1 through 3 {
+  .vote-item__stars[data-star="#{$n}"] {
+    img:nth-child(-n + #{$n}) {
+      opacity: 1;
+    }
   }
 }

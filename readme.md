@@ -26,4 +26,5 @@
 2. <https://megafronteam.github.io/0059Award/00-modal.html>
 
 
-#### In progress
+#### 05.11.2024
+22. <https://megafronteam.github.io/0059Award/20-project.html>

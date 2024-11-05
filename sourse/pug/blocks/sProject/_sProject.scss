@@ -1,0 +1,113 @@
+// start .sProject
+.sProject {
+	--sPT: #{rem(26)};
+	--sPB: #{rem(20)};
+	// --sTPB: #{rem()};
+  @include media-breakpoint-up(lg) {
+    --sPT: #{rem(42)};
+  }
+	
+	&__row {
+		// --bs-gutter-x: #{rem()};
+		--bs-gutter-y: #{rem(33)};
+    margin-bottom: rem(49);
+    @include media-breakpoint-up(lg) {
+      margin-bottom: rem(61);
+    }
+	}
+	&__project-row {
+		// --bs-gutter-x: #{rem(30)};
+	}
+
+	.h5 {
+    margin-top: rem(32);
+    font-size: rem(24);
+    @include media-breakpoint-up(md) {
+      margin-top: rem(24);
+    }
+  }
+
+  .vote-item__stars {
+    position: static;
+    margin-bottom: rem(59);
+    @include media-breakpoint-up(lg) {
+      margin-bottom: rem(46);
+    }
+
+    img {
+      width: 30%;
+      max-height: none;
+      @include media-breakpoint-up(sm) {
+        width: rem(82);
+      }
+      @include media-breakpoint-up(xl) {
+        margin-right: rem(29);
+      }
+    }
+  }
+
+	&__item {
+		padding: rem(23) rem(22) rem(24);
+    background: $blue-200;
+    border-radius: $border-radius-sm;
+    margin-bottom: rem(10);
+    @include media-breakpoint-up(lg) {
+      border-radius: $border-radius;
+      padding: rem(23) rem(50) rem(24) rem(30);
+    }
+
+    .title {
+      margin-bottom: rem(22);
+      font-weight: 500;
+    }
+
+    p {
+      line-height: 1.18;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+	}
+
+  .title {
+    font-size: rem(24);
+  }
+
+  .nomination-item {
+    padding-bottom: rem(36);
+    &:not(:last-child) {
+      border-bottom: 1px solid $blue-200;
+      margin-bottom: rem(41);
+      @include media-breakpoint-up(lg) {
+        margin-bottom: rem(36);
+      }
+    }
+    @include media-breakpoint-up(lg) {
+      padding-bottom: rem(74);
+      &:first-child {
+        padding-top: rem(41);
+        border-top: 1px solid $blue-200;
+      }
+    }
+
+    .title {
+      margin-top: rem(32);
+      max-width: rem(300);
+    }
+  }
+
+  &__btn {
+    width: 100%;
+    @include media-breakpoint-up(lg) {
+      max-width: rem(304);
+    }
+  }
+
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sProject
