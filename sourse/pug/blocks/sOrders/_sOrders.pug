@@ -4,16 +4,23 @@ mixin sOrders(data)
 		.container
 			+b.order-card
 				+e.title.fw-500.color-add Номинация
-				+e.title.fw-500.color-add Название проекта
-			+orderCard('Мой край — моя гордость', 'Президент наградил победителя специальной номинации Всероссийской муниципальной премии «Служение»', 'btn').--blue
-			+orderCard('Мой край — моя гордость', 'Президент наградил победителя', 'btn').--blue
-			+orderCard('Мой край — моя гордость', 'Президент наградил победителя специальной номинации Всероссийской муниципальной премии «Служение»', 'btn').--blue
+				+e.descr Название проекта
+				+e.year.year.fw-500 Год подачи заявки
+			+orderCard('Мой край — моя гордость', 'Президент наградил победителя специальной номинации Всероссийской муниципальной премии «Служение»', 2024, 'btn').--blue
+			+orderCard('Мой край — моя гордость', 'Президент наградил победителя',2024, 'btn').--blue
+			+orderCard('Мой край — моя гордость', 'Президент наградил победителя специальной номинации Всероссийской муниципальной премии «Служение»', 2023, 'btn').--last
+				+e.btn.btn.btn-outline-primary(href='#') Подать в&nbsp;2024*
+			+e.add-info.color-add *Заявки попавшие в&nbsp;ТОП3&nbsp;в 2023 году не&nbsp;могут подаваться в&nbsp;2024 году
 	// end sOrders
 
 
-mixin orderCard(title, descr, btn)
+mixin orderCard(title, descr, year, btn)
 	+b.order-card&attributes(attributes)
 		+e.title.fw-500= title
 		+e.descr-wrap: +e.descr= descr
+		+e.year.year.fw-500= year
 		if btn
-			+e.btn.btn.btn-outline-primary(href='#'): +icon('pencil')
+			+e.btn-wrap
+				if block
+					block
+				+e.btn.btn.btn-outline-primary(href='#'): +icon('pencil')
