@@ -28,6 +28,7 @@
 
 #### 05.11.2024
 22. <https://megafronteam.github.io/0059Award/20-project.html>
+22. <https://megafronteam.github.io/0059Award/20-project-success.html>
 
 #### Profile
 1. <https://megafronteam.github.io/0059Award/15-user-profile.html>

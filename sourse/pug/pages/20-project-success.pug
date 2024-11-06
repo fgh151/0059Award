@@ -6,15 +6,16 @@ include ../blocks/sNominations/_sNominations.pug
  
 include ../blocks/sAwardSteps/_sAwardSteps.pug
 include ../blocks/sDocuments/_sDocuments.pug
+include ../blocks/sVote/_sVote.pug
+include ../blocks/sProject/_sProject.pug
 include ../blocks/sApplication/_sApplication.pug
-include ../blocks/sBlog/_sBlog.pug
 
 block variables
 	- let  mainPage= 'main-page' 
 	- let  bg= null
 
 block title
-	- let  title= 'Подача заявки'
+	- let  title= 'Карточка проекта'
 	title= title
 block pagecontent
 	//- +mob-mnu()
@@ -22,7 +23,8 @@ block pagecontent
 	
 	+parts('header')
 	main
-		+headerBlock1('apply1', title)
-		+sApplicationSuccess('Спасибо Ваша заявка принята!')
+		+headerBlock1('nominations', title)
+		+sApplicationSuccess('Спасибо, Ваш голос учтен!')
+
 
 	+parts('footer')
