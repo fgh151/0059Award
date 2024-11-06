@@ -143,8 +143,8 @@
       position: absolute;
       right: var(--padding);
       bottom: var(--padding);
-      // height: rem(24);
-      // width: rem(24);
+      height: rem(24);
+      width: rem(24);
       &:not(:checked) {
         opacity: 0;
       }
@@ -155,6 +155,11 @@
     position: absolute;
     bottom: var(--padding);
     left: var(--padding);
+    @include media-breakpoint-only(xl) {
+      img {
+        max-width: 25%;
+      }
+    }
   }
 
   &--btn {
