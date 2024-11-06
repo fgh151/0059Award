@@ -13,6 +13,19 @@ mixin sOrders(data)
 			+e.add-info.color-add *Заявки попавшие в&nbsp;ТОП3&nbsp;в 2023 году не&nbsp;могут подаваться в&nbsp;2024 году
 	// end sOrders
 
+mixin sOrders2(data)
+	// start sOrders
+	+b.SECTION.sOrders.section#sOrders&attributes(attributes)
+		+b.order-card
+			+e.title.fw-500.color-add Номинация
+			+e.descr Название проекта
+			+e.year.year.fw-500 Год подачи заявки
+		+orderCard('Мой край — моя гордость', 'Президент наградил победителя специальной номинации Всероссийской муниципальной премии «Служение»', 2024, 'btn').--blue
+		+orderCard('Мой край — моя гордость', 'Президент наградил победителя',2024, 'btn').--blue
+		+orderCard('Мой край — моя гордость', 'Президент наградил победителя специальной номинации Всероссийской муниципальной премии «Служение»', 2023, 'btn').--last
+			+e.btn.btn.btn-outline-primary(href='#') Подать в&nbsp;2024*
+		+e.add-info.color-add *Заявки попавшие в&nbsp;ТОП3&nbsp;в 2023 году не&nbsp;могут подаваться в&nbsp;2024 году
+
 
 mixin orderCard(title, descr, year, btn)
 	+b.order-card&attributes(attributes)

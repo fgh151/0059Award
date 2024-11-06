@@ -24,15 +24,7 @@ block pagecontent
 	main
 		+headerBlockSm('expertise', title)
 		+sUserNav
-			+b.form-wrap
-				.sUser__grid
-					.sUser__photo
-						+uploadAvatar()
-					//- .sUser__wrap
-					.sUser__person Муклин Василий Геннадьевич
-					.sUser__item.sUser__item-2
-						+input('', 'text', 'E-mail')(value="email@email.ru" disabled)
-						+input('', 'text', 'Телефон')(value="+7 (000) 000 00 00" disabled)
-					+btnsCollect
+			+userVoteItem('Перекрестная экспертиза')
+			+userVoteItem('Экспертное голосование')
 
 	+parts('footer')

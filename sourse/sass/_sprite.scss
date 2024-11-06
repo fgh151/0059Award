@@ -67,6 +67,11 @@
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(24 / #{$h} *1em );
 }
+.icon-link {
+	$h: 26;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(26 / #{$h} *1em );
+}
 .icon-news {
 	$h: 80;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
@@ -121,6 +126,11 @@
 	$h: 28;
 	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
 	width: calc(30 / #{$h} *1em );
+}
+.icon-vote {
+	$h: 35;
+	font-size:calc( #{$h} / #{$rfs-rem-value} * 1rem);
+	width: calc(32 / #{$h} *1em );
 }
 .icon-whatsapp {
 	$h: 16;

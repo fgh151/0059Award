@@ -18,7 +18,7 @@
 15. <https://megafronteam.github.io/0059Award/13-review.html>
 16. <https://megafronteam.github.io/0059Award/14-winners.html>
 17. <https://megafronteam.github.io/0059Award/15-user-profile.html>
-18. <https://megafronteam.github.io/0059Award/16-applies.html>
+<!-- 18. <https://megafronteam.github.io/0059Award/16-applies.html> -->
 19. <https://megafronteam.github.io/0059Award/17-managers.html>
 20. <https://megafronteam.github.io/0059Award/18-geography.html>
 21. <https://megafronteam.github.io/0059Award/19-region.html>
@@ -28,3 +28,9 @@
 
 #### 05.11.2024
 22. <https://megafronteam.github.io/0059Award/20-project.html>
+
+#### Profile
+1. <https://megafronteam.github.io/0059Award/15-user-profile.html>
+2. <https://megafronteam.github.io/0059Award/15-user-profile-vote.html>
+3. <https://megafronteam.github.io/0059Award/15-user-profile-applies.html>
+

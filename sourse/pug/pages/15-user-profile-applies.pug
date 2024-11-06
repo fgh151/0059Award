@@ -6,6 +6,7 @@ include ../blocks/sNominations/_sNominations.pug
  
 include ../blocks/sAwardSteps/_sAwardSteps.pug
 include ../blocks/sDocuments/_sDocuments.pug
+include ../blocks/sOrders/_sOrders.pug
 include ../blocks/sVote/_sVote.pug
 include ../blocks/sUser/_sUser.pug
 
@@ -24,15 +25,6 @@ block pagecontent
 	main
 		+headerBlockSm('expertise', title)
 		+sUserNav
-			+b.form-wrap
-				.sUser__grid
-					.sUser__photo
-						+uploadAvatar()
-					//- .sUser__wrap
-					.sUser__person Муклин Василий Геннадьевич
-					.sUser__item.sUser__item-2
-						+input('', 'text', 'E-mail')(value="email@email.ru" disabled)
-						+input('', 'text', 'Телефон')(value="+7 (000) 000 00 00" disabled)
-					+btnsCollect
+			+sOrders2
 
 	+parts('footer')

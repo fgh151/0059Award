@@ -3,7 +3,7 @@
 	--sPT: #{rem(0)};
 	--sPB: #{rem(20)};
   @include media-breakpoint-down(sm) {
-    --sPT: #{rem(30)};
+    // --sPT: #{rem(30)};
     --sPB: #{rem(30)};
   }
 	// --sTPB: #{rem()};
@@ -27,6 +27,7 @@
       background: transparent;
       color: $blue-600;
       padding-bottom: rem(20);
+      padding-top: rem(0);
     }
   }
 

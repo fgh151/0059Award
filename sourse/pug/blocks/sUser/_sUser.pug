@@ -1,36 +1,71 @@
+mixin sUserNav(data)
+	+b.SECTION.sUser.section#sUser&attributes(attributes)
+		.container
+			+e.top-wrap
+				+e.top-nav
+					a(href='#') Мои заявки
+					a(href='#').active Профиль
+					a(href='#') Голосование
+						+icon('vote')
+					a(href='#') Анкета для финального опроса
+				+e.btn.btn.btn-outline-primary(href='#', download) Скачать сертификаты
+			if block
+				block
+
 mixin sUser(data)
 	// start sUser
 	+b.SECTION.sUser.section#sUser&attributes(attributes)
 		.container
-			+e.top-nav
-				a(href='#') Мои заявки
-				a(href='#') Мои сертификаты
-				a(href='#').active Профиль
-				a(href='#') Голосование
-				a(href='#') Анкета для финального опроса
+			+e.top-wrap
+				+e.top-nav
+					a(href='#') Мои заявки
+					a(href='#').active Профиль
+					a(href='#') Голосование
+						+icon('vote')
+					a(href='#') Анкета для финального опроса
+				+e.btn.btn.btn-outline-primary(href='#', download) Скачать сертификаты
 			+b.form-wrap
-				.row
-					+e.col.col-auto
-						.sUser__photo
-							+uploadAvatar()
-					+e.col.col-lg
-						.sUser__wrap
-							.sUser__item
-								.sUser__person Муклин Василий Геннадьевич
-								//- a.sUser__link.fw-500(href="#") Редактировать профиль
-								//- 	+icon('pencil')
-								//- a.sUser__link.sUser__return-link.fw-500.ms-auto(href="#") Выйти
-							.sUser__item.sUser__item-2
-								.sUser__email
-									+input('', 'email', 'E-mail')(value="email@email.ru")
-								.sUser__tel
-									+input('', 'tel', 'Телефон')(value="+7 (000) 000 00 00")
-								+btnsCollect
+				.sUser__grid
+					.sUser__photo
+						+uploadAvatar()
+					//- .sUser__wrap
+					.sUser__person Муклин Василий Геннадьевич
+					.sUser__item.sUser__item-2
+						+input('', 'text', 'E-mail')(value="email@email.ru" disabled)
+						+input('', 'text', 'Телефон')(value="+7 (000) 000 00 00" disabled)
+					+btnsCollect
 
 
 	// end sUser
 
 mixin btnsCollect
 	.sUser__btns-wrap
-		.btn.btn-outline-primary(href='#') Редактировать профиль
-		.btn.btn-outline-dark(href='#') Выйти
+		.btn.btn-outline-primary.btn-icon(href='#')
+			.text Ссылка на публичную страницу вашего проекта
+			+icon('link')
+		.btn.btn-outline-dark(href='#') Выйти из личного кабинета
+
+mixin userVoteItem(title)
+	+b.user-vote-item 
+		+e.title-wrap: .title= title
+		+e.list
+			+vItem
+			+vItem
+			+vItem
+
+mixin vItem
+	+e.wrap: .row 
+		+e.col.col-lg
+			+e.col-title Название проекта
+			+e.col-name.text-primary.fw-500 «Времён<br>связующая нить»
+		+e.col.col-lg
+			+e.col-title Название проекта
+			+e.col-name Инициатива каждого — общий успех
+		+e.col.col-lg-4
+			+e.col-title Описание проекта
+			+e.descr
+				p Президент наградил победителя специальной номинации Всероссийской муниципальной премии «Служение»
+				a(href='#').link Посмотреть полное описание
+					+icon('arr-next')
+		+e.col.col-lg-auto
+			+e.btn-wrap: +e.btn.btn.btn-primary(href='#') Голосовать
