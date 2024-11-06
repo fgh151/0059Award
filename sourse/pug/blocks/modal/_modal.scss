@@ -25,6 +25,7 @@
       margin-bottom: 0;
     }
   }
+  border-radius: $border-radius-sm;
 
   &--lg {
     width: 1310px;
@@ -33,7 +34,6 @@
       padding: rem(77) rem(110);
     }
     // background: gray;
-    border-radius: $border-radius-sm;
   }
   .h5 {
     text-wrap: balance;
