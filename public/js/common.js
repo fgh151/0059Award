@@ -142,6 +142,9 @@ function eventHandler() {
 			const scrollPosition =
 				window.scrollY || document.documentElement.scrollTop;
 
+			const headerBlockHeight =
+				document.querySelector(".headerBlock").offsetHeight;
+
 			const topNav = document.querySelector(".top-nav");
 			if (topNav) {
 				const bottomNav = topNav.getBoundingClientRect().bottom;
@@ -155,17 +158,20 @@ function eventHandler() {
 
 				if (bottomNav < 0 && isScrollingDown) {
 					header.classList.add("change-logos--js");
-				} else if (!isScrollingDown && scrollPosition < 300) {
+				} else if (
+					!isScrollingDown &&
+					scrollPosition < headerBlockHeight * 0.5
+				) {
 					header.classList.remove("change-logos--js");
 				}
 
-				if (scrollPosition >= 400) {
+				if (scrollPosition >= headerBlockHeight) {
 					header.classList.add("show");
 				} else {
 					header.classList.remove("show");
 				}
 
-				if (scrollPosition >= 300) {
+				if (scrollPosition >= headerBlockHeight * 0.5) {
 					// header.classList.add('show');
 					header.classList.add("change-logos--js");
 				}
