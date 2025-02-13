@@ -1,4 +1,19 @@
 mixin sExpertise(data)
+	mixin coastOneToTen(budget)
+
+			.col: .wrapper
+				p Оцените от 0 до 10, где 0 самая низкая оценка проекта, а 10 самая высокая
+				.form-wrap__input-wrap.form-wrap__input-wrap--budget-radio.form-group
+					+in-c('radio', '1', budget)
+					+in-c('radio', '2', budget)
+					+in-c('radio', '3', budget)
+					+in-c('radio', '4', budget)
+					+in-c('radio', '5', budget)
+					+in-c('radio', '6', budget)
+					+in-c('radio', '7', budget)
+					+in-c('radio', '8', budget)
+					+in-c('radio', '9', budget)
+					+in-c('radio', '10', budget)
 	// start sExpertise
 	+b.SECTION.sExpertise.section#sExpertise&attributes(attributes)
 		.container
@@ -10,43 +25,28 @@ mixin sExpertise(data)
 					+e.row.row
 						.col-lg-7
 							p #[span Есть ли у проекта/управленческого решения комплексный подход к реализации и достижению поставленной цели?]
-						.col: .wrapper
-							.form-wrap__input-wrap.form-wrap__input-wrap--budget-radio.form-group
-								+in-c('radio', 'Да', 'budget')
-								+in-c('radio', 'Нет', 'budget')
+						+coastOneToTen('budget1') 
 				+e.card-item.card-item--single
 					+e.row.row
 						.col-lg-7
 							p #[span Есть ли у проекта/управленческого решения социальная значимость?]
-						.col: .wrapper
-							.form-wrap__input-wrap.form-wrap__input-wrap--budget-radio.form-group
-								+in-c('radio', 'Да', 'budget1')
-								+in-c('radio', 'Нет', 'budget1')
+						+coastOneToTen('budget2') 
 				+e.card-item.card-item--single
 					+e.row.row
 						.col-lg-7
 							p #[span Проект/управленческое решение подразумевает устойчивую долгосрочную потребность в результате реализации?]
 							p (Проект/решение может быть реализовано единожды или многократно?)
-						.col: .wrapper
-							.form-wrap__input-wrap.form-wrap__input-wrap--budget-radio.form-group
-								+in-c('radio', 'Да', 'budget2')
-								+in-c('radio', 'Нет', 'budget2')
+						+coastOneToTen('budget3') 
 				+e.card-item.card-item--single
 					+e.row.row
 						.col-lg-7
 							p #[span Направлен ли проект/управленческое решение на повышение качества жизни граждан?]
-						.col: .wrapper
-							.form-wrap__input-wrap.form-wrap__input-wrap--budget-radio.form-group
-								+in-c('radio', 'Да', 'budget3')
-								+in-c('radio', 'Нет', 'budget3')
+						+coastOneToTen('budget4') 
 				+e.card-item.card-item--single
 					+e.row.row
 						.col-lg-7
 							p #[span Может ли проект/управленческое решение быть масштабируемым и тиражируемым?]<br>(например,  для других регионов или элементов системы муниципального самоуправления)
-						.col: .wrapper
-							.form-wrap__input-wrap.form-wrap__input-wrap--budget-radio.form-group
-								+in-c('radio', 'Да', 'budget4')
-								+in-c('radio', 'Нет', 'budget4')
+						+coastOneToTen('budget5') 
 				+e.card-item.card-item--single.card_sm
 					+e.row-large.row
 						.col-lg-7
@@ -67,6 +67,31 @@ mixin sExpertise(data)
 						.col-lg-12
 							p #[span Ваше резюме о&nbsp;номинанте (до&nbsp;500 символов, но&nbsp;не&nbsp;менее 150):]
 							+input('', 'textarea', '')
+
+				+e.card-item.card-item--single
+					+e.row-large.row
+						.col-12
+							table
+								tbody
+									mixin tr(t)
+										tr
+											td
+												p= t
+											td
+												p Ваша оценка
+											td
+												p.text-primary 7
+									+tr(' Несёт ли проект, инициатива, управленческое решение культурно-историчествую ценность?')
+									+tr('Направлен ли проект, управленческое решение, инициатива на раскрытие и развитие человеческого потенциала жителей России?')
+									+tr('Направлен ли проект, инициатива или управленческое решение на укрепление партнёрства между государством, обществом и бизнесом для совместного развития территорий и повышения благополучия граждан. ')
+									+tr('Направлен ли проект, инициатива или управленческое решение на развитие технологий и качество принятия управленческих решений. Значительны ли результаты проекта, инициативы и решения для изменения практикоприменения на территории страны.')
+								tfoot
+									tr
+										td
+										td
+											p Итого
+										td
+											p.text-primary 28
 				.text-center: button.btn.btn-primary Отправить
 	// end sExpertise
 

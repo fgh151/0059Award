@@ -1,5 +1,5 @@
 /**
- * Swiper Custom Element 11.2.0
+ * Swiper Custom Element 11.2.3
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -7,22 +7,22 @@
  *
  * Released under the MIT License
  *
- * Released on: January 2, 2025
+ * Released on: February 12, 2025
  */
 
 (function () {
   'use strict';
 
   /**
-   * SSR Window 4.0.2
+   * SSR Window 5.0.0
    * Better handling for window object in SSR environment
    * https://github.com/nolimits4web/ssr-window
    *
-   * Copyright 2021, Vladimir Kharlampidi
+   * Copyright 2025, Vladimir Kharlampidi
    *
    * Licensed under MIT
    *
-   * Released on: December 13, 2021
+   * Released on: February 12, 2025
    */
   /* eslint-disable no-param-reassign */
   function isObject$2(obj) {
@@ -35,7 +35,8 @@
     if (src === void 0) {
       src = {};
     }
-    Object.keys(src).forEach(key => {
+    const noExtend = ['__proto__', 'constructor', 'prototype'];
+    Object.keys(src).filter(key => noExtend.indexOf(key) < 0).forEach(key => {
       if (typeof target[key] === 'undefined') target[key] = src[key];else if (isObject$2(src[key]) && isObject$2(target[key]) && Object.keys(src[key]).length > 0) {
         extend$2(target[key], src[key]);
       }
@@ -338,8 +339,9 @@
     if (selector === void 0) {
       selector = '';
     }
+    const window = getWindow();
     const children = [...element.children];
-    if (element instanceof HTMLSlotElement) {
+    if (window.HTMLSlotElement && element instanceof HTMLSlotElement) {
       children.push(...element.assignedElements());
     }
     if (!selector) {
@@ -359,8 +361,9 @@
     }
   }
   function elementIsChildOf(el, parent) {
+    const window = getWindow();
     let isChild = parent.contains(el);
-    if (!isChild && parent instanceof HTMLSlotElement) {
+    if (!isChild && window.HTMLSlotElement && parent instanceof HTMLSlotElement) {
       const children = [...parent.assignedElements()];
       isChild = children.includes(el);
       if (!isChild) {
@@ -1941,6 +1944,11 @@
       }
       return true;
     }
+    const browser = getBrowser();
+    const isSafari = browser.isSafari;
+    if (isVirtual && !initial && isSafari && swiper.isElement) {
+      swiper.virtual.update(false, false, slideIndex);
+    }
     swiper.setTransition(speed);
     swiper.setTranslate(translate);
     swiper.updateActiveIndex(slideIndex);
@@ -2114,8 +2122,9 @@
     }
     const normalizedTranslate = normalize(translate);
     const normalizedSnapGrid = snapGrid.map(val => normalize(val));
+    const isFreeMode = params.freeMode && params.freeMode.enabled;
     let prevSnap = snapGrid[normalizedSnapGrid.indexOf(normalizedTranslate) - 1];
-    if (typeof prevSnap === 'undefined' && params.cssMode) {
+    if (typeof prevSnap === 'undefined' && (params.cssMode || isFreeMode)) {
       let prevSnapIndex;
       snapGrid.forEach((snap, snapIndex) => {
         if (normalizedTranslate >= snap) {
@@ -2124,7 +2133,7 @@
         }
       });
       if (typeof prevSnapIndex !== 'undefined') {
-        prevSnap = snapGrid[prevSnapIndex > 0 ? prevSnapIndex - 1 : prevSnapIndex];
+        prevSnap = isFreeMode ? snapGrid[prevSnapIndex] : snapGrid[prevSnapIndex > 0 ? prevSnapIndex - 1 : prevSnapIndex];
       }
     }
     let prevIndex = 0;
@@ -2869,7 +2878,7 @@
     }
     let loopFixed;
     new Date().getTime();
-    if (data.isMoved && data.allowThresholdMove && prevTouchesDirection !== swiper.touchesDirection && isLoop && allowLoopFix && Math.abs(diff) >= 1) {
+    if (params._loopSwapReset !== false && data.isMoved && data.allowThresholdMove && prevTouchesDirection !== swiper.touchesDirection && isLoop && allowLoopFix && Math.abs(diff) >= 1) {
       Object.assign(touches, {
         startX: pageX,
         startY: pageY,
@@ -4675,7 +4684,7 @@
   }
 
   /**
-   * Swiper Custom Element 11.2.0
+   * Swiper Custom Element 11.2.3
    * Most modern mobile touch slider and framework with hardware accelerated transitions
    * https://swiperjs.com
    *
@@ -4683,7 +4692,7 @@
    *
    * Released under the MIT License
    *
-   * Released on: January 2, 2025
+   * Released on: February 12, 2025
    */
 
 
@@ -4939,6 +4948,9 @@
       this.render();
     }
     connectedCallback() {
+      if (this.swiperLoopMoveDOM) {
+        return;
+      }
       this.initialize();
     }
   }
