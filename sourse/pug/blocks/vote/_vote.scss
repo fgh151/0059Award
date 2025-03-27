@@ -1,0 +1,162 @@
+.vote-wrapper {
+  width: 100%;
+  height: 252px;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 78px 0 62px;
+  position: relative;
+}
+
+.vote-background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  max-width: 100%;
+  height: 100%;
+  border-radius: 24px;
+}
+
+.vote-text {
+  color: #fff;
+
+  h1 {
+    font-size: 64px;
+    line-height: 60px;
+    margin-bottom: 17px;
+    font-weight: 400;
+  }
+
+  h3 { 
+    font-size: rem(32px);
+    line-height: 100%;
+    font-weight: 400;
+    margin-bottom: 0;
+  } 
+}
+
+.vote-button {
+  width: rem(317px);
+  height: rem(110px);
+  background-color: #fff;
+  border-radius: 12px;
+  outline: none;
+  border: 2px solid #D2A35F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #D2A35F;
+  font-size: rem(40px);
+  font-weight: 400;
+  line-height: 100%;
+  transition: background-color .2s;
+
+  &:hover {
+    background-color: #eee;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .vote-text {
+    h1 {
+      font-size: 50px;
+    }
+  
+    h3 { 
+      font-size: 24px;
+    } 
+  }
+  
+  .vote-button {
+    width: 220px;
+    height: 90px;
+    font-size: 32px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .vote-wrapper {
+    height: 200px;
+    padding: 0 28px 0;
+  }
+
+  .vote-text {
+    h1 {
+      font-size: 34px;
+      line-height: 38px;
+    }
+  
+    h3 { 
+      font-size: 18px;
+    } 
+  }
+  
+  .vote-button {
+    max-width: 180px;
+    height: 75px;
+    font-size: 20px;
+  }
+
+  .vote-background-image {
+    border-radius: 15px;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .vote-wrapper {
+    height: 200px;
+    padding: 0 28px 0;
+  }
+
+  .vote-text {
+    h1 {
+      font-size: 34px;
+      line-height: 38px;
+    }
+  
+    h3 { 
+      font-size: 18px;
+    } 
+  }
+  
+  .vote-button {
+    max-width: 150px;
+    height: 60px;
+    font-size: 18px;
+  }
+
+  .vote-background-image {
+    border-radius: 15px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .vote-wrapper {
+    height: 200px;
+    padding: 0 28px 0;
+    flex-wrap: wrap;
+  }
+
+  .vote-text {
+    h1 {
+      font-size: 30px;
+      line-height: 30px;
+    }
+  
+    h3 { 
+      font-size: 16px;
+    } 
+  }
+  
+  .vote-button {
+    max-width: 120px;
+    height: 50px;
+    font-size: 16px;
+  }
+
+  .vote-background-image {
+    border-radius: 15px;
+  }
+}

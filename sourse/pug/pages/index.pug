@@ -2,6 +2,7 @@ extends ../layout/main.pug
 
 include ../blocks/headerBlock/_headerBlock.pug
 include ../blocks/sForm/_sForm.pug
+include ../blocks/vote/_vote.pug
 include ../blocks/sNominations/_sNominations.pug
  
 include ../blocks/sAwardSteps/_sAwardSteps.pug
@@ -23,6 +24,7 @@ block pagecontent
 	+parts('header-2')
 	main
 		+headerBlock 
+		+vote
 		+sNominations
 		+sAwardSteps
 		+sNews
